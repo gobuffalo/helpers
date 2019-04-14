@@ -7,6 +7,7 @@ import (
 	"github.com/gobuffalo/helpers/env"
 	"github.com/gobuffalo/helpers/escapes"
 	"github.com/gobuffalo/helpers/forms"
+	"github.com/gobuffalo/helpers/forms/bootstrap"
 	"github.com/gobuffalo/helpers/hctx"
 	"github.com/gobuffalo/helpers/inflections"
 	"github.com/gobuffalo/helpers/iterators"
@@ -14,6 +15,7 @@ import (
 	"github.com/gobuffalo/helpers/text"
 )
 
+var BootstrapForms = bootstrap.New()
 var Content = content.New()
 var Debug = debug.New()
 var Encoders = encoders.New()
@@ -27,6 +29,7 @@ var Text = text.New()
 
 var ALL = func() hctx.Map {
 	return hctx.Merge(
+		BootstrapForms,
 		Content,
 		Debug,
 		Encoders,
