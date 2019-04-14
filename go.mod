@@ -15,6 +15,7 @@ require (
 	github.com/onsi/gomega v1.5.0 // indirect
 	github.com/pkg/errors v0.8.1
 	github.com/serenize/snaker v0.0.0-20171204205717-a683aaf2d516 // indirect
+	github.com/stretchr/testify v1.3.0
 	golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3 // indirect
 	golang.org/x/sync v0.0.0-20190227155943-e225da77a7e6 // indirect
 	golang.org/x/sys v0.0.0-20190411185658-b44545bcd369 // indirect

@@ -1,34 +1,41 @@
 package helpers
 
-import "html/template"
+import (
+	"github.com/gobuffalo/helpers/content"
+	"github.com/gobuffalo/helpers/debug"
+	"github.com/gobuffalo/helpers/encoders"
+	"github.com/gobuffalo/helpers/env"
+	"github.com/gobuffalo/helpers/escapes"
+	"github.com/gobuffalo/helpers/forms"
+	"github.com/gobuffalo/helpers/hctx"
+	"github.com/gobuffalo/helpers/inflections"
+	"github.com/gobuffalo/helpers/iterators"
+	"github.com/gobuffalo/helpers/meta"
+	"github.com/gobuffalo/helpers/text"
+)
 
-// HTMLer generates HTML source
-type HTMLer interface {
-	HTML() template.HTML
+var Content = content.New()
+var Debug = debug.New()
+var Encoders = encoders.New()
+var Env = env.New()
+var Escapes = escapes.New()
+var Forms = forms.New()
+var Inflections = inflections.New()
+var Iterators = iterators.New()
+var Meta = meta.New()
+var Text = text.New()
+
+var ALL = func() hctx.Map {
+	return hctx.Merge(
+		Content,
+		Debug,
+		Encoders,
+		Env,
+		Escapes,
+		Forms,
+		Inflections,
+		Iterators,
+		Meta,
+		Text,
+	)
 }
-
-// Helpers.Add("json", toJSONHelper)
-// Helpers.Add("jsEscape", template.JSEscapeString)
-// Helpers.Add("htmlEscape", htmlEscape)
-// Helpers.Add("upcase", strings.ToUpper)
-// Helpers.Add("downcase", strings.ToLower)
-// Helpers.Add("contentFor", contentForHelper)
-// Helpers.Add("contentOf", contentOfHelper)
-// Helpers.Add("markdown", MarkdownHelper)
-// Helpers.Add("len", lenHelper)
-// Helpers.Add("debug", debugHelper)
-// Helpers.Add("inspect", inspectHelper)
-// Helpers.Add("range", rangeHelper)
-// Helpers.Add("between", betweenHelper)
-// Helpers.Add("until", untilHelper)
-// Helpers.Add("groupBy", groupByHelper)
-// Helpers.Add("form", BootstrapFormHelper)
-// Helpers.Add("form_for", BootstrapFormForHelper)
-// Helpers.Add("truncate", truncateHelper)
-// Helpers.Add("env", envy.MustGet)
-// Helpers.Add("envOr", envy.Get)
-// Helpers.Add("partial", partialHelper)
-// Helpers.Add("raw", func(s string) template.HTML {
-// 	return template.HTML(s)
-// })
-// Helpers.AddMany(inflect.Helpers)

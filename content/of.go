@@ -20,11 +20,11 @@ func ContentOf(name string, data hctx.Map, help hctx.HelperContext) (template.HT
 			return template.HTML(""), errors.New("missing contentOf block: " + name)
 		}
 
-		hctx := help.New()
+		hc := help.New()
 		for k, v := range data {
-			hctx.Set(k, v)
+			hc.Set(k, v)
 		}
-		body, err := help.BlockWith(hctx)
+		body, err := help.BlockWith(hc)
 		if err != nil {
 			return template.HTML(""), err
 		}

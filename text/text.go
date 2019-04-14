@@ -1,10 +1,10 @@
-package content
+package text
 
 import "github.com/gobuffalo/helpers/hctx"
 
 func New() hctx.Map {
 	return hctx.Map{
-		"contentOf":  ContentOf,
-		"contentFor": ContentFor,
+		"markdown": Markdown,
+		"truncate": Truncate,
 	}
 }

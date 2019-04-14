@@ -1,4 +1,4 @@
-package helpers
+package text
 
 import (
 	"html/template"
@@ -8,7 +8,7 @@ import (
 )
 
 // Markdown converts the string into HTML using GitHub flavored markdown.
-func MarkdownHelper(body string, help hctx.HelperContext) (template.HTML, error) {
+func Markdown(body string, help hctx.HelperContext) (template.HTML, error) {
 	var err error
 	if help.HasBlock() {
 		body, err = help.Block()

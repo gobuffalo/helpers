@@ -1,4 +1,4 @@
-package helpers
+package text
 
 import "github.com/gobuffalo/helpers/hctx"
 
