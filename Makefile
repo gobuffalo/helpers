@@ -26,7 +26,7 @@ build:
 
 test:
 	packr2
-	$(GO_BIN) test -tags ${TAGS} ./...
+	$(GO_BIN) test -cover -tags ${TAGS} ./...
 	make tidy
 
 ci-deps:
