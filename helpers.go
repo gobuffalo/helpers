@@ -39,7 +39,6 @@ var ALL = func() hctx.Map {
 		Encoders,
 		Env,
 		Escapes,
-		Forms,
 		Inflections,
 		Iterators,
 		Meta,
