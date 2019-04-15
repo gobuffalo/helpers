@@ -26,6 +26,7 @@ build:
 
 test:
 	packr2
+	go run ./helpers/main.go
 	$(GO_BIN) test -cover -tags ${TAGS} ./...
 	make tidy
 

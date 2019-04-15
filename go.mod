@@ -19,14 +19,13 @@ require (
 	github.com/gobuffalo/validate v2.0.3+incompatible // indirect
 	github.com/gofrs/uuid v3.2.0+incompatible // indirect
 	github.com/markbates/inflect v1.0.4 // indirect
-	github.com/mitchellh/go-homedir v1.1.0
 	github.com/onsi/ginkgo v1.8.0 // indirect
 	github.com/onsi/gomega v1.5.0 // indirect
 	github.com/pkg/errors v0.8.1
 	github.com/serenize/snaker v0.0.0-20171204205717-a683aaf2d516 // indirect
 	github.com/spf13/cobra v0.0.3
-	github.com/spf13/viper v1.3.2
 	github.com/stretchr/testify v1.3.0
 	golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3 // indirect
 	golang.org/x/sys v0.0.0-20190411185658-b44545bcd369 // indirect
+	gopkg.in/yaml.v2 v2.2.2 // indirect
 )
