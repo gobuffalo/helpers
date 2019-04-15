@@ -33,7 +33,7 @@ var Text = text.New()
 
 var ALL = func() hctx.Map {
 	return hctx.Merge(
-		BootstrapForms,
+		bootstrap.NewAsForms(),
 		Content,
 		Debug,
 		Encoders,
