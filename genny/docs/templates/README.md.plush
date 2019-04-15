@@ -1,0 +1,10 @@
+# Helpers
+
+---
+Note: This file is auto-generated. Do Not Edit
+---
+
+<%= for (h) in helpers { %>
+# [`github.com/gobuffalo/helpers/<%= h.Name %>`](https://godoc.org/github.com/gobuffalo/helpers/<%= h.Name %>)
+<%= if (h.Doc) {return markdown(h.Doc)} %>
+<% } %>
