@@ -6,7 +6,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-func GroupBy(size int, underlying interface{}) (*groupBy, error) {
+func GroupBy(size int, underlying interface{}) (Iterator, error) {
 	if size <= 0 {
 		return nil, errors.New("size must be greater than zero")
 	}
