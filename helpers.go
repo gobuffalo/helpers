@@ -12,6 +12,8 @@ import (
 	"github.com/gobuffalo/helpers/inflections"
 	"github.com/gobuffalo/helpers/iterators"
 	"github.com/gobuffalo/helpers/meta"
+	"github.com/gobuffalo/helpers/paths"
+	"github.com/gobuffalo/helpers/tags"
 	"github.com/gobuffalo/helpers/text"
 )
 
@@ -25,6 +27,8 @@ var Forms = forms.New()
 var Inflections = inflections.New()
 var Iterators = iterators.New()
 var Meta = meta.New()
+var Paths = paths.New()
+var Tags = tags.New()
 var Text = text.New()
 
 var ALL = func() hctx.Map {
@@ -39,6 +43,8 @@ var ALL = func() hctx.Map {
 		Inflections,
 		Iterators,
 		Meta,
+		Paths,
+		Tags,
 		Text,
 	)
 }
