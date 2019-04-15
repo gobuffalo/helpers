@@ -49,6 +49,7 @@ update:
 	make tidy
 
 release-test:
+	go run ./helpers/main.go
 	$(GO_BIN) test -tags ${TAGS} -race ./...
 	make tidy
 
