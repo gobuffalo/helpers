@@ -6,6 +6,7 @@ import (
 	"go/parser"
 	"path"
 	"path/filepath"
+	"sort"
 	"strings"
 	"unicode"
 
@@ -46,7 +47,7 @@ func New(opts *Options) (*genny.Generator, error) {
 	return g, nil
 }
 
-var prefixes = []string{"genny", "helptest", "helpers/cmd"}
+var prefixes = []string{"genny", "helptest", "helpers/cmd", "hctx"}
 var suffixes = []string{"_test.go"}
 
 func findHelpers() ([]helper, error) {
@@ -94,6 +95,10 @@ func findHelpers() ([]helper, error) {
 			})
 		}
 		return nil
+	})
+
+	sort.Slice(helpers, func(a, b int) bool {
+		return helpers[a].Name < helpers[b].Name
 	})
 	return helpers, err
 }
