@@ -73,3 +73,8 @@ func (f HelperContext) Render(s string) (string, error) {
 	}
 	return f.RenderFn(s)
 }
+
+// Has checks the existence of the key in the context.
+func (c HelperContext) Has(key string) bool {
+	return c.Value(key) != nil
+}
