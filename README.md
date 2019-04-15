@@ -19,6 +19,9 @@ bootstrap.NewFormFor function in the github.com/gobuffalo/tags/form/bootstrap pa
 ## [`bootstrap#New`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#New)
 
 
+## [`bootstrap#NewAsForms`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#NewAsForms)
+
+
 ## [`content#ContentFor`](https://godoc.org/github.com/gobuffalo/helpers/content#ContentFor)
 <p>ContentFor stores a block of templating code to be re-used later in the template
 via the contentOf helper.

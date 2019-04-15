@@ -15,6 +15,14 @@ func New() hctx.Map {
 	}
 }
 
+func NewAsForms() hctx.Map {
+	return hctx.Map{
+		"form":     BootstrapForm,
+		"formFor":  BootstrapFormFor,
+		"form_for": BootstrapFormFor,
+	}
+}
+
 type helperable interface {
 	SetAuthenticityToken(string)
 	Append(...tags.Body)
