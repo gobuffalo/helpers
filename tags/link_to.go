@@ -1,6 +1,7 @@
 package tags
 
 import (
+	"errors"
 	"html/template"
 
 	"github.com/gobuffalo/helpers/hctx"
@@ -13,6 +14,15 @@ func LinkTo(in interface{}, opts tags.Options, help hctx.HelperContext) (templat
 	if err != nil {
 		return "", err
 	}
+
+	if opts == nil {
+		opts = tags.Options{}
+	}
+
+	if help == nil {
+		return "", errors.New("nil HelperContext")
+	}
+
 	opts["href"] = s
 	a := tags.New("a", opts)
 	if help.HasBlock() {

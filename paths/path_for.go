@@ -29,6 +29,10 @@ type Paramable interface {
 // * if `struct.Slug` the slug is used to fill the `{id}` slot of the URL
 // * if `struct.ID` the ID is used to fill the `{id}` slot of the URL
 func PathFor(in interface{}) (string, error) {
+	if in == nil {
+		return "", errors.New("can not calculate path to nil")
+	}
+
 	if s, ok := in.(string); ok {
 		return join(s), nil
 	}
@@ -49,11 +53,11 @@ func PathFor(in interface{}) (string, error) {
 		v := reflect.ValueOf(in)
 		f := v.FieldByName("Slug")
 		if f.IsValid() {
-			return join(ni.URL().String(), fmt.Sprint(f.Interface())), nil
+			return byField(ni, f)
 		}
 		f = v.FieldByName("ID")
 		if f.IsValid() {
-			return join(ni.URL().String(), fmt.Sprint(f.Interface())), nil
+			return byField(ni, f)
 		}
 	case reflect.Slice, reflect.Array:
 		var paths []string
@@ -74,6 +78,19 @@ func PathFor(in interface{}) (string, error) {
 	}
 
 	return "", errors.New("could not convert to path")
+}
+
+func byField(ni name.Ident, f reflect.Value) (string, error) {
+	ii := f.Interface()
+	if ii == nil {
+		return "", nil
+	}
+
+	zero := reflect.DeepEqual(ii, reflect.Zero(reflect.TypeOf(ii)).Interface())
+	if zero {
+		return join(ni.URL().String()), nil
+	}
+	return join(ni.URL().String(), fmt.Sprint(ii)), nil
 }
 
 func join(s ...string) string {

@@ -33,12 +33,14 @@ func Test_PathFor(t *testing.T) {
 		err bool
 	}{
 		{Car{1}, "/cars/1", false},
+		{Car{}, "/cars", false},
 		{boat{"titanic"}, "/boats/titanic", false},
 		{plane{}, "/planes/aeroplane", false},
 		{truck{}, "/a/truck", false},
 		{[]interface{}{truck{}, plane{}}, "/a/truck/planes/aeroplane", false},
 		{"foo", "/foo", false},
 		{map[int]int{}, "", true},
+		{nil, "", true},
 	}
 
 	for _, tt := range table {
