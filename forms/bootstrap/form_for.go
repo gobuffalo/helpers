@@ -8,9 +8,9 @@ import (
 	"github.com/gobuffalo/tags/form/bootstrap"
 )
 
-// BootstrapFormFor implements a Plush helper around the
+// FormFor implements a Plush helper around the
 // bootstrap.NewFormFor function in the github.com/gobuffalo/tags/form/bootstrap package
-func BootstrapFormFor(model interface{}, opts tags.Options, help hctx.HelperContext) (template.HTML, error) {
+func FormFor(model interface{}, opts tags.Options, help hctx.HelperContext) (template.HTML, error) {
 	return helper(opts, help, func(opts tags.Options) helperable {
 		return bootstrap.NewFormFor(model, opts)
 	})

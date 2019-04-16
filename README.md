@@ -6,13 +6,13 @@ Note: This file is auto-generated. Do Not Edit
 ---
 
 
-## [`bootstrap#BootstrapForm`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#BootstrapForm)
-<p>BootstrapForm implements a Plush helper around the
+## [`bootstrap#Form`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#Form)
+<p>Form implements a Plush helper around the
 bootstrap.New function in the github.com/gobuffalo/tags/form/bootstrap package</p>
 
 
-## [`bootstrap#BootstrapFormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#BootstrapFormFor)
-<p>BootstrapFormFor implements a Plush helper around the
+## [`bootstrap#FormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#FormFor)
+<p>FormFor implements a Plush helper around the
 bootstrap.NewFormFor function in the github.com/gobuffalo/tags/form/bootstrap package</p>
 
 

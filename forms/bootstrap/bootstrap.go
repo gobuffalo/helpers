@@ -15,8 +15,8 @@ const (
 
 func New() hctx.Map {
 	return hctx.Map{
-		FormKey:    BootstrapForm,
-		FormForKey: BootstrapFormFor,
+		FormKey:    Form,
+		FormForKey: FormFor,
 	}
 }
 
