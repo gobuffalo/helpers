@@ -5,7 +5,7 @@ go 1.12
 require (
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/gobuffalo/envy v1.6.15
-	github.com/gobuffalo/flect v0.1.1
+	github.com/gobuffalo/flect v0.1.2
 	github.com/gobuffalo/genny v0.0.0-20190403191548-3ca520ef0d9e
 	github.com/gobuffalo/github_flavored_markdown v1.0.7
 	github.com/gobuffalo/gogen v0.0.0-20190315121717-8f38393713f5

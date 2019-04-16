@@ -117,6 +117,22 @@ form.NewFormFor function in the github.com/gobuffalo/tags/form package</p>
 ## [`paths#New`](https://godoc.org/github.com/gobuffalo/helpers/paths#New)
 
 
+## [`paths#PathFor`](https://godoc.org/github.com/gobuffalo/helpers/paths#PathFor)
+<p>PathFor takes an <code>interface{}</code>, or a <code>slice</code> of them,
+and tries to convert it to a <code>/foos/{id}</code> style URL path.
+Rules:</p>
+
+<ul>
+<li>if <code>string</code> it is returned as is</li>
+<li>if <code>Pathable</code> the <code>ToPath</code> method is returned</li>
+<li>if <code>slice</code> or an <code>array</code> each element is run through the helper then joined</li>
+<li>if <code>struct</code> the name of the struct, pluralized is used for the name</li>
+<li>if <code>struct.Slug</code> the slug is used to fill the <code>{id}</code> slot of the URL</li>
+<li>if <code>struct.ID</code> the ID is used to fill the <code>{id}</code> slot of the URL</li>
+<li>if <code>Paramable</code> the <code>ToParam</code> method is used to fill the <code>{id}</code> slot</li>
+</ul>
+
+
 ## [`tags#CSS`](https://godoc.org/github.com/gobuffalo/helpers/tags#CSS)
 
 
