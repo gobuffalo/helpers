@@ -127,9 +127,9 @@ Rules:</p>
 <li>if <code>Pathable</code> the <code>ToPath</code> method is returned</li>
 <li>if <code>slice</code> or an <code>array</code> each element is run through the helper then joined</li>
 <li>if <code>struct</code> the name of the struct, pluralized is used for the name</li>
+<li>if <code>Paramable</code> the <code>ToParam</code> method is used to fill the <code>{id}</code> slot</li>
 <li>if <code>struct.Slug</code> the slug is used to fill the <code>{id}</code> slot of the URL</li>
 <li>if <code>struct.ID</code> the ID is used to fill the <code>{id}</code> slot of the URL</li>
-<li>if <code>Paramable</code> the <code>ToParam</code> method is used to fill the <code>{id}</code> slot</li>
 </ul>
 
 
@@ -140,6 +140,9 @@ Rules:</p>
 
 
 ## [`tags#JS`](https://godoc.org/github.com/gobuffalo/helpers/tags#JS)
+
+
+## [`tags#LinkTo`](https://godoc.org/github.com/gobuffalo/helpers/tags#LinkTo)
 
 
 ## [`tags#New`](https://godoc.org/github.com/gobuffalo/helpers/tags#New)
