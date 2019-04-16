@@ -25,9 +25,9 @@ type Paramable interface {
 // * if `Pathable` the `ToPath` method is returned
 // * if `slice` or an `array` each element is run through the helper then joined
 // * if `struct` the name of the struct, pluralized is used for the name
+// * if `Paramable` the `ToParam` method is used to fill the `{id}` slot
 // * if `struct.Slug` the slug is used to fill the `{id}` slot of the URL
 // * if `struct.ID` the ID is used to fill the `{id}` slot of the URL
-// * if `Paramable` the `ToParam` method is used to fill the `{id}` slot
 func PathFor(in interface{}) (string, error) {
 	if s, ok := in.(string); ok {
 		return join(s), nil
