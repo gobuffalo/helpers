@@ -34,4 +34,11 @@ func Test_Truncate(t *testing.T) {
 	})
 	r.Len(s, 4)
 	r.Equal("more", s)
+
+	// Case size >= len(string)
+	s = Truncate(x, hctx.Map{
+		"size": len(x),
+	})
+	r.Len(s, len(x))
+	r.Equal(x[48:], s[48:])
 }
