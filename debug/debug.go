@@ -7,10 +7,15 @@ import (
 	"github.com/gobuffalo/helpers/hctx"
 )
 
+const (
+	DebugKey   = "debug"
+	InspectKey = "inspect"
+)
+
 func New() hctx.Map {
 	return hctx.Map{
-		"debug":   Debug,
-		"inspect": Inspect,
+		DebugKey:   Debug,
+		InspectKey: Inspect,
 	}
 }
 

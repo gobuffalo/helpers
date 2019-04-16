@@ -2,15 +2,21 @@ package tags
 
 import "github.com/gobuffalo/helpers/hctx"
 
+const (
+	ImgKey = "img"
+	CSSKey = "stylesheetTag"
+	JSKey  = "javascriptTag"
+)
+
 func New() hctx.Map {
 	return hctx.Map{
-		"img":           Img,
-		"imgTag":        Img,
-		"css":           CSS,
-		"cssTag":        CSS,
-		"stylesheetTag": CSS,
-		"js":            JS,
-		"jsTag":         JS,
-		"javascriptTag": JS,
+		ImgKey:   Img,
+		"imgTag": Img,
+		"css":    CSS,
+		"cssTag": CSS,
+		CSSKey:   CSS,
+		"js":     JS,
+		"jsTag":  JS,
+		JSKey:    JS,
 	}
 }

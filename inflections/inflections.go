@@ -7,16 +7,26 @@ import (
 	"github.com/gobuffalo/helpers/hctx"
 )
 
+const (
+	CamelizeKey    = "camelize"
+	CapitalizeKey  = "capitalize"
+	DasherizeKey   = "dasherize"
+	OrdinalizeKey  = "ordinalize"
+	PluralizeKey   = "pluralize"
+	SingularizeKey = "singularize"
+	UnderscoreKey  = "underscore"
+)
+
 func New() hctx.Map {
 	return hctx.Map{
-		"camelize":            Camelize,
+		CamelizeKey:           Camelize,
 		"camelize_down_first": Camelize, // Deprecated
-		"capitalize":          Capitalize,
-		"dasherize":           Dasherize,
-		"ordinalize":          Ordinalize,
-		"pluralize":           Pluralize,
-		"singularize":         Singularize,
-		"underscore":          Underscore,
+		CapitalizeKey:         Capitalize,
+		DasherizeKey:          Dasherize,
+		OrdinalizeKey:         Ordinalize,
+		PluralizeKey:          Pluralize,
+		SingularizeKey:        Singularize,
+		UnderscoreKey:         Underscore,
 		// "asciffy":             Asciify,
 		// "humanize":            Humanize,
 		// "parameterize":        Parameterize,

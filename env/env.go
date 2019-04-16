@@ -5,10 +5,15 @@ import (
 	"github.com/gobuffalo/helpers/hctx"
 )
 
+const (
+	EnvKey   = "env"
+	EnvOrKey = "envOr"
+)
+
 func New() hctx.Map {
 	return hctx.Map{
-		"env":   Env,
-		"envOr": EnvOr,
+		EnvKey:   Env,
+		EnvOrKey: EnvOr,
 	}
 }
 

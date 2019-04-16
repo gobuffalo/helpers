@@ -2,9 +2,14 @@ package escapes
 
 import "github.com/gobuffalo/helpers/hctx"
 
+const (
+	JSEscapeKey   = "jsEscape"
+	HTMLEscapeKey = "htmlEscape"
+)
+
 func New() hctx.Map {
 	return hctx.Map{
-		"jsEscape":   JSEscape,
-		"htmlEscape": HTMLEscape,
+		JSEscapeKey:   JSEscape,
+		HTMLEscapeKey: HTMLEscape,
 	}
 }

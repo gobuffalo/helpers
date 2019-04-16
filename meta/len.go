@@ -6,9 +6,13 @@ import (
 	"github.com/gobuffalo/helpers/hctx"
 )
 
+const (
+	LenKey = "len"
+)
+
 func New() hctx.Map {
 	return hctx.Map{
-		"len": Len,
+		LenKey: Len,
 	}
 }
 

@@ -2,11 +2,18 @@ package iterators
 
 import "github.com/gobuffalo/helpers/hctx"
 
+const (
+	RangeKey   = "range"
+	BetweenKey = "between"
+	UntilKey   = "until"
+	GroupByKey = "groupBy"
+)
+
 func New() hctx.Map {
 	return hctx.Map{
-		"range":   Range,
-		"between": Between,
-		"until":   Until,
-		"groupBy": GroupBy,
+		RangeKey:   Range,
+		BetweenKey: Between,
+		UntilKey:   Until,
+		GroupByKey: GroupBy,
 	}
 }

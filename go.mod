@@ -13,7 +13,6 @@ require (
 	github.com/gobuffalo/packr/v2 v2.1.0
 	github.com/gobuffalo/plush v3.7.34+incompatible
 	github.com/gobuffalo/plushgen v0.0.0-20190329152458-0555238fe0d9
-	github.com/gobuffalo/syncx v0.0.0-20190224160051-33c29581e754
 	github.com/gobuffalo/tags v2.0.16+incompatible
 	github.com/gobuffalo/uuid v2.0.5+incompatible // indirect
 	github.com/gobuffalo/validate v2.0.3+incompatible // indirect

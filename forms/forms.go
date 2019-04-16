@@ -8,10 +8,15 @@ import (
 	"github.com/gobuffalo/tags"
 )
 
+const (
+	FormKey    = "form"
+	FormForKey = "formFor"
+)
+
 func New() hctx.Map {
 	return hctx.Map{
-		"form":     Form,
-		"formFor":  FormFor,
+		FormKey:    Form,
+		FormForKey: FormFor,
 		"form_for": FormFor, // Deprecated
 	}
 }
