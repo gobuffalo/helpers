@@ -15,3 +15,13 @@ func Form(opts tags.Options, help hctx.HelperContext) (template.HTML, error) {
 		return bootstrap.New(opts)
 	})
 }
+
+// RemoteForm implements a Plush helper around the
+// bootstrap.New function in the github.com/gobuffalo/tags/form/bootstrap package
+func RemoteForm(opts tags.Options, help hctx.HelperContext) (template.HTML, error) {
+	if opts == nil {
+		opts = tags.Options{}
+	}
+	opts["data-remote"] = true
+	return Form(opts, help)
+}

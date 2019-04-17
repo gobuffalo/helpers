@@ -3,6 +3,7 @@ package paths
 import (
 	"errors"
 	"fmt"
+	"html/template"
 	"path"
 	"reflect"
 	"strings"
@@ -33,11 +34,12 @@ func PathFor(in interface{}) (string, error) {
 		return "", errors.New("can not calculate path to nil")
 	}
 
-	if s, ok := in.(string); ok {
+	switch s := in.(type) {
+	case string:
 		return join(s), nil
-	}
-
-	if s, ok := in.(Pathable); ok {
+	case template.HTML:
+		return join(string(s)), nil
+	case Pathable:
 		return join(s.ToPath()), nil
 	}
 
@@ -46,25 +48,25 @@ func PathFor(in interface{}) (string, error) {
 		return "", err
 	}
 
-	to := reflect.TypeOf(in)
+	rv := reflect.Indirect(reflect.ValueOf(in))
+
+	to := rv.Type()
 	k := to.Kind()
 	switch k {
 	case reflect.Struct:
-		v := reflect.ValueOf(in)
-		f := v.FieldByName("Slug")
+		f := rv.FieldByName("Slug")
 		if f.IsValid() {
 			return byField(ni, f)
 		}
-		f = v.FieldByName("ID")
+		f = rv.FieldByName("ID")
 		if f.IsValid() {
 			return byField(ni, f)
 		}
 	case reflect.Slice, reflect.Array:
 		var paths []string
-		v := reflect.ValueOf(in)
-		for i := 0; i < v.Len(); i++ {
-			rv := v.Index(i)
-			s, err := PathFor(rv.Interface())
+		for i := 0; i < rv.Len(); i++ {
+			xrv := rv.Index(i)
+			s, err := PathFor(xrv.Interface())
 			if err != nil {
 				return "", err
 			}
@@ -77,7 +79,7 @@ func PathFor(in interface{}) (string, error) {
 		return join(ni.URL().String(), s.ToParam()), nil
 	}
 
-	return "", errors.New("could not convert to path")
+	return "", fmt.Errorf("could not convert %T to path", in)
 }
 
 func byField(ni name.Ident, f reflect.Value) (string, error) {

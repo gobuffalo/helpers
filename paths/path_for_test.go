@@ -1,6 +1,7 @@
 package paths
 
 import (
+	"html/template"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -34,11 +35,13 @@ func Test_PathFor(t *testing.T) {
 	}{
 		{Car{1}, "/cars/1", false},
 		{Car{}, "/cars", false},
+		{&Car{}, "/cars", false},
 		{boat{"titanic"}, "/boats/titanic", false},
 		{plane{}, "/planes/aeroplane", false},
 		{truck{}, "/a/truck", false},
 		{[]interface{}{truck{}, plane{}}, "/a/truck/planes/aeroplane", false},
 		{"foo", "/foo", false},
+		{template.HTML("foo"), "/foo", false},
 		{map[int]int{}, "", true},
 		{nil, "", true},
 	}

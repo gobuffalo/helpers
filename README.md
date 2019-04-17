@@ -19,6 +19,21 @@ bootstrap.NewFormFor function in the github.com/gobuffalo/tags/form/bootstrap pa
 ## [`bootstrap#New`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#New)
 
 
+## [`bootstrap#RemoteForm`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#RemoteForm)
+<p>RemoteForm implements a Plush helper around the
+bootstrap.New function in the github.com/gobuffalo/tags/form/bootstrap package</p>
+
+
+## [`bootstrap#RemoteFormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#RemoteFormFor)
+<p>RemoteFormFor implements an AJAXified Plush helper around the
+bootstrap.NewFormFor function in the github.com/gobuffalo/tags/form/bootstrap package</p>
+
+<pre><code>&lt;%= remoteFormFor(widget, {method: &#34;POST&#34;}) { %&gt;
+&lt;% } %&gt;
+&lt;form action=&#34;/widgets/b6b0ab24-19ae-4cdd-ad73-c5ecbddd6f91&#34; id=&#34;widget-form&#34; method=&#34;POST&#34;&gt;&lt;input name=&#34;_method&#34; type=&#34;hidden&#34; value=&#34;PUT&#34;&gt;&lt;/form&gt;
+</code></pre>
+
+
 ## [`content#ContentFor`](https://godoc.org/github.com/gobuffalo/helpers/content#ContentFor)
 <p>ContentFor stores a block of templating code to be re-used later in the template
 via the contentOf helper.
@@ -77,11 +92,26 @@ form.New function in the github.com/gobuffalo/tags/form package</p>
 
 
 ## [`forms#FormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms#FormFor)
-<p>FormForimplements a Plush helper around the
+<p>FormFor implements a Plush helper around the
 form.NewFormFor function in the github.com/gobuffalo/tags/form package</p>
 
 
 ## [`forms#New`](https://godoc.org/github.com/gobuffalo/helpers/forms#New)
+
+
+## [`forms#RemoteForm`](https://godoc.org/github.com/gobuffalo/helpers/forms#RemoteForm)
+<p>RemoteForm implements a Plush helper around the
+form.New function in the github.com/gobuffalo/tags/form package</p>
+
+
+## [`forms#RemoteFormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms#RemoteFormFor)
+<p>RemoteFormFor implements a Plush helper around the
+form.NewFormFor function in the github.com/gobuffalo/tags/form package</p>
+
+<pre><code>&lt;%= remoteFormFor(widget, {method: &#34;POST&#34;}) { %&gt;
+&lt;% } %&gt;
+&lt;form action=&#34;/widgets/b6b0ab24-19ae-4cdd-ad73-c5ecbddd6f91&#34; id=&#34;widget-form&#34; method=&#34;POST&#34;&gt;&lt;input name=&#34;_method&#34; type=&#34;hidden&#34; value=&#34;PUT&#34;&gt;&lt;/form&gt;
+</code></pre>
 
 
 ## [`inflections#New`](https://godoc.org/github.com/gobuffalo/helpers/inflections#New)
@@ -146,6 +176,14 @@ Rules:</p>
 
 
 ## [`tags#New`](https://godoc.org/github.com/gobuffalo/helpers/tags#New)
+
+
+## [`tags#RemoteLinkTo`](https://godoc.org/github.com/gobuffalo/helpers/tags#RemoteLinkTo)
+<p>RemoteLinkTo creates an AJAXified  tag.</p>
+
+<pre><code>&lt;%= remoteLinkTo(widget, {class: &#34;btn btn-info&#34;, body: &#34;View&#34;}) %&gt;
+&lt;a class=&#34;btn btn-info&#34; data-remote=&#34;true&#34; href=&#34;/widgets/b6b0ab24-19ae-4cdd-ad73-c5ecbddd6f91&#34;&gt;View&lt;/a&gt;
+</code></pre>
 
 
 ## [`text#Markdown`](https://godoc.org/github.com/gobuffalo/helpers/text#Markdown)

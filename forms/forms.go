@@ -9,15 +9,19 @@ import (
 )
 
 const (
-	FormKey    = "form"
-	FormForKey = "formFor"
+	FormKey          = "form"
+	RemoteFormKey    = "remoteForm"
+	FormForKey       = "formFor"
+	RemoteFormForKey = "remoteFormFor"
 )
 
 func New() hctx.Map {
 	return hctx.Map{
-		FormKey:    Form,
-		FormForKey: FormFor,
-		"form_for": FormFor, // Deprecated
+		FormKey:          Form,
+		RemoteFormKey:    RemoteForm,
+		FormForKey:       FormFor,
+		RemoteFormForKey: RemoteFormFor,
+		"form_for":       FormFor, // Deprecated
 	}
 }
 
@@ -28,6 +32,9 @@ type helperable interface {
 }
 
 func helper(opts tags.Options, help hctx.HelperContext, fn func(opts tags.Options) helperable) (template.HTML, error) {
+	if opts == nil {
+		opts = tags.Options{}
+	}
 	hn := "f"
 	if n, ok := opts["var"]; ok {
 		hn = n.(string)

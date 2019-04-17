@@ -9,14 +9,18 @@ import (
 )
 
 const (
-	FormKey    = "bootstrapForm"
-	FormForKey = "BootstrapFormFor"
+	FormKey          = "bootstrapForm"
+	RemoteFormKey    = "remoteBootstrapForm"
+	FormForKey       = "bootstrapFormFor"
+	RemoteFormForKey = "remoteBootstrapFormFor"
 )
 
 func New() hctx.Map {
 	return hctx.Map{
-		FormKey:    Form,
-		FormForKey: FormFor,
+		FormKey:          Form,
+		RemoteFormKey:    RemoteForm,
+		FormForKey:       FormFor,
+		RemoteFormForKey: RemoteFormFor,
 	}
 }
 
@@ -27,6 +31,9 @@ type helperable interface {
 }
 
 func helper(opts tags.Options, help hctx.HelperContext, fn func(opts tags.Options) helperable) (template.HTML, error) {
+	if opts == nil {
+		opts = tags.Options{}
+	}
 	hn := "f"
 	if n, ok := opts["var"]; ok {
 		hn = n.(string)
