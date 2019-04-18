@@ -8,6 +8,7 @@ import (
 	"github.com/gobuffalo/tags"
 )
 
+// Keys to be used in templates for the functions in this package.
 const (
 	FormKey          = "bootstrapForm"
 	RemoteFormKey    = "remoteBootstrapForm"
@@ -15,6 +16,7 @@ const (
 	RemoteFormForKey = "remoteBootstrapFormFor"
 )
 
+// New returns a map of the helpers within this package.
 func New() hctx.Map {
 	return hctx.Map{
 		FormKey:          Form,

@@ -2,19 +2,7 @@ package meta
 
 import (
 	"reflect"
-
-	"github.com/gobuffalo/helpers/hctx"
 )
-
-const (
-	LenKey = "len"
-)
-
-func New() hctx.Map {
-	return hctx.Map{
-		LenKey: Len,
-	}
-}
 
 func Len(v interface{}) int {
 	if v == nil {

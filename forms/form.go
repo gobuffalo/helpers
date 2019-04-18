@@ -8,16 +8,16 @@ import (
 	"github.com/gobuffalo/tags/form"
 )
 
-// Form implements a Plush helper around the
-// form.New function in the github.com/gobuffalo/tags/form package
+// Form implements a `github.com/gobuffalo/plush` helper around the
+// form.New function in the `github.com/gobuffalo/tags/form` package
 func Form(opts tags.Options, help hctx.HelperContext) (template.HTML, error) {
 	return helper(opts, help, func(opts tags.Options) helperable {
 		return form.New(opts)
 	})
 }
 
-// RemoteForm implements a Plush helper around the
-// form.New function in the github.com/gobuffalo/tags/form package
+// RemoteForm implements a `github.com/gobuffalo/plush` helper around the
+// form.New function in the `github.com/gobuffalo/tags/form` package
 func RemoteForm(opts tags.Options, help hctx.HelperContext) (template.HTML, error) {
 	if opts == nil {
 		opts = tags.Options{}

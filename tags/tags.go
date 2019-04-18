@@ -2,6 +2,7 @@ package tags
 
 import "github.com/gobuffalo/helpers/hctx"
 
+// Keys to be used in templates for the functions in this package.
 const (
 	ImgKey          = "imgTag"
 	CSSKey          = "stylesheetTag"
@@ -10,6 +11,7 @@ const (
 	RemoteLinkToKey = "remoteLinkTo"
 )
 
+// New returns a map of the helpers within this package.
 func New() hctx.Map {
 	return hctx.Map{
 		ImgKey:          Img,

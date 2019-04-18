@@ -6,6 +6,7 @@ import (
 	"github.com/gobuffalo/helpers/hctx"
 )
 
+// HTMLEscape will escape a string for HTML
 func HTMLEscape(s string, help hctx.HelperContext) (string, error) {
 	var err error
 	if help.HasBlock() {

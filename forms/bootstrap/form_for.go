@@ -9,8 +9,8 @@ import (
 	"github.com/gobuffalo/tags/form/bootstrap"
 )
 
-// FormFor implements a Plush helper around the
-// bootstrap.NewFormFor function in the github.com/gobuffalo/tags/form/bootstrap package
+// FormFor implements a `github.com/gobuffalo/plush` helper around the
+// bootstrap.NewFormFor function in the `github.com/gobuffalo/tags/form/bootstrap` package
 func FormFor(model interface{}, opts tags.Options, help hctx.HelperContext) (template.HTML, error) {
 	if opts == nil {
 		opts = tags.Options{}
@@ -27,8 +27,8 @@ func FormFor(model interface{}, opts tags.Options, help hctx.HelperContext) (tem
 	})
 }
 
-// RemoteFormFor implements an AJAXified Plush helper around the
-// bootstrap.NewFormFor function in the github.com/gobuffalo/tags/form/bootstrap package
+// FormFor implements a `github.com/gobuffalo/plush` helper around the
+// bootstrap.NewFormFor function in the `github.com/gobuffalo/tags/form/bootstrap` package
 //	<%= remoteFormFor(widget, {method: "POST"}) { %>
 //	<% } %>
 //	<form action="/widgets/b6b0ab24-19ae-4cdd-ad73-c5ecbddd6f91" id="widget-form" method="POST"><input name="_method" type="hidden" value="PUT"></form>

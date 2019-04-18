@@ -7,26 +7,27 @@ Note: This file is auto-generated. Do Not Edit
 
 
 ## [`bootstrap#Form`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#Form)
-<p>Form implements a Plush helper around the
-bootstrap.New function in the github.com/gobuffalo/tags/form/bootstrap package</p>
+<p>Form implements a <code>github.com/gobuffalo/plush</code> helper around the
+bootstrap.New function in the <code>github.com/gobuffalo/tags/form/bootstrap</code> package</p>
 
 
 ## [`bootstrap#FormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#FormFor)
-<p>FormFor implements a Plush helper around the
-bootstrap.NewFormFor function in the github.com/gobuffalo/tags/form/bootstrap package</p>
+<p>FormFor implements a <code>github.com/gobuffalo/plush</code> helper around the
+bootstrap.NewFormFor function in the <code>github.com/gobuffalo/tags/form/bootstrap</code> package</p>
 
 
 ## [`bootstrap#New`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`bootstrap#RemoteForm`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#RemoteForm)
-<p>RemoteForm implements a Plush helper around the
-bootstrap.New function in the github.com/gobuffalo/tags/form/bootstrap package</p>
+<p>RemoteForm implements a <code>github.com/gobuffalo/plush</code> helper around the
+bootstrap.New function in the <code>github.com/gobuffalo/tags/form/bootstrap</code> package</p>
 
 
 ## [`bootstrap#RemoteFormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#RemoteFormFor)
-<p>RemoteFormFor implements an AJAXified Plush helper around the
-bootstrap.NewFormFor function in the github.com/gobuffalo/tags/form/bootstrap package</p>
+<p>FormFor implements a <code>github.com/gobuffalo/plush</code> helper around the
+bootstrap.NewFormFor function in the <code>github.com/gobuffalo/tags/form/bootstrap</code> package</p>
 
 <pre><code>&lt;%= remoteFormFor(widget, {method: &#34;POST&#34;}) { %&gt;
 &lt;% } %&gt;
@@ -56,6 +57,7 @@ You can pass an optional map of fields that will be set.</p>
 
 
 ## [`content#New`](https://godoc.org/github.com/gobuffalo/helpers/content#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`debug#Debug`](https://godoc.org/github.com/gobuffalo/helpers/debug#Debug)
@@ -63,50 +65,60 @@ You can pass an optional map of fields that will be set.</p>
 
 
 ## [`debug#Inspect`](https://godoc.org/github.com/gobuffalo/helpers/debug#Inspect)
+<p>Inspect the interface using the <code>%+v</code> formatter</p>
 
 
 ## [`debug#New`](https://godoc.org/github.com/gobuffalo/helpers/debug#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`encoders#New`](https://godoc.org/github.com/gobuffalo/helpers/encoders#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`encoders#Raw`](https://godoc.org/github.com/gobuffalo/helpers/encoders#Raw)
+<p>Raw converts a <code>string</code> to a <code>template.HTML</code></p>
 
 
 ## [`encoders#ToJSON`](https://godoc.org/github.com/gobuffalo/helpers/encoders#ToJSON)
+<p>ToJSON marshals the interface{} and returns it
+as template.HTML</p>
 
 
 ## [`env#New`](https://godoc.org/github.com/gobuffalo/helpers/env#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`escapes#HTMLEscape`](https://godoc.org/github.com/gobuffalo/helpers/escapes#HTMLEscape)
+<p>HTMLEscape will escape a string for HTML</p>
 
 
 ## [`escapes#New`](https://godoc.org/github.com/gobuffalo/helpers/escapes#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`forms#Form`](https://godoc.org/github.com/gobuffalo/helpers/forms#Form)
-<p>Form implements a Plush helper around the
-form.New function in the github.com/gobuffalo/tags/form package</p>
+<p>Form implements a <code>github.com/gobuffalo/plush</code> helper around the
+form.New function in the <code>github.com/gobuffalo/tags/form</code> package</p>
 
 
 ## [`forms#FormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms#FormFor)
-<p>FormFor implements a Plush helper around the
-form.NewFormFor function in the github.com/gobuffalo/tags/form package</p>
+<p>FormFor implements a <code>github.com/gobuffalo/plush</code> helper around the
+form.NewFormFor function in the <code>github.com/gobuffalo/tags/form</code> package</p>
 
 
 ## [`forms#New`](https://godoc.org/github.com/gobuffalo/helpers/forms#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`forms#RemoteForm`](https://godoc.org/github.com/gobuffalo/helpers/forms#RemoteForm)
-<p>RemoteForm implements a Plush helper around the
-form.New function in the github.com/gobuffalo/tags/form package</p>
+<p>RemoteForm implements a <code>github.com/gobuffalo/plush</code> helper around the
+form.New function in the <code>github.com/gobuffalo/tags/form</code> package</p>
 
 
 ## [`forms#RemoteFormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms#RemoteFormFor)
-<p>RemoteFormFor implements a Plush helper around the
-form.NewFormFor function in the github.com/gobuffalo/tags/form package</p>
+<p>RemoteFormFor implements a <code>github.com/gobuffalo/plush</code> helper around the
+form.NewFormFor function in the <code>github.com/gobuffalo/tags/form</code> package</p>
 
 <pre><code>&lt;%= remoteFormFor(widget, {method: &#34;POST&#34;}) { %&gt;
 &lt;% } %&gt;
@@ -115,15 +127,21 @@ form.NewFormFor function in the github.com/gobuffalo/tags/form package</p>
 
 
 ## [`inflections#New`](https://godoc.org/github.com/gobuffalo/helpers/inflections#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`iterators#Between`](https://godoc.org/github.com/gobuffalo/helpers/iterators#Between)
+<p>Between will iterate up to, but not including <code>b</code></p>
+
+<pre><code>Between(0,10) // 0,1,2,3,4,5,6,7,8,9
+</code></pre>
 
 
 ## [`iterators#GroupBy`](https://godoc.org/github.com/gobuffalo/helpers/iterators#GroupBy)
 
 
 ## [`iterators#New`](https://godoc.org/github.com/gobuffalo/helpers/iterators#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`iterators#Next`](https://godoc.org/github.com/gobuffalo/helpers/iterators#Next)
@@ -136,15 +154,21 @@ form.NewFormFor function in the github.com/gobuffalo/tags/form package</p>
 
 
 ## [`iterators#Until`](https://godoc.org/github.com/gobuffalo/helpers/iterators#Until)
+<p>Until will iterate up to, but not including <code>a</code></p>
+
+<pre><code>Until(3) // 0,1,2
+</code></pre>
 
 
 ## [`meta#Len`](https://godoc.org/github.com/gobuffalo/helpers/meta#Len)
 
 
 ## [`meta#New`](https://godoc.org/github.com/gobuffalo/helpers/meta#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`paths#New`](https://godoc.org/github.com/gobuffalo/helpers/paths#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`paths#PathFor`](https://godoc.org/github.com/gobuffalo/helpers/paths#PathFor)
@@ -176,6 +200,7 @@ Rules:</p>
 
 
 ## [`tags#New`](https://godoc.org/github.com/gobuffalo/helpers/tags#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`tags#RemoteLinkTo`](https://godoc.org/github.com/gobuffalo/helpers/tags#RemoteLinkTo)
@@ -191,6 +216,7 @@ Rules:</p>
 
 
 ## [`text#New`](https://godoc.org/github.com/gobuffalo/helpers/text#New)
+<p>New returns a map of the helpers within this package.</p>
 
 
 ## [`text#Truncate`](https://godoc.org/github.com/gobuffalo/helpers/text#Truncate)
