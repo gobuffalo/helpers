@@ -1,6 +1,7 @@
 package escapes
 
 import (
+	"errors"
 	"html/template"
 	"testing"
 
@@ -29,4 +30,12 @@ func Test_HTMLEscape_Block(t *testing.T) {
 	s, err := HTMLEscape("", hc)
 	r.NoError(err)
 	r.Equal(template.HTMLEscapeString(in), s)
+
+	hc2 := helptest.NewContext()
+	hc2.BlockFn = func() (string, error) {
+		return "", errors.New("nope")
+	}
+	s2, err2 := HTMLEscape("", hc2)
+	r.Error(err2)
+	r.Empty(s2)
 }
