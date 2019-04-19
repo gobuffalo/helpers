@@ -217,7 +217,7 @@ to <code>text/javascript</code> for <code>type</code> if not set in the <code>op
 ## [`tags#LinkTo`](https://godoc.org/github.com/gobuffalo/helpers/tags#LinkTo)
 <p>LinkTo creates html for a <code>&lt;a&gt;</code> tag using <code>github.com/gobuffalo/tags</code>
 to create tag with the given options(<code>opts</code>) and
-using <code>paths.PathFor(in)</code> to set the <code>href</code>. If given a block
+using <a href="https://godoc.org/github.com/gobuffalo/helpers/paths#PathFor" rel="nofollow"><code>paths#PathFor(in)</code></a> to set the <code>href</code>. If given a block
 it will be interrupted and appended inside of the <code>&lt;a&gt;</code> tag.
 Example 1:</p>
 
