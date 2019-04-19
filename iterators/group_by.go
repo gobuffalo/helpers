@@ -6,6 +6,10 @@ import (
 	"github.com/pkg/errors"
 )
 
+// GroupBy creates an iterator of groups or sub-slices of the underlying 
+// Array or Slice entered where each group is of length
+// Len(underlying) / size. If Len(underlying) == size it will 
+// return an iterator with only a single group.
 func GroupBy(size int, underlying interface{}) (Iterator, error) {
 	if size <= 0 {
 		return nil, errors.New("size must be greater than zero")
@@ -49,6 +53,7 @@ type groupBy struct {
 	group []reflect.Value
 }
 
+// Next returns the next group from the GroupBy
 func (g *groupBy) Next() interface{} {
 	if g.pos >= len(g.group) {
 		return nil
