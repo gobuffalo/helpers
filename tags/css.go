@@ -6,6 +6,10 @@ import (
 	"github.com/gobuffalo/tags"
 )
 
+// CSS creates html for a css link using `github.com/gobuffalo/tags`
+// to create a link with the given options and href. Defaults
+// to `stylesheet` for `rel` and `screen` for `media` if those
+// options are not set.
 func CSS(href string, options tags.Options) template.HTML {
 	if options["rel"] == nil {
 		options["rel"] = "stylesheet"
