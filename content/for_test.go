@@ -2,6 +2,7 @@ package content
 
 import (
 	"testing"
+	"errors"
 
 	"github.com/gobuffalo/helpers/hctx"
 	"github.com/gobuffalo/helpers/helptest"
@@ -22,4 +23,19 @@ func Test_ContentFor(t *testing.T) {
 	s, err := ContentOf("buttons", hctx.Map{}, cf)
 	r.NoError(err)
 	r.Contains(s, in)
+}
+
+func Test_ContentFor_Fail(t *testing.T) {
+	r := require.New(t)
+
+	hc := helptest.NewContext()
+	hc.BlockContextFn = func(c hctx.Context) (string, error) {
+		return "", errors.New("nope")
+	}
+
+	cf := hc.New().(*helptest.HelperContext)
+	ContentFor("buttons", hc)
+	s, err := ContentOf("buttons", hctx.Map{}, cf)
+	r.Error(err)
+	r.Empty(s)
 }
