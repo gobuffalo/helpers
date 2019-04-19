@@ -15,6 +15,8 @@ func Test_ToJSON(t *testing.T) {
 		C bool
 	}{"A", 42, true}
 
+	f := func() {}
+
 	table := []struct {
 		in  interface{}
 		out string
@@ -24,6 +26,7 @@ func Test_ToJSON(t *testing.T) {
 		{[]string{"foo", "bar"}, `["foo","bar"]`, false},
 		{x, `{"A":"A","B":42,"C":true}`, false},
 		{nil, "null", false},
+		{f, "", true},
 	}
 
 	for _, tt := range table {
