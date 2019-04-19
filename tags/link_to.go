@@ -13,13 +13,14 @@ import (
 // to create tag with the given options(`opts`) and 
 // using `paths.PathFor(in)` to set the `href`. If given a block
 // it will be interrupted and appended inside of the `<a>` tag.
-//  <%= linkTo([user, widget], {class: "btn"}) %>
-//  //yields(assuming user ID'd by `id` and widget by `slug`):
-//  <a class="btn" href="/users/id/widget/slug"></a>
-//  //Example 2:
-//  <%= linkTo("foo", {class: "btn"}) %>
-//  //yields:
-//  <a class="btn" href="/foo"></a>
+// Example 1:
+//	<%= linkTo([user, widget], {class: "btn"}) %>
+// yields(assuming user ID'd by `id` and widget by `slug`):
+//	<a class="btn" href="/users/id/widget/slug"></a>
+// Example 2:
+//	<%= linkTo("foo", {class: "btn"}) %>
+// yields:
+//	<a class="btn" href="/foo"></a>
 func LinkTo(in interface{}, opts tags.Options, help hctx.HelperContext) (template.HTML, error) {
 	s, err := paths.PathFor(in)
 	if err != nil {

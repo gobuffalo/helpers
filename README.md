@@ -219,13 +219,25 @@ to <code>text/javascript</code> for <code>type</code> if not set in the <code>op
 to create tag with the given options(<code>opts</code>) and
 using <code>paths.PathFor(in)</code> to set the <code>href</code>. If given a block
 it will be interrupted and appended inside of the <code>&lt;a&gt;</code> tag.
- &lt;%= linkTo([user, widget], {class: &#34;btn&#34;}) %&gt;
- //yields(assuming user ID&#39;d by <code>id</code> and widget by <code>slug</code>):
- <a class="btn" href="/users/id/widget/slug" rel="nofollow"></a>
- //Example 2:
- &lt;%= linkTo(&#34;foo&#34;, {class: &#34;btn&#34;}) %&gt;
- //yields:
- <a class="btn" href="/foo" rel="nofollow"></a></p>
+Example 1:</p>
+
+<pre><code>&lt;%= linkTo([user, widget], {class: &#34;btn&#34;}) %&gt;
+</code></pre>
+
+<p>yields(assuming user ID&#39;d by <code>id</code> and widget by <code>slug</code>):</p>
+
+<pre><code>&lt;a class=&#34;btn&#34; href=&#34;/users/id/widget/slug&#34;&gt;&lt;/a&gt;
+</code></pre>
+
+<p>Example 2:</p>
+
+<pre><code>&lt;%= linkTo(&#34;foo&#34;, {class: &#34;btn&#34;}) %&gt;
+</code></pre>
+
+<p>yields:</p>
+
+<pre><code>&lt;a class=&#34;btn&#34; href=&#34;/foo&#34;&gt;&lt;/a&gt;
+</code></pre>
 
 
 ## [`tags#New`](https://godoc.org/github.com/gobuffalo/helpers/tags#New)
