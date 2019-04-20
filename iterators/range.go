@@ -1,6 +1,6 @@
 package iterators
 
-// Range creates an Iterator that will 
+// Range creates an Iterator that will
 // iterate numbers from a to b, including b.
 func Range(a, b int) Iterator {
 	return &ranger{pos: a - 1, end: b}

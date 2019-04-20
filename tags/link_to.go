@@ -10,7 +10,7 @@ import (
 )
 
 // LinkTo creates html for a `<a>` tag using `github.com/gobuffalo/tags`
-// to create tag with the given options(`opts`) and 
+// to create tag with the given options(`opts`) and
 // using [`paths#PathFor(in)`](https://godoc.org/github.com/gobuffalo/helpers/paths#PathFor) to set the `href`. If given a block
 // it will be interrupted and appended inside of the `<a>` tag.
 // Example 1:

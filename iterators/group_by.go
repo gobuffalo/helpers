@@ -6,9 +6,9 @@ import (
 	"github.com/pkg/errors"
 )
 
-// GroupBy creates an iterator of groups or sub-slices of the underlying 
+// GroupBy creates an iterator of groups or sub-slices of the underlying
 // Array or Slice entered where each group is of length
-// Len(underlying) / size. If Len(underlying) == size it will 
+// Len(underlying) / size. If Len(underlying) == size it will
 // return an iterator with only a single group.
 func GroupBy(size int, underlying interface{}) (Iterator, error) {
 	if size <= 0 {
