@@ -138,6 +138,10 @@ form.NewFormFor function in the <code>github.com/gobuffalo/tags/form</code> pack
 
 
 ## [`iterators#GroupBy`](https://godoc.org/github.com/gobuffalo/helpers/iterators#GroupBy)
+<p>GroupBy creates an iterator of groups or sub-slices of the underlying
+Array or Slice entered where each group is of length
+Len(underlying) / size. If Len(underlying) == size it will
+return an iterator with only a single group.</p>
 
 
 ## [`iterators#New`](https://godoc.org/github.com/gobuffalo/helpers/iterators#New)
@@ -145,12 +149,16 @@ form.NewFormFor function in the <code>github.com/gobuffalo/tags/form</code> pack
 
 
 ## [`iterators#Next`](https://godoc.org/github.com/gobuffalo/helpers/iterators#Next)
+<p>Next returns the next group from the GroupBy</p>
 
 
 ## [`iterators#Next`](https://godoc.org/github.com/gobuffalo/helpers/iterators#Next)
+<p>Next returns the next number in the Range or nil</p>
 
 
 ## [`iterators#Range`](https://godoc.org/github.com/gobuffalo/helpers/iterators#Range)
+<p>Range creates an Iterator that will
+iterate numbers from a to b, including b.</p>
 
 
 ## [`iterators#Until`](https://godoc.org/github.com/gobuffalo/helpers/iterators#Until)
@@ -161,6 +169,7 @@ form.NewFormFor function in the <code>github.com/gobuffalo/tags/form</code> pack
 
 
 ## [`meta#Len`](https://godoc.org/github.com/gobuffalo/helpers/meta#Len)
+<p>Len returns the length of v</p>
 
 
 ## [`meta#New`](https://godoc.org/github.com/gobuffalo/helpers/meta#New)
@@ -188,15 +197,47 @@ Rules:</p>
 
 
 ## [`tags#CSS`](https://godoc.org/github.com/gobuffalo/helpers/tags#CSS)
+<p>CSS creates html for a css link using <code>github.com/gobuffalo/tags</code>
+to create a link with the given options and href. Defaults
+to <code>stylesheet</code> for <code>rel</code> and <code>screen</code> for <code>media</code> if those
+options are not set.</p>
 
 
 ## [`tags#Img`](https://godoc.org/github.com/gobuffalo/helpers/tags#Img)
+<p>Img creates html for a <code>&lt;img&gt;</code> tag using <code>github.com/gobuffalo/tags</code>
+to create a tag with the given <code>src</code> and <code>options</code>.</p>
 
 
 ## [`tags#JS`](https://godoc.org/github.com/gobuffalo/helpers/tags#JS)
+<p>JS creates html for a <code>&lt;script&gt;</code> tag using <code>github.com/gobuffalo/tags</code>
+to create the tag with the given <code>options</code> and <code>src</code>. Defaults
+to <code>text/javascript</code> for <code>type</code> if not set in the <code>options</code>.</p>
 
 
 ## [`tags#LinkTo`](https://godoc.org/github.com/gobuffalo/helpers/tags#LinkTo)
+<p>LinkTo creates html for a <code>&lt;a&gt;</code> tag using <code>github.com/gobuffalo/tags</code>
+to create tag with the given options(<code>opts</code>) and
+using <a href="https://godoc.org/github.com/gobuffalo/helpers/paths#PathFor" rel="nofollow"><code>paths#PathFor(in)</code></a> to set the <code>href</code>. If given a block
+it will be interrupted and appended inside of the <code>&lt;a&gt;</code> tag.
+Example 1:</p>
+
+<pre><code>&lt;%= linkTo([user, widget], {class: &#34;btn&#34;}) %&gt;
+</code></pre>
+
+<p>yields(assuming user ID&#39;d by <code>id</code> and widget by <code>slug</code>):</p>
+
+<pre><code>&lt;a class=&#34;btn&#34; href=&#34;/users/id/widget/slug&#34;&gt;&lt;/a&gt;
+</code></pre>
+
+<p>Example 2:</p>
+
+<pre><code>&lt;%= linkTo(&#34;foo&#34;, {class: &#34;btn&#34;}) %&gt;
+</code></pre>
+
+<p>yields:</p>
+
+<pre><code>&lt;a class=&#34;btn&#34; href=&#34;/foo&#34;&gt;&lt;/a&gt;
+</code></pre>
 
 
 ## [`tags#New`](https://godoc.org/github.com/gobuffalo/helpers/tags#New)
@@ -204,7 +245,7 @@ Rules:</p>
 
 
 ## [`tags#RemoteLinkTo`](https://godoc.org/github.com/gobuffalo/helpers/tags#RemoteLinkTo)
-<p>RemoteLinkTo creates an AJAXified  tag.</p>
+<p>RemoteLinkTo creates an AJAXified <code>&lt;a&gt;</code> tag.</p>
 
 <pre><code>&lt;%= remoteLinkTo(widget, {class: &#34;btn btn-info&#34;, body: &#34;View&#34;}) %&gt;
 &lt;a class=&#34;btn btn-info&#34; data-remote=&#34;true&#34; href=&#34;/widgets/b6b0ab24-19ae-4cdd-ad73-c5ecbddd6f91&#34;&gt;View&lt;/a&gt;
@@ -220,5 +261,13 @@ Rules:</p>
 
 
 ## [`text#Truncate`](https://godoc.org/github.com/gobuffalo/helpers/text#Truncate)
+<p>Truncate will try to return a string that is no longer
+than <code>size</code>, which defaults to 50. If given
+a <code>trail</code> option the returned string will have
+that appended at the end, while still trying to make
+sure that the returned string is no longer than
+<code>size</code> characters long. However, if <code>trail</code> is longer
+than or equal to <code>size</code>, <code>trail</code> will be returned
+completely as is. Defaults to a <code>trail</code> of <code>...</code>.</p>
 
 

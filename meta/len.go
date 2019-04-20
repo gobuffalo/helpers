@@ -4,6 +4,7 @@ import (
 	"reflect"
 )
 
+// Len returns the length of v
 func Len(v interface{}) int {
 	if v == nil {
 		return 0
