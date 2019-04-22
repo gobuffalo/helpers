@@ -27,6 +27,10 @@ func (truck) ToPath() string {
 	return "/a/truck"
 }
 
+type BadCar struct {
+	IDs int
+}
+
 func Test_PathFor(t *testing.T) {
 	table := []struct {
 		in  interface{}
@@ -44,6 +48,8 @@ func Test_PathFor(t *testing.T) {
 		{template.HTML("foo"), "/foo", false},
 		{map[int]int{}, "", true},
 		{nil, "", true},
+		{[]interface{}{truck{}, nil}, "", true},
+		{BadCar{}, "", true},
 	}
 
 	for _, tt := range table {
