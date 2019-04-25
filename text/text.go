@@ -6,6 +6,8 @@ import "github.com/gobuffalo/helpers/hctx"
 const (
 	MarkdownKey = "markdown"
 	TruncateKey = "truncate"
+	UpcaseKey   = "upcase"
+	DowncaseKey = "downcase"
 )
 
 // New returns a map of the helpers within this package.
@@ -13,5 +15,7 @@ func New() hctx.Map {
 	return hctx.Map{
 		MarkdownKey: Markdown,
 		TruncateKey: Truncate,
+		UpcaseKey:   Upcase,
+		DowncaseKey: Downcase,
 	}
 }
