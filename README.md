@@ -6,268 +6,369 @@ Note: This file is auto-generated. Do Not Edit
 ---
 
 
-## [`bootstrap#Form`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#Form)
-<p>Form implements a <code>github.com/gobuffalo/plush</code> helper around the
-bootstrap.New function in the <code>github.com/gobuffalo/tags/form/bootstrap</code> package</p>
+## [`github.com/gobuffalo/helpers/`](https://godoc.org/github.com/gobuffalo/helpers/)
 
+## [`github.com/gobuffalo/helpers/content`](https://godoc.org/github.com/gobuffalo/helpers/content)
 
-## [`bootstrap#FormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#FormFor)
-<p>FormFor implements a <code>github.com/gobuffalo/plush</code> helper around the
-bootstrap.NewFormFor function in the <code>github.com/gobuffalo/tags/form/bootstrap</code> package</p>
+## [`github.com/gobuffalo/helpers/debug`](https://godoc.org/github.com/gobuffalo/helpers/debug)
 
+## [`github.com/gobuffalo/helpers/encoders`](https://godoc.org/github.com/gobuffalo/helpers/encoders)
 
-## [`bootstrap#New`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/env`](https://godoc.org/github.com/gobuffalo/helpers/env)
 
+## [`github.com/gobuffalo/helpers/escapes`](https://godoc.org/github.com/gobuffalo/helpers/escapes)
 
-## [`bootstrap#RemoteForm`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#RemoteForm)
-<p>RemoteForm implements a <code>github.com/gobuffalo/plush</code> helper around the
-bootstrap.New function in the <code>github.com/gobuffalo/tags/form/bootstrap</code> package</p>
+## [`github.com/gobuffalo/helpers/forms`](https://godoc.org/github.com/gobuffalo/helpers/forms)
 
+## [`github.com/gobuffalo/helpers/forms/bootstrap`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap)
 
-## [`bootstrap#RemoteFormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap#RemoteFormFor)
-<p>FormFor implements a <code>github.com/gobuffalo/plush</code> helper around the
-bootstrap.NewFormFor function in the <code>github.com/gobuffalo/tags/form/bootstrap</code> package</p>
+## [`github.com/gobuffalo/helpers/helpers`](https://godoc.org/github.com/gobuffalo/helpers/helpers)
 
-<pre><code>&lt;%= remoteFormFor(widget, {method: &#34;POST&#34;}) { %&gt;
-&lt;% } %&gt;
-&lt;form action=&#34;/widgets/b6b0ab24-19ae-4cdd-ad73-c5ecbddd6f91&#34; id=&#34;widget-form&#34; method=&#34;POST&#34;&gt;&lt;input name=&#34;_method&#34; type=&#34;hidden&#34; value=&#34;PUT&#34;&gt;&lt;/form&gt;
-</code></pre>
+## [`github.com/gobuffalo/helpers/inflections`](https://godoc.org/github.com/gobuffalo/helpers/inflections)
 
+## [`github.com/gobuffalo/helpers/iterators`](https://godoc.org/github.com/gobuffalo/helpers/iterators)
 
-## [`content#ContentFor`](https://godoc.org/github.com/gobuffalo/helpers/content#ContentFor)
-<p>ContentFor stores a block of templating code to be re-used later in the template
-via the contentOf helper.
-An optional map of values can be passed to contentOf,
-which are made available to the contentFor block.</p>
+## [`github.com/gobuffalo/helpers/meta`](https://godoc.org/github.com/gobuffalo/helpers/meta)
 
-<pre><code>&lt;% contentFor(&#34;buttons&#34;) { %&gt;
-    &lt;button&gt;hi&lt;/button&gt;
-&lt;% } %&gt;
-</code></pre>
+## [`github.com/gobuffalo/helpers/packrd`](https://godoc.org/github.com/gobuffalo/helpers/packrd)
 
+## [`github.com/gobuffalo/helpers/paths`](https://godoc.org/github.com/gobuffalo/helpers/paths)
 
-## [`content#ContentOf`](https://godoc.org/github.com/gobuffalo/helpers/content#ContentOf)
-<p>ContentOf retrieves a stored block for templating and renders it.
-You can pass an optional map of fields that will be set.</p>
+## [`github.com/gobuffalo/helpers/stdlib/archive/tarh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/archive/tarh)
 
-<pre><code>&lt;%= contentOf(&#34;buttons&#34;) %&gt;
-&lt;%= contentOf(&#34;buttons&#34;, {&#34;label&#34;: &#34;Click me&#34;}) %&gt;
-</code></pre>
+## [`github.com/gobuffalo/helpers/stdlib/archive/ziph`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/archive/ziph)
 
+## [`github.com/gobuffalo/helpers/stdlib/bufioh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/bufioh)
 
-## [`content#New`](https://godoc.org/github.com/gobuffalo/helpers/content#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/stdlib/builtinh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/builtinh)
 
+## [`github.com/gobuffalo/helpers/stdlib/bytesh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/bytesh)
 
-## [`debug#Debug`](https://godoc.org/github.com/gobuffalo/helpers/debug#Debug)
-<p>Debug by verbosely printing out using &#39;pre&#39; tags.</p>
+## [`github.com/gobuffalo/helpers/stdlib/cmd/addr2lineh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/addr2lineh)
 
+## [`github.com/gobuffalo/helpers/stdlib/cmd/apih`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/apih)
 
-## [`debug#Inspect`](https://godoc.org/github.com/gobuffalo/helpers/debug#Inspect)
-<p>Inspect the interface using the <code>%+v</code> formatter</p>
+## [`github.com/gobuffalo/helpers/stdlib/cmd/asmh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/asmh)
 
+## [`github.com/gobuffalo/helpers/stdlib/cmd/buildidh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/buildidh)
 
-## [`debug#New`](https://godoc.org/github.com/gobuffalo/helpers/debug#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/stdlib/cmd/cgoh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/cgoh)
 
+## [`github.com/gobuffalo/helpers/stdlib/cmd/compileh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/compileh)
 
-## [`encoders#New`](https://godoc.org/github.com/gobuffalo/helpers/encoders#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/stdlib/cmd/coverh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/coverh)
 
+## [`github.com/gobuffalo/helpers/stdlib/cmd/disth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/disth)
 
-## [`encoders#Raw`](https://godoc.org/github.com/gobuffalo/helpers/encoders#Raw)
-<p>Raw converts a <code>string</code> to a <code>template.HTML</code></p>
+## [`github.com/gobuffalo/helpers/stdlib/cmd/doch`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/doch)
 
+## [`github.com/gobuffalo/helpers/stdlib/cmd/fixh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/fixh)
 
-## [`encoders#ToJSON`](https://godoc.org/github.com/gobuffalo/helpers/encoders#ToJSON)
-<p>ToJSON marshals the interface{} and returns it
-as template.HTML</p>
+## [`github.com/gobuffalo/helpers/stdlib/cmd/gofmth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/gofmth)
 
+## [`github.com/gobuffalo/helpers/stdlib/cmd/goh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/goh)
 
-## [`env#New`](https://godoc.org/github.com/gobuffalo/helpers/env#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/stdlib/cmd/linkh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/linkh)
 
+## [`github.com/gobuffalo/helpers/stdlib/cmd/nmh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/nmh)
 
-## [`escapes#HTMLEscape`](https://godoc.org/github.com/gobuffalo/helpers/escapes#HTMLEscape)
-<p>HTMLEscape will escape a string for HTML</p>
+## [`github.com/gobuffalo/helpers/stdlib/cmd/objdumph`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/objdumph)
 
+## [`github.com/gobuffalo/helpers/stdlib/cmd/packh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/packh)
 
-## [`escapes#New`](https://godoc.org/github.com/gobuffalo/helpers/escapes#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/stdlib/cmd/pprofh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/pprofh)
 
+## [`github.com/gobuffalo/helpers/stdlib/cmd/test2jsonh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/test2jsonh)
 
-## [`forms#Form`](https://godoc.org/github.com/gobuffalo/helpers/forms#Form)
-<p>Form implements a <code>github.com/gobuffalo/plush</code> helper around the
-form.New function in the <code>github.com/gobuffalo/tags/form</code> package</p>
+## [`github.com/gobuffalo/helpers/stdlib/cmd/traceh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/traceh)
 
+## [`github.com/gobuffalo/helpers/stdlib/cmd/vet/allh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/vet/allh)
 
-## [`forms#FormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms#FormFor)
-<p>FormFor implements a <code>github.com/gobuffalo/plush</code> helper around the
-form.NewFormFor function in the <code>github.com/gobuffalo/tags/form</code> package</p>
+## [`github.com/gobuffalo/helpers/stdlib/cmd/veth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/veth)
 
+## [`github.com/gobuffalo/helpers/stdlib/compress/bzip2h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/compress/bzip2h)
 
-## [`forms#New`](https://godoc.org/github.com/gobuffalo/helpers/forms#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/stdlib/compress/flateh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/compress/flateh)
 
+## [`github.com/gobuffalo/helpers/stdlib/compress/gziph`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/compress/gziph)
 
-## [`forms#RemoteForm`](https://godoc.org/github.com/gobuffalo/helpers/forms#RemoteForm)
-<p>RemoteForm implements a <code>github.com/gobuffalo/plush</code> helper around the
-form.New function in the <code>github.com/gobuffalo/tags/form</code> package</p>
+## [`github.com/gobuffalo/helpers/stdlib/compress/lzwh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/compress/lzwh)
 
+## [`github.com/gobuffalo/helpers/stdlib/compress/zlibh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/compress/zlibh)
 
-## [`forms#RemoteFormFor`](https://godoc.org/github.com/gobuffalo/helpers/forms#RemoteFormFor)
-<p>RemoteFormFor implements a <code>github.com/gobuffalo/plush</code> helper around the
-form.NewFormFor function in the <code>github.com/gobuffalo/tags/form</code> package</p>
+## [`github.com/gobuffalo/helpers/stdlib/container/heaph`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/container/heaph)
 
-<pre><code>&lt;%= remoteFormFor(widget, {method: &#34;POST&#34;}) { %&gt;
-&lt;% } %&gt;
-&lt;form action=&#34;/widgets/b6b0ab24-19ae-4cdd-ad73-c5ecbddd6f91&#34; id=&#34;widget-form&#34; method=&#34;POST&#34;&gt;&lt;input name=&#34;_method&#34; type=&#34;hidden&#34; value=&#34;PUT&#34;&gt;&lt;/form&gt;
-</code></pre>
+## [`github.com/gobuffalo/helpers/stdlib/container/listh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/container/listh)
 
+## [`github.com/gobuffalo/helpers/stdlib/container/ringh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/container/ringh)
 
-## [`inflections#New`](https://godoc.org/github.com/gobuffalo/helpers/inflections#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/stdlib/contexth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/contexth)
 
+## [`github.com/gobuffalo/helpers/stdlib/crypto/aesh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/aesh)
 
-## [`iterators#Between`](https://godoc.org/github.com/gobuffalo/helpers/iterators#Between)
-<p>Between will iterate up to, but not including <code>b</code></p>
+## [`github.com/gobuffalo/helpers/stdlib/crypto/cipherh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/cipherh)
 
-<pre><code>Between(0,10) // 0,1,2,3,4,5,6,7,8,9
-</code></pre>
+## [`github.com/gobuffalo/helpers/stdlib/crypto/desh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/desh)
 
+## [`github.com/gobuffalo/helpers/stdlib/crypto/dsah`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/dsah)
 
-## [`iterators#GroupBy`](https://godoc.org/github.com/gobuffalo/helpers/iterators#GroupBy)
-<p>GroupBy creates an iterator of groups or sub-slices of the underlying
-Array or Slice entered where each group is of length
-Len(underlying) / size. If Len(underlying) == size it will
-return an iterator with only a single group.</p>
+## [`github.com/gobuffalo/helpers/stdlib/crypto/ecdsah`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/ecdsah)
 
+## [`github.com/gobuffalo/helpers/stdlib/crypto/elliptich`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/elliptich)
 
-## [`iterators#New`](https://godoc.org/github.com/gobuffalo/helpers/iterators#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/stdlib/crypto/hmach`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/hmach)
 
+## [`github.com/gobuffalo/helpers/stdlib/crypto/md5h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/md5h)
 
-## [`iterators#Next`](https://godoc.org/github.com/gobuffalo/helpers/iterators#Next)
-<p>Next returns the next group from the GroupBy</p>
+## [`github.com/gobuffalo/helpers/stdlib/crypto/randh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/randh)
 
+## [`github.com/gobuffalo/helpers/stdlib/crypto/rc4h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/rc4h)
 
-## [`iterators#Next`](https://godoc.org/github.com/gobuffalo/helpers/iterators#Next)
-<p>Next returns the next number in the Range or nil</p>
+## [`github.com/gobuffalo/helpers/stdlib/crypto/rsah`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/rsah)
 
+## [`github.com/gobuffalo/helpers/stdlib/crypto/sha1h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/sha1h)
 
-## [`iterators#Range`](https://godoc.org/github.com/gobuffalo/helpers/iterators#Range)
-<p>Range creates an Iterator that will
-iterate numbers from a to b, including b.</p>
+## [`github.com/gobuffalo/helpers/stdlib/crypto/sha256h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/sha256h)
 
+## [`github.com/gobuffalo/helpers/stdlib/crypto/sha512h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/sha512h)
 
-## [`iterators#Until`](https://godoc.org/github.com/gobuffalo/helpers/iterators#Until)
-<p>Until will iterate up to, but not including <code>a</code></p>
+## [`github.com/gobuffalo/helpers/stdlib/crypto/subtleh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/subtleh)
 
-<pre><code>Until(3) // 0,1,2
-</code></pre>
+## [`github.com/gobuffalo/helpers/stdlib/crypto/tlsh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/tlsh)
 
+## [`github.com/gobuffalo/helpers/stdlib/crypto/x509/pkixh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/x509/pkixh)
 
-## [`meta#Len`](https://godoc.org/github.com/gobuffalo/helpers/meta#Len)
-<p>Len returns the length of v</p>
+## [`github.com/gobuffalo/helpers/stdlib/crypto/x509h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/crypto/x509h)
 
+## [`github.com/gobuffalo/helpers/stdlib/cryptoh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cryptoh)
 
-## [`meta#New`](https://godoc.org/github.com/gobuffalo/helpers/meta#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/stdlib/database/sql/driverh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/database/sql/driverh)
 
+## [`github.com/gobuffalo/helpers/stdlib/database/sqlh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/database/sqlh)
 
-## [`paths#New`](https://godoc.org/github.com/gobuffalo/helpers/paths#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/stdlib/debug/dwarfh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/debug/dwarfh)
 
+## [`github.com/gobuffalo/helpers/stdlib/debug/elfh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/debug/elfh)
 
-## [`paths#PathFor`](https://godoc.org/github.com/gobuffalo/helpers/paths#PathFor)
-<p>PathFor takes an <code>interface{}</code>, or a <code>slice</code> of them,
-and tries to convert it to a <code>/foos/{id}</code> style URL path.
-Rules:</p>
+## [`github.com/gobuffalo/helpers/stdlib/debug/gosymh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/debug/gosymh)
 
-<ul>
-<li>if <code>string</code> it is returned as is</li>
-<li>if <code>Pathable</code> the <code>ToPath</code> method is returned</li>
-<li>if <code>slice</code> or an <code>array</code> each element is run through the helper then joined</li>
-<li>if <code>struct</code> the name of the struct, pluralized is used for the name</li>
-<li>if <code>Paramable</code> the <code>ToParam</code> method is used to fill the <code>{id}</code> slot</li>
-<li>if <code>struct.Slug</code> the slug is used to fill the <code>{id}</code> slot of the URL</li>
-<li>if <code>struct.ID</code> the ID is used to fill the <code>{id}</code> slot of the URL</li>
-</ul>
+## [`github.com/gobuffalo/helpers/stdlib/debug/machoh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/debug/machoh)
 
+## [`github.com/gobuffalo/helpers/stdlib/debug/peh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/debug/peh)
 
-## [`tags#CSS`](https://godoc.org/github.com/gobuffalo/helpers/tags#CSS)
-<p>CSS creates html for a css link using <code>github.com/gobuffalo/tags</code>
-to create a link with the given options and href. Defaults
-to <code>stylesheet</code> for <code>rel</code> and <code>screen</code> for <code>media</code> if those
-options are not set.</p>
+## [`github.com/gobuffalo/helpers/stdlib/debug/plan9objh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/debug/plan9objh)
 
+## [`github.com/gobuffalo/helpers/stdlib/encoding/ascii85h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/ascii85h)
 
-## [`tags#Img`](https://godoc.org/github.com/gobuffalo/helpers/tags#Img)
-<p>Img creates html for a <code>&lt;img&gt;</code> tag using <code>github.com/gobuffalo/tags</code>
-to create a tag with the given <code>src</code> and <code>options</code>.</p>
+## [`github.com/gobuffalo/helpers/stdlib/encoding/asn1h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/asn1h)
 
+## [`github.com/gobuffalo/helpers/stdlib/encoding/base32h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/base32h)
 
-## [`tags#JS`](https://godoc.org/github.com/gobuffalo/helpers/tags#JS)
-<p>JS creates html for a <code>&lt;script&gt;</code> tag using <code>github.com/gobuffalo/tags</code>
-to create the tag with the given <code>options</code> and <code>src</code>. Defaults
-to <code>text/javascript</code> for <code>type</code> if not set in the <code>options</code>.</p>
+## [`github.com/gobuffalo/helpers/stdlib/encoding/base64h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/base64h)
 
+## [`github.com/gobuffalo/helpers/stdlib/encoding/binaryh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/binaryh)
 
-## [`tags#LinkTo`](https://godoc.org/github.com/gobuffalo/helpers/tags#LinkTo)
-<p>LinkTo creates html for a <code>&lt;a&gt;</code> tag using <code>github.com/gobuffalo/tags</code>
-to create tag with the given options(<code>opts</code>) and
-using <a href="https://godoc.org/github.com/gobuffalo/helpers/paths#PathFor" rel="nofollow"><code>paths#PathFor(in)</code></a> to set the <code>href</code>. If given a block
-it will be interrupted and appended inside of the <code>&lt;a&gt;</code> tag.
-Example 1:</p>
+## [`github.com/gobuffalo/helpers/stdlib/encoding/csvh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/csvh)
 
-<pre><code>&lt;%= linkTo([user, widget], {class: &#34;btn&#34;}) %&gt;
-</code></pre>
+## [`github.com/gobuffalo/helpers/stdlib/encoding/gobh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/gobh)
 
-<p>yields(assuming user ID&#39;d by <code>id</code> and widget by <code>slug</code>):</p>
+## [`github.com/gobuffalo/helpers/stdlib/encoding/hexh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/hexh)
 
-<pre><code>&lt;a class=&#34;btn&#34; href=&#34;/users/id/widget/slug&#34;&gt;&lt;/a&gt;
-</code></pre>
+## [`github.com/gobuffalo/helpers/stdlib/encoding/jsonh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/jsonh)
 
-<p>Example 2:</p>
+## [`github.com/gobuffalo/helpers/stdlib/encoding/pemh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/pemh)
 
-<pre><code>&lt;%= linkTo(&#34;foo&#34;, {class: &#34;btn&#34;}) %&gt;
-</code></pre>
+## [`github.com/gobuffalo/helpers/stdlib/encoding/xmlh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/xmlh)
 
-<p>yields:</p>
+## [`github.com/gobuffalo/helpers/stdlib/encodingh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encodingh)
 
-<pre><code>&lt;a class=&#34;btn&#34; href=&#34;/foo&#34;&gt;&lt;/a&gt;
-</code></pre>
+## [`github.com/gobuffalo/helpers/stdlib/errorsh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/errorsh)
 
+## [`github.com/gobuffalo/helpers/stdlib/expvarh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/expvarh)
 
-## [`tags#New`](https://godoc.org/github.com/gobuffalo/helpers/tags#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/stdlib/flagh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/flagh)
 
+## [`github.com/gobuffalo/helpers/stdlib/fmth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/fmth)
 
-## [`tags#RemoteLinkTo`](https://godoc.org/github.com/gobuffalo/helpers/tags#RemoteLinkTo)
-<p>RemoteLinkTo creates an AJAXified <code>&lt;a&gt;</code> tag.</p>
+## [`github.com/gobuffalo/helpers/stdlib/go/asth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/go/asth)
 
-<pre><code>&lt;%= remoteLinkTo(widget, {class: &#34;btn btn-info&#34;, body: &#34;View&#34;}) %&gt;
-&lt;a class=&#34;btn btn-info&#34; data-remote=&#34;true&#34; href=&#34;/widgets/b6b0ab24-19ae-4cdd-ad73-c5ecbddd6f91&#34;&gt;View&lt;/a&gt;
-</code></pre>
+## [`github.com/gobuffalo/helpers/stdlib/go/buildh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/go/buildh)
 
+## [`github.com/gobuffalo/helpers/stdlib/go/constanth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/go/constanth)
 
-## [`text#Markdown`](https://godoc.org/github.com/gobuffalo/helpers/text#Markdown)
-<p>Markdown converts the string into HTML using GitHub flavored markdown.</p>
+## [`github.com/gobuffalo/helpers/stdlib/go/doch`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/go/doch)
 
+## [`github.com/gobuffalo/helpers/stdlib/go/formath`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/go/formath)
 
-## [`text#New`](https://godoc.org/github.com/gobuffalo/helpers/text#New)
-<p>New returns a map of the helpers within this package.</p>
+## [`github.com/gobuffalo/helpers/stdlib/go/importerh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/go/importerh)
 
+## [`github.com/gobuffalo/helpers/stdlib/go/parserh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/go/parserh)
 
-## [`text#Truncate`](https://godoc.org/github.com/gobuffalo/helpers/text#Truncate)
-<p>Truncate will try to return a string that is no longer
-than <code>size</code>, which defaults to 50. If given
-a <code>trail</code> option the returned string will have
-that appended at the end, while still trying to make
-sure that the returned string is no longer than
-<code>size</code> characters long. However, if <code>trail</code> is longer
-than or equal to <code>size</code>, <code>trail</code> will be returned
-completely as is. Defaults to a <code>trail</code> of <code>...</code>.</p>
+## [`github.com/gobuffalo/helpers/stdlib/go/printerh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/go/printerh)
 
+## [`github.com/gobuffalo/helpers/stdlib/go/scannerh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/go/scannerh)
+
+## [`github.com/gobuffalo/helpers/stdlib/go/tokenh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/go/tokenh)
+
+## [`github.com/gobuffalo/helpers/stdlib/go/typesh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/go/typesh)
+
+## [`github.com/gobuffalo/helpers/stdlib/hash/adler32h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/hash/adler32h)
+
+## [`github.com/gobuffalo/helpers/stdlib/hash/crc32h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/hash/crc32h)
+
+## [`github.com/gobuffalo/helpers/stdlib/hash/crc64h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/hash/crc64h)
+
+## [`github.com/gobuffalo/helpers/stdlib/hash/fnvh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/hash/fnvh)
+
+## [`github.com/gobuffalo/helpers/stdlib/hashh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/hashh)
+
+## [`github.com/gobuffalo/helpers/stdlib/html/templateh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/html/templateh)
+
+## [`github.com/gobuffalo/helpers/stdlib/htmlh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/htmlh)
+
+## [`github.com/gobuffalo/helpers/stdlib/image/color/paletteh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/image/color/paletteh)
+
+## [`github.com/gobuffalo/helpers/stdlib/image/colorh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/image/colorh)
+
+## [`github.com/gobuffalo/helpers/stdlib/image/drawh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/image/drawh)
+
+## [`github.com/gobuffalo/helpers/stdlib/image/gifh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/image/gifh)
+
+## [`github.com/gobuffalo/helpers/stdlib/image/jpegh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/image/jpegh)
+
+## [`github.com/gobuffalo/helpers/stdlib/image/pngh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/image/pngh)
+
+## [`github.com/gobuffalo/helpers/stdlib/imageh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/imageh)
+
+## [`github.com/gobuffalo/helpers/stdlib/index/suffixarrayh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/index/suffixarrayh)
+
+## [`github.com/gobuffalo/helpers/stdlib/io/ioutilh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/io/ioutilh)
+
+## [`github.com/gobuffalo/helpers/stdlib/ioh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/ioh)
+
+## [`github.com/gobuffalo/helpers/stdlib/log/syslogh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/log/syslogh)
+
+## [`github.com/gobuffalo/helpers/stdlib/logh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/logh)
+
+## [`github.com/gobuffalo/helpers/stdlib/math/bigh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/math/bigh)
+
+## [`github.com/gobuffalo/helpers/stdlib/math/bitsh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/math/bitsh)
+
+## [`github.com/gobuffalo/helpers/stdlib/math/cmplxh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/math/cmplxh)
+
+## [`github.com/gobuffalo/helpers/stdlib/math/randh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/math/randh)
+
+## [`github.com/gobuffalo/helpers/stdlib/mathh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/mathh)
+
+## [`github.com/gobuffalo/helpers/stdlib/mime/multiparth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/mime/multiparth)
+
+## [`github.com/gobuffalo/helpers/stdlib/mime/quotedprintableh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/mime/quotedprintableh)
+
+## [`github.com/gobuffalo/helpers/stdlib/mimeh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/mimeh)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/http/cgih`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/http/cgih)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/http/cookiejarh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/http/cookiejarh)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/http/fcgih`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/http/fcgih)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/http/httptesth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/http/httptesth)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/http/httptraceh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/http/httptraceh)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/http/httputilh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/http/httputilh)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/http/pprofh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/http/pprofh)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/httph`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/httph)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/mailh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/mailh)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/rpc/jsonrpch`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/rpc/jsonrpch)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/rpch`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/rpch)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/smtph`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/smtph)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/textprotoh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/textprotoh)
+
+## [`github.com/gobuffalo/helpers/stdlib/net/urlh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/net/urlh)
+
+## [`github.com/gobuffalo/helpers/stdlib/neth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/neth)
+
+## [`github.com/gobuffalo/helpers/stdlib/os/exech`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/os/exech)
+
+## [`github.com/gobuffalo/helpers/stdlib/os/signalh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/os/signalh)
+
+## [`github.com/gobuffalo/helpers/stdlib/os/userh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/os/userh)
+
+## [`github.com/gobuffalo/helpers/stdlib/osh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/osh)
+
+## [`github.com/gobuffalo/helpers/stdlib/path/filepathh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/path/filepathh)
+
+## [`github.com/gobuffalo/helpers/stdlib/pathh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/pathh)
+
+## [`github.com/gobuffalo/helpers/stdlib/pluginh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/pluginh)
+
+## [`github.com/gobuffalo/helpers/stdlib/reflecth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/reflecth)
+
+## [`github.com/gobuffalo/helpers/stdlib/regexp/syntaxh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/regexp/syntaxh)
+
+## [`github.com/gobuffalo/helpers/stdlib/regexph`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/regexph)
+
+## [`github.com/gobuffalo/helpers/stdlib/runtime/cgoh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/runtime/cgoh)
+
+## [`github.com/gobuffalo/helpers/stdlib/runtime/debugh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/runtime/debugh)
+
+## [`github.com/gobuffalo/helpers/stdlib/runtime/msanh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/runtime/msanh)
+
+## [`github.com/gobuffalo/helpers/stdlib/runtime/pprofh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/runtime/pprofh)
+
+## [`github.com/gobuffalo/helpers/stdlib/runtime/raceh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/runtime/raceh)
+
+## [`github.com/gobuffalo/helpers/stdlib/runtime/traceh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/runtime/traceh)
+
+## [`github.com/gobuffalo/helpers/stdlib/runtimeh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/runtimeh)
+
+## [`github.com/gobuffalo/helpers/stdlib/sorth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/sorth)
+
+## [`github.com/gobuffalo/helpers/stdlib/strconvh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/strconvh)
+
+## [`github.com/gobuffalo/helpers/stdlib/stringsh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/stringsh)
+
+## [`github.com/gobuffalo/helpers/stdlib/sync/atomich`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/sync/atomich)
+
+## [`github.com/gobuffalo/helpers/stdlib/synch`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/synch)
+
+## [`github.com/gobuffalo/helpers/stdlib/syscall/jsh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/syscall/jsh)
+
+## [`github.com/gobuffalo/helpers/stdlib/syscallh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/syscallh)
+
+## [`github.com/gobuffalo/helpers/stdlib/testing/iotesth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/testing/iotesth)
+
+## [`github.com/gobuffalo/helpers/stdlib/testing/quickh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/testing/quickh)
+
+## [`github.com/gobuffalo/helpers/stdlib/testingh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/testingh)
+
+## [`github.com/gobuffalo/helpers/stdlib/text/scannerh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/text/scannerh)
+
+## [`github.com/gobuffalo/helpers/stdlib/text/tabwriterh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/text/tabwriterh)
+
+## [`github.com/gobuffalo/helpers/stdlib/text/template/parseh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/text/template/parseh)
+
+## [`github.com/gobuffalo/helpers/stdlib/text/templateh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/text/templateh)
+
+## [`github.com/gobuffalo/helpers/stdlib/timeh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/timeh)
+
+## [`github.com/gobuffalo/helpers/stdlib/unicode/utf16h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/unicode/utf16h)
+
+## [`github.com/gobuffalo/helpers/stdlib/unicode/utf8h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/unicode/utf8h)
+
+## [`github.com/gobuffalo/helpers/stdlib/unicodeh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/unicodeh)
+
+## [`github.com/gobuffalo/helpers/stdlib/unsafeh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/unsafeh)
+
+## [`github.com/gobuffalo/helpers/tags`](https://godoc.org/github.com/gobuffalo/helpers/tags)
+
+## [`github.com/gobuffalo/helpers/text`](https://godoc.org/github.com/gobuffalo/helpers/text)
 

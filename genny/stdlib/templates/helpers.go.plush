@@ -1,0 +1,25 @@
+package <%= pkg.Short %>h
+
+import (
+"github.com/gobuffalo/helpers/hctx"
+"<%= pkg.Full %>"
+)
+
+const (
+<%= for (d) in pkg.Decls { %>
+<%= d.Name %>Key = "<%= d.Name %>"
+<% } %>
+)
+
+func New() hctx.Map {
+	return hctx.Map{
+        <%= for (f) in pkg.Decls { %>
+        <%= f.Name %>Key : <%= f.Name %>,
+        <% } %>
+	}
+}
+
+<%= for (f) in pkg.Decls { %>
+<%= f.Doc %>
+var <%= f.Name %> = <%= pkg.Short %>.<%= f.Name %>
+<% } %>

@@ -6,6 +6,5 @@ Note: This file is auto-generated. Do Not Edit
 ---
 
 <%= for (h) in helpers { %>
-## [`<%= h.Name %>`](https://godoc.org/<%= h.FullName %>)
-<%= if (h.Doc) {return markdown(h.Doc)} %>
+## [`github.com/gobuffalo/helpers/<%= h.Full %>`](https://godoc.org/github.com/gobuffalo/helpers/<%= h.Full %>)
 <% } %>
