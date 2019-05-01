@@ -160,10 +160,10 @@ var Exp = cmplx.Exp
 // Inf returns a complex infinity, complex(+Inf, +Inf).
 var Inf = cmplx.Inf
 
-// IsInf reports whether either real(x) or imag(x) is an infinity.
+// IsInf returns true if either real(x) or imag(x) is an infinity.
 var IsInf = cmplx.IsInf
 
-// IsNaN reports whether either real(x) or imag(x) is NaN
+// IsNaN returns true if either real(x) or imag(x) is NaN
 // and neither is an infinity.
 var IsNaN = cmplx.IsNaN
 

@@ -10,8 +10,6 @@ const (
 	DefaultKey = "Default"
 
 	ForKey = "For"
-
-	ForCompilerKey = "ForCompiler"
 )
 
 func New() hctx.Map {
@@ -20,8 +18,6 @@ func New() hctx.Map {
 		DefaultKey: Default,
 
 		ForKey: For,
-
-		ForCompilerKey: ForCompiler,
 	}
 }
 
@@ -29,13 +25,7 @@ func New() hctx.Map {
 // If available, the result implements types.ImporterFrom.
 var Default = importer.Default
 
-// For calls ForCompiler with a new FileSet.
-//
-// Deprecated: use ForCompiler, which populates a FileSet
-// with the positions of objects created by the importer.
-var For = importer.For
-
-// ForCompiler returns an Importer for importing from installed packages
+// For returns an Importer for importing from installed packages
 // for the compilers &#34;gc&#34; and &#34;gccgo&#34;, or for importing directly
 // from the source if the compiler argument is &#34;source&#34;. In this
 // latter case, importing may fail under circumstances where the
@@ -54,4 +44,4 @@ var For = importer.For
 // (not relative or absolute ones); it is assumed that the translation
 // to canonical import paths is being done by the client of the
 // importer.
-var ForCompiler = importer.ForCompiler
+var For = importer.For

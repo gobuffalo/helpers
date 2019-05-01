@@ -69,7 +69,7 @@ var Synopsis = doc.Synopsis
 // a single paragraph. There is one exception to the rule: a span that
 // consists of a single line, is followed by another paragraph span,
 // begins with a capital letter, and contains no punctuation
-// other than parentheses and commas is formatted as a heading.
+// is formatted as a heading.
 //
 // A span of indented lines is converted into a &lt;pre&gt; block,
 // with the common indent prefix removed.

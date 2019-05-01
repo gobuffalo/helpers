@@ -95,7 +95,7 @@ var IsAbs = path.IsAbs
 // all empty strings are ignored.
 var Join = path.Join
 
-// Match reports whether name matches the shell pattern.
+// Match reports whether name matches the shell file name pattern.
 // The pattern syntax is:
 //
 // 	pattern:

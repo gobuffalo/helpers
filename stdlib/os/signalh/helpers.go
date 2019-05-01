@@ -9,8 +9,6 @@ import (
 const (
 	IgnoreKey = "Ignore"
 
-	IgnoredKey = "Ignored"
-
 	NotifyKey = "Notify"
 
 	ResetKey = "Reset"
@@ -22,8 +20,6 @@ func New() hctx.Map {
 	return hctx.Map{
 
 		IgnoreKey: Ignore,
-
-		IgnoredKey: Ignored,
 
 		NotifyKey: Notify,
 
@@ -38,9 +34,6 @@ func New() hctx.Map {
 // calls to Notify for the provided signals.
 // If no signals are provided, all incoming signals will be ignored.
 var Ignore = signal.Ignore
-
-// Ignored reports whether sig is currently ignored.
-var Ignored = signal.Ignored
 
 // Notify causes package signal to relay incoming signals to c.
 // If no signals are provided, all incoming signals will be relayed to c.

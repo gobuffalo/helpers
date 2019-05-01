@@ -7,18 +7,6 @@ import (
 )
 
 const (
-	AddKey = "Add"
-
-	Add32Key = "Add32"
-
-	Add64Key = "Add64"
-
-	DivKey = "Div"
-
-	Div32Key = "Div32"
-
-	Div64Key = "Div64"
-
 	LeadingZerosKey = "LeadingZeros"
 
 	LeadingZeros16Key = "LeadingZeros16"
@@ -38,12 +26,6 @@ const (
 	Len64Key = "Len64"
 
 	Len8Key = "Len8"
-
-	MulKey = "Mul"
-
-	Mul32Key = "Mul32"
-
-	Mul64Key = "Mul64"
 
 	OnesCountKey = "OnesCount"
 
@@ -83,12 +65,6 @@ const (
 
 	RotateLeft8Key = "RotateLeft8"
 
-	SubKey = "Sub"
-
-	Sub32Key = "Sub32"
-
-	Sub64Key = "Sub64"
-
 	TrailingZerosKey = "TrailingZeros"
 
 	TrailingZeros16Key = "TrailingZeros16"
@@ -102,18 +78,6 @@ const (
 
 func New() hctx.Map {
 	return hctx.Map{
-
-		AddKey: Add,
-
-		Add32Key: Add32,
-
-		Add64Key: Add64,
-
-		DivKey: Div,
-
-		Div32Key: Div32,
-
-		Div64Key: Div64,
 
 		LeadingZerosKey: LeadingZeros,
 
@@ -134,12 +98,6 @@ func New() hctx.Map {
 		Len64Key: Len64,
 
 		Len8Key: Len8,
-
-		MulKey: Mul,
-
-		Mul32Key: Mul32,
-
-		Mul64Key: Mul64,
 
 		OnesCountKey: OnesCount,
 
@@ -179,12 +137,6 @@ func New() hctx.Map {
 
 		RotateLeft8Key: RotateLeft8,
 
-		SubKey: Sub,
-
-		Sub32Key: Sub32,
-
-		Sub64Key: Sub64,
-
 		TrailingZerosKey: TrailingZeros,
 
 		TrailingZeros16Key: TrailingZeros16,
@@ -196,39 +148,6 @@ func New() hctx.Map {
 		TrailingZeros8Key: TrailingZeros8,
 	}
 }
-
-// Add returns the sum with carry of x, y and carry: sum = x + y + carry.
-// The carry input must be 0 or 1; otherwise the behavior is undefined.
-// The carryOut output is guaranteed to be 0 or 1.
-var Add = bits.Add
-
-// Add32 returns the sum with carry of x, y and carry: sum = x + y + carry.
-// The carry input must be 0 or 1; otherwise the behavior is undefined.
-// The carryOut output is guaranteed to be 0 or 1.
-var Add32 = bits.Add32
-
-// Add64 returns the sum with carry of x, y and carry: sum = x + y + carry.
-// The carry input must be 0 or 1; otherwise the behavior is undefined.
-// The carryOut output is guaranteed to be 0 or 1.
-var Add64 = bits.Add64
-
-// Div returns the quotient and remainder of (hi, lo) divided by y:
-// quo = (hi, lo)/y, rem = (hi, lo)%y with the dividend bits&#39; upper
-// half in parameter hi and the lower half in parameter lo.
-// Div panics for y == 0 (division by zero) or y &lt;= hi (quotient overflow).
-var Div = bits.Div
-
-// Div32 returns the quotient and remainder of (hi, lo) divided by y:
-// quo = (hi, lo)/y, rem = (hi, lo)%y with the dividend bits&#39; upper
-// half in parameter hi and the lower half in parameter lo.
-// Div32 panics for y == 0 (division by zero) or y &lt;= hi (quotient overflow).
-var Div32 = bits.Div32
-
-// Div64 returns the quotient and remainder of (hi, lo) divided by y:
-// quo = (hi, lo)/y, rem = (hi, lo)%y with the dividend bits&#39; upper
-// half in parameter hi and the lower half in parameter lo.
-// Div64 panics for y == 0 (division by zero) or y &lt;= hi (quotient overflow).
-var Div64 = bits.Div64
 
 // LeadingZeros returns the number of leading zero bits in x; the result is UintSize for x == 0.
 var LeadingZeros = bits.LeadingZeros
@@ -259,21 +178,6 @@ var Len64 = bits.Len64
 
 // Len8 returns the minimum number of bits required to represent x; the result is 0 for x == 0.
 var Len8 = bits.Len8
-
-// Mul returns the full-width product of x and y: (hi, lo) = x * y
-// with the product bits&#39; upper half returned in hi and the lower
-// half returned in lo.
-var Mul = bits.Mul
-
-// Mul32 returns the 64-bit product of x and y: (hi, lo) = x * y
-// with the product bits&#39; upper half returned in hi and the lower
-// half returned in lo.
-var Mul32 = bits.Mul32
-
-// Mul64 returns the 128-bit product of x and y: (hi, lo) = x * y
-// with the product bits&#39; upper half returned in hi and the lower
-// half returned in lo.
-var Mul64 = bits.Mul64
 
 // OnesCount returns the number of one bits (&#34;population count&#34;) in x.
 var OnesCount = bits.OnesCount
@@ -336,21 +240,6 @@ var RotateLeft64 = bits.RotateLeft64
 // RotateLeft8 returns the value of x rotated left by (k mod 8) bits.
 // To rotate x right by k bits, call RotateLeft8(x, -k).
 var RotateLeft8 = bits.RotateLeft8
-
-// Sub returns the difference of x, y and borrow: diff = x - y - borrow.
-// The borrow input must be 0 or 1; otherwise the behavior is undefined.
-// The borrowOut output is guaranteed to be 0 or 1.
-var Sub = bits.Sub
-
-// Sub32 returns the difference of x, y and borrow, diff = x - y - borrow.
-// The borrow input must be 0 or 1; otherwise the behavior is undefined.
-// The borrowOut output is guaranteed to be 0 or 1.
-var Sub32 = bits.Sub32
-
-// Sub64 returns the difference of x, y and borrow: diff = x - y - borrow.
-// The borrow input must be 0 or 1; otherwise the behavior is undefined.
-// The borrowOut output is guaranteed to be 0 or 1.
-var Sub64 = bits.Sub64
 
 // TrailingZeros returns the number of trailing zero bits in x; the result is UintSize for x == 0.
 var TrailingZeros = bits.TrailingZeros

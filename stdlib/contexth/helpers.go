@@ -46,7 +46,8 @@ var Background = context.Background
 // TODO returns a non-nil, empty Context. Code should use context.TODO when
 // it&#39;s unclear which Context to use or it is not yet available (because the
 // surrounding function has not yet been extended to accept a Context
-// parameter).
+// parameter). TODO is recognized by static analysis tools that determine
+// whether Contexts are propagated correctly in a program.
 var TODO = context.TODO
 
 // WithCancel returns a copy of parent with a new Done channel. The returned

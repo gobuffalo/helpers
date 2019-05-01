@@ -194,8 +194,7 @@ var NArg = flag.NArg
 var NFlag = flag.NFlag
 
 // NewFlagSet returns a new, empty flag set with the specified name and
-// error handling property. If the name is not empty, it will be printed
-// in the default usage message and in error messages.
+// error handling property.
 var NewFlagSet = flag.NewFlagSet
 
 // Parse parses the command-line flags from os.Args[1:]. Must be called
@@ -224,8 +223,6 @@ var Parsed = flag.Parsed
 // the output will be
 // 	-I directory
 // 		search directory for include files.
-//
-// To change the destination for flag messages, call CommandLine.SetOutput.
 var PrintDefaults = flag.PrintDefaults
 
 // Set sets the value of the named command-line flag.

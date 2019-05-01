@@ -91,9 +91,7 @@ var NewChunkedReader = httputil.NewChunkedReader
 
 // NewChunkedWriter returns a new chunkedWriter that translates writes into HTTP
 // &#34;chunked&#34; format before writing them to w. Closing the returned chunkedWriter
-// sends the final 0-length chunk that marks the end of the stream but does
-// not send the final CRLF that appears after trailers; trailers and the last
-// CRLF must be written separately.
+// sends the final 0-length chunk that marks the end of the stream.
 //
 // NewChunkedWriter is not needed by normal applications. The http
 // package adds chunking automatically if handlers don&#39;t set a

@@ -65,7 +65,7 @@ var NewReader = gzip.NewReader
 // NewWriter returns a new Writer.
 // Writes to the returned writer are compressed and written to w.
 //
-// It is the caller&#39;s responsibility to call Close on the Writer when done.
+// It is the caller&#39;s responsibility to call Close on the WriteCloser when done.
 // Writes may be buffered and not flushed until Close.
 //
 // Callers that wish to set the fields in Writer.Header must do so before

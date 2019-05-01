@@ -102,39 +102,11 @@ func New() hctx.Map {
 }
 
 // CreateCertificate creates a new X.509v3 certificate based on a template.
-// The following members of template are used:
-//
-//  - AuthorityKeyId
-//  - BasicConstraintsValid
-//  - CRLDistributionPoints
-//  - DNSNames
-//  - EmailAddresses
-//  - ExcludedDNSDomains
-//  - ExcludedEmailAddresses
-//  - ExcludedIPRanges
-//  - ExcludedURIDomains
-//  - ExtKeyUsage
-//  - ExtraExtensions
-//  - IsCA
-//  - IssuingCertificateURL
-//  - KeyUsage
-//  - MaxPathLen
-//  - MaxPathLenZero
-//  - NotAfter
-//  - NotBefore
-//  - OCSPServer
-//  - PermittedDNSDomains
-//  - PermittedDNSDomainsCritical
-//  - PermittedEmailAddresses
-//  - PermittedIPRanges
-//  - PermittedURIDomains
-//  - PolicyIdentifiers
-//  - SerialNumber
-//  - SignatureAlgorithm
-//  - Subject
-//  - SubjectKeyId
-//  - URIs
-//  - UnknownExtKeyUsage
+// The following members of template are used: AuthorityKeyId,
+// BasicConstraintsValid, DNSNames, ExcludedDNSDomains, ExtKeyUsage,
+// IsCA, KeyUsage, MaxPathLen, MaxPathLenZero, NotAfter, NotBefore,
+// PermittedDNSDomains, PermittedDNSDomainsCritical, SerialNumber,
+// SignatureAlgorithm, Subject, SubjectKeyId, and UnknownExtKeyUsage.
 //
 // The certificate is signed by parent. If parent is equal to template then the
 // certificate is self-signed. The parameter pub is the public key of the
@@ -151,23 +123,14 @@ func New() hctx.Map {
 var CreateCertificate = x509.CreateCertificate
 
 // CreateCertificateRequest creates a new certificate request based on a
-// template. The following members of template are used:
-//
-//  - SignatureAlgorithm
-//  - Subject
-//  - DNSNames
-//  - EmailAddresses
-//  - IPAddresses
-//  - URIs
-//  - ExtraExtensions
-//  - Attributes (deprecated)
-//
-// priv is the private key to sign the CSR with, and the corresponding public
-// key will be included in the CSR. It must implement crypto.Signer and its
-// Public() method must return a *rsa.PublicKey or a *ecdsa.PublicKey. (A
-// *rsa.PrivateKey or *ecdsa.PrivateKey satisfies this.)
+// template. The following members of template are used: Attributes, DNSNames,
+// EmailAddresses, ExtraExtensions, IPAddresses, URIs, SignatureAlgorithm, and
+// Subject. The private key is the private key of the signer.
 //
 // The returned slice is the certificate request in DER encoding.
+//
+// All keys types that are implemented via crypto.Signer are supported (This
+// includes *rsa.PublicKey and *ecdsa.PublicKey.)
 var CreateCertificateRequest = x509.CreateCertificateRequest
 
 // DecryptPEMBlock takes a password encrypted PEM block and the password used to
@@ -198,7 +161,7 @@ var MarshalPKCS1PrivateKey = x509.MarshalPKCS1PrivateKey
 var MarshalPKCS1PublicKey = x509.MarshalPKCS1PublicKey
 
 // MarshalPKCS8PrivateKey converts a private key to PKCS#8 encoded form.
-// The following key types are supported: *rsa.PrivateKey, *ecdsa.PrivateKey.
+// The following key types are supported: *rsa.PrivateKey, *ecdsa.PublicKey.
 // Unsupported key types result in an error.
 //
 // See RFC 5208.
@@ -256,8 +219,5 @@ var ParsePKIXPublicKey = x509.ParsePKIXPublicKey
 // SystemCertPool returns a copy of the system cert pool.
 //
 // Any mutations to the returned pool are not written to disk and do
-// not affect any other pool returned by SystemCertPool.
-//
-// New changes in the system cert pool might not be reflected
-// in subsequent calls.
+// not affect any other pool.
 var SystemCertPool = x509.SystemCertPool

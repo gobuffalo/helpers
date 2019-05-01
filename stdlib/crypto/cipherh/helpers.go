@@ -21,8 +21,6 @@ const (
 
 	NewGCMWithNonceSizeKey = "NewGCMWithNonceSize"
 
-	NewGCMWithTagSizeKey = "NewGCMWithTagSize"
-
 	NewOFBKey = "NewOFB"
 )
 
@@ -42,8 +40,6 @@ func New() hctx.Map {
 		NewGCMKey: NewGCM,
 
 		NewGCMWithNonceSizeKey: NewGCMWithNonceSize,
-
-		NewGCMWithTagSizeKey: NewGCMWithTagSize,
 
 		NewOFBKey: NewOFB,
 	}
@@ -88,16 +84,6 @@ var NewGCM = cipher.NewGCM
 // cryptosystem that uses non-standard nonce lengths. All other users should use
 // NewGCM, which is faster and more resistant to misuse.
 var NewGCMWithNonceSize = cipher.NewGCMWithNonceSize
-
-// NewGCMWithTagSize returns the given 128-bit, block cipher wrapped in Galois
-// Counter Mode, which generates tags with the given length.
-//
-// Tag sizes between 12 and 16 bytes are allowed.
-//
-// Only use this function if you require compatibility with an existing
-// cryptosystem that uses non-standard tag lengths. All other users should use
-// NewGCM, which is more resistant to misuse.
-var NewGCMWithTagSize = cipher.NewGCMWithTagSize
 
 // NewOFB returns a Stream that encrypts or decrypts using the block cipher b
 // in output feedback mode. The initialization vector iv&#39;s length must be equal

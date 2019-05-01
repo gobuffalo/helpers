@@ -455,26 +455,18 @@ var Exp2 = math.Exp2
 // Very large values overflow to -1 or +Inf.
 var Expm1 = math.Expm1
 
-// Float32bits returns the IEEE 754 binary representation of f,
-// with the sign bit of f and the result in the same bit position.
-// Float32bits(Float32frombits(x)) == x.
+// Float32bits returns the IEEE 754 binary representation of f.
 var Float32bits = math.Float32bits
 
-// Float32frombits returns the floating-point number corresponding
-// to the IEEE 754 binary representation b, with the sign bit of b
-// and the result in the same bit position.
-// Float32frombits(Float32bits(x)) == x.
+// Float32frombits returns the floating point number corresponding
+// to the IEEE 754 binary representation b.
 var Float32frombits = math.Float32frombits
 
-// Float64bits returns the IEEE 754 binary representation of f,
-// with the sign bit of f and the result in the same bit position,
-// and Float64bits(Float64frombits(x)) == x.
+// Float64bits returns the IEEE 754 binary representation of f.
 var Float64bits = math.Float64bits
 
-// Float64frombits returns the floating-point number corresponding
-// to the IEEE 754 binary representation b, with the sign bit of b
-// and the result in the same bit position.
-// Float64frombits(Float64bits(x)) == x.
+// Float64frombits returns the floating point number corresponding
+// the IEEE 754 binary representation b.
 var Float64frombits = math.Float64frombits
 
 // Floor returns the greatest integer value less than or equal to x.
@@ -728,7 +720,7 @@ var Round = math.Round
 // 	RoundToEven(NaN) = NaN
 var RoundToEven = math.RoundToEven
 
-// Signbit reports whether x is negative or negative zero.
+// Signbit returns true if x is negative or negative zero.
 var Signbit = math.Signbit
 
 // Sin returns the sine of the radian argument x.

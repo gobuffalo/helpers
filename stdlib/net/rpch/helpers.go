@@ -90,11 +90,6 @@ var HandleHTTP = rpc.HandleHTTP
 // set of services at the other end of the connection.
 // It adds a buffer to the write side of the connection so
 // the header and payload are sent as a unit.
-//
-// The read and write halves of the connection are serialized independently,
-// so no interlocking is required. However each half may be accessed
-// concurrently so the implementation of conn should protect against
-// concurrent reads or concurrent writes.
 var NewClient = rpc.NewClient
 
 // NewClientWithCodec is like NewClient but uses the specified
@@ -120,7 +115,6 @@ var ServeCodec = rpc.ServeCodec
 // The caller typically invokes ServeConn in a go statement.
 // ServeConn uses the gob wire format (see package gob) on the
 // connection. To use an alternate codec, use ServeCodec.
-// See NewClient&#39;s comment for information about concurrent access.
 var ServeConn = rpc.ServeConn
 
 // ServeRequest is like ServeCodec but synchronously serves a single request.

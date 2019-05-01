@@ -100,10 +100,6 @@ var EscapeText = xml.EscapeText
 //       string of length zero.
 //     - an anonymous struct field is handled as if the fields of its
 //       value were part of the outer struct.
-//     - a field implementing Marshaler is written by calling its MarshalXML
-//       method.
-//     - a field implementing encoding.TextMarshaler is written by encoding the
-//       result of its MarshalText method as text.
 //
 // If a field uses a tag &#34;a&gt;b&gt;c&#34;, then the element c will be nested inside
 // parent elements a and b. Fields that appear next to each other that name
@@ -203,11 +199,6 @@ var NewTokenDecoder = xml.NewTokenDecoder
 //      value were part of the outer struct.
 //
 //   * A struct field with tag &#34;-&#34; is never unmarshaled into.
-//
-// If Unmarshal encounters a field type that implements the Unmarshaler
-// interface, Unmarshal calls its UnmarshalXML method to produce the value from
-// the XML element.  Otherwise, if the value implements
-// encoding.TextUnmarshaler, Unmarshal calls that value&#39;s UnmarshalText method.
 //
 // Unmarshal maps an XML element to a string or []byte by saving the
 // concatenation of that element&#39;s character data in the string or

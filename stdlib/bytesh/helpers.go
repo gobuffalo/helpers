@@ -61,8 +61,6 @@ const (
 
 	ReplaceKey = "Replace"
 
-	ReplaceAllKey = "ReplaceAll"
-
 	RunesKey = "Runes"
 
 	SplitKey = "Split"
@@ -162,8 +160,6 @@ func New() hctx.Map {
 		RepeatKey: Repeat,
 
 		ReplaceKey: Replace,
-
-		ReplaceAllKey: ReplaceAll,
 
 		RunesKey: Runes,
 
@@ -265,7 +261,7 @@ var Index = bytes.Index
 // point in common.
 var IndexAny = bytes.IndexAny
 
-// IndexByte returns the index of the first instance of c in b, or -1 if c is not present in b.
+// IndexByte returns the index of the first instance of c in s, or -1 if c is not present in s.
 var IndexByte = bytes.IndexByte
 
 // IndexFunc interprets s as a sequence of UTF-8-encoded code points.
@@ -310,9 +306,9 @@ var Map = bytes.Map
 // NewBuffer creates and initializes a new Buffer using buf as its
 // initial contents. The new Buffer takes ownership of buf, and the
 // caller should not use buf after this call. NewBuffer is intended to
-// prepare a Buffer to read existing data. It can also be used to set
-// the initial size of the internal buffer for writing. To do that,
-// buf should have the desired capacity but a length of zero.
+// prepare a Buffer to read existing data. It can also be used to size
+// the internal buffer for writing. To do that, buf should have the
+// desired capacity but a length of zero.
 //
 // In most cases, new(Buffer) (or just declaring a Buffer variable) is
 // sufficient to initialize a Buffer.
@@ -342,13 +338,6 @@ var Repeat = bytes.Repeat
 // for a k-rune slice.
 // If n &lt; 0, there is no limit on the number of replacements.
 var Replace = bytes.Replace
-
-// ReplaceAll returns a copy of the slice s with all
-// non-overlapping instances of old replaced by new.
-// If old is empty, it matches at the beginning of the slice
-// and after each UTF-8 sequence, yielding up to k+1 replacements
-// for a k-rune slice.
-var ReplaceAll = bytes.ReplaceAll
 
 // Runes interprets s as a sequence of UTF-8-encoded code points.
 // It returns a slice of runes (Unicode code points) equivalent to s.

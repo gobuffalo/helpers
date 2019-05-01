@@ -41,4 +41,8 @@ var Node = format.Node
 // is applied to the result (such that it has the same leading and trailing
 // space as src), and the result is indented by the same amount as the first
 // line of src containing code. Imports are not sorted for partial source files.
+//
+// Caution: Tools relying on consistent formatting based on the installed
+// version of gofmt (for instance, such as for presubmit checks) should
+// execute that gofmt binary instead of calling Source.
 var Source = format.Source

@@ -51,8 +51,6 @@ const (
 
 	NewInterfaceKey = "NewInterface"
 
-	NewInterfaceTypeKey = "NewInterfaceType"
-
 	NewLabelKey = "NewLabel"
 
 	NewMapKey = "NewMap"
@@ -147,8 +145,6 @@ func New() hctx.Map {
 
 		NewInterfaceKey: NewInterface,
 
-		NewInterfaceTypeKey: NewInterfaceType,
-
 		NewLabelKey: NewLabel,
 
 		NewMapKey: NewMap,
@@ -225,6 +221,9 @@ var Default = types.Default
 // complete position information relative to the provided file
 // set.
 //
+// If the expression contains function literals, their bodies
+// are ignored (i.e., the bodies are not type-checked).
+//
 // If pkg == nil, the Universe scope is used and the provided
 // position pos is ignored. If pkg != nil, and pos is invalid,
 // the package scope is used. Otherwise, pos must belong to the
@@ -277,7 +276,7 @@ var IsInterface = types.IsInterface
 // 	2) the list of all methods (method set) of an interface type; or
 // 	3) the list of fields of a struct type.
 //
-// The earlier index entries are the indices of the embedded struct fields
+// The earlier index entries are the indices of the anonymous struct fields
 // traversed to get to the found entry, starting at depth 0.
 //
 // If no entry is found, a nil object is returned. In this case, the returned
@@ -303,7 +302,6 @@ var LookupFieldOrMethod = types.LookupFieldOrMethod
 var MissingMethod = types.MissingMethod
 
 // NewArray returns a new array type for the given element type and length.
-// A negative length indicates an unknown length.
 var NewArray = types.NewArray
 
 // NewChan returns a new channel type for the given direction and element type.
@@ -318,8 +316,8 @@ var NewChecker = types.NewChecker
 var NewConst = types.NewConst
 
 // NewField returns a new variable representing a struct field.
-// For embedded fields, the name is the unqualified type name
-// / under which the field is accessible.
+// For anonymous (embedded) fields, the name is the unqualified
+// type name under which the field is accessible.
 var NewField = types.NewField
 
 // NewFunc returns a new function with the given signature, representing
@@ -327,22 +325,8 @@ var NewField = types.NewField
 var NewFunc = types.NewFunc
 
 // NewInterface returns a new (incomplete) interface for the given methods and embedded types.
-// Each embedded type must have an underlying type of interface type.
-// NewInterface takes ownership of the provided methods and may modify their types by setting
-// missing receivers. To compute the method set of the interface, Complete must be called.
-//
-// Deprecated: Use NewInterfaceType instead which allows any (even non-defined) interface types
-// to be embedded. This is necessary for interfaces that embed alias type names referring to
-// non-defined (literal) interface types.
+// To compute the method set of the interface, Complete must be called.
 var NewInterface = types.NewInterface
-
-// NewInterfaceType returns a new (incomplete) interface for the given methods and embedded types.
-// Each embedded type must have an underlying type of interface type (this property is not
-// verified for defined types, which may be in the process of being set up and which don&#39;t
-// have a valid underlying type yet).
-// NewInterfaceType takes ownership of the provided methods and may modify their types by setting
-// missing receivers. To compute the method set of the interface, Complete must be called.
-var NewInterfaceType = types.NewInterfaceType
 
 // NewLabel returns a new label.
 var NewLabel = types.NewLabel
@@ -432,7 +416,7 @@ var SelectionString = types.SelectionString
 //
 // Supported architectures for compiler &#34;gc&#34;:
 // &#34;386&#34;, &#34;arm&#34;, &#34;arm64&#34;, &#34;amd64&#34;, &#34;amd64p32&#34;, &#34;mips&#34;, &#34;mipsle&#34;,
-// &#34;mips64&#34;, &#34;mips64le&#34;, &#34;ppc64&#34;, &#34;ppc64le&#34;, &#34;riscv64&#34;, &#34;s390x&#34;, &#34;sparc64&#34;, &#34;wasm&#34;.
+// &#34;mips64&#34;, &#34;mips64le&#34;, &#34;ppc64&#34;, &#34;ppc64le&#34;, &#34;s390x&#34;.
 var SizesFor = types.SizesFor
 
 // TypeString returns the string representation of typ.

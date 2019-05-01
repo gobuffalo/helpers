@@ -197,7 +197,6 @@ var Caller = runtime.Caller
 // directly is discouraged, as is using FuncForPC on any of the
 // returned PCs, since these cannot account for inlining or return
 // program counter adjustment.
-// go:noinline
 var Callers = runtime.Callers
 
 // CallersFrames takes a slice of PC values returned by Callers and
@@ -209,8 +208,7 @@ var CallersFrames = runtime.CallersFrames
 // given program counter address, or else nil.
 //
 // If pc represents multiple functions because of inlining, it returns
-// the a *Func describing the innermost function, but with an entry
-// of the outermost function.
+// the *Func describing the outermost function.
 var FuncForPC = runtime.FuncForPC
 
 // GC runs a garbage collection and blocks the caller until the
@@ -284,10 +282,6 @@ var KeepAlive = runtime.KeepAlive
 // UnlockOSThread as to LockOSThread.
 // If the calling goroutine exits without unlocking the thread,
 // the thread will be terminated.
-//
-// All init functions are run on the startup thread. Calling LockOSThread
-// from an init function will cause the main function to be invoked on
-// that thread.
 //
 // A goroutine should call LockOSThread before calling OS services or
 // non-Go library functions that depend on per-thread state.
@@ -466,13 +460,6 @@ var SetCPUProfileRate = runtime.SetCPUProfileRate
 // to the symbolizer function, return the file/line of the call
 // instruction.  No additional subtraction is required or appropriate.
 //
-// On all platforms, the traceback function is invoked when a call from
-// Go to C to Go requests a stack trace. On linux/amd64, linux/ppc64le,
-// and freebsd/amd64, the traceback function is also invoked when a
-// signal is received by a thread that is executing a cgo call. The
-// traceback function should not make assumptions about when it is
-// called, as future versions of Go may make additional calls.
-//
 // The symbolizer function will be called with a single argument, a
 // pointer to a struct:
 //
@@ -558,8 +545,8 @@ var SetCgoTraceback = runtime.SetCgoTraceback
 // is not guaranteed to run, because there is no ordering that
 // respects the dependencies.
 //
-// The finalizer is scheduled to run at some arbitrary time after the
-// program can no longer reach the object to which obj points.
+// The finalizer for obj is scheduled to run at some arbitrary time after
+// obj becomes unreachable.
 // There is no guarantee that finalizers will run before a program exits,
 // so typically they are useful only for releasing non-memory resources
 // associated with an object during a long-running program.
@@ -604,7 +591,7 @@ var SetFinalizer = runtime.SetFinalizer
 // reported. The previous rate is returned.
 //
 // To turn off profiling entirely, pass rate 0.
-// To just read the current rate, pass rate &lt; 0.
+// To just read the current rate, pass rate -1.
 // (For n&gt;1 the details of sampling may change.)
 var SetMutexProfileFraction = runtime.SetMutexProfileFraction
 

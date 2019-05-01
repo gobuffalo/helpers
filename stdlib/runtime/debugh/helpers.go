@@ -11,8 +11,6 @@ const (
 
 	PrintStackKey = "PrintStack"
 
-	ReadBuildInfoKey = "ReadBuildInfo"
-
 	ReadGCStatsKey = "ReadGCStats"
 
 	SetGCPercentKey = "SetGCPercent"
@@ -36,8 +34,6 @@ func New() hctx.Map {
 		FreeOSMemoryKey: FreeOSMemory,
 
 		PrintStackKey: PrintStack,
-
-		ReadBuildInfoKey: ReadBuildInfo,
 
 		ReadGCStatsKey: ReadGCStats,
 
@@ -65,11 +61,6 @@ var FreeOSMemory = debug.FreeOSMemory
 
 // PrintStack prints to standard error the stack trace returned by runtime.Stack.
 var PrintStack = debug.PrintStack
-
-// ReadBuildInfo returns the build information embedded
-// in the running binary. The information is available only
-// in binaries built with module support.
-var ReadBuildInfo = debug.ReadBuildInfo
 
 // ReadGCStats reads statistics about garbage collection into stats.
 // The number of entries in the pause history is system-dependent;

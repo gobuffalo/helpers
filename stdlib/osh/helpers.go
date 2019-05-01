@@ -130,10 +130,6 @@ const (
 	TruncateKey = "Truncate"
 
 	UnsetenvKey = "Unsetenv"
-
-	UserCacheDirKey = "UserCacheDir"
-
-	UserHomeDirKey = "UserHomeDir"
 )
 
 func New() hctx.Map {
@@ -262,10 +258,6 @@ func New() hctx.Map {
 		TruncateKey: Truncate,
 
 		UnsetenvKey: Unsetenv,
-
-		UserCacheDirKey: UserCacheDir,
-
-		UserHomeDirKey: UserHomeDir,
 	}
 }
 
@@ -295,11 +287,7 @@ var Chmod = os.Chmod
 
 // Chown changes the numeric uid and gid of the named file.
 // If the file is a symbolic link, it changes the uid and gid of the link&#39;s target.
-// A uid or gid of -1 means to not change that value.
 // If there is an error, it will be of type *PathError.
-//
-// On Windows or Plan 9, Chown always returns the syscall.EWINDOWS or
-// EPLAN9 error, wrapped in *PathError.
 var Chown = os.Chown
 
 // Chtimes changes the access and modification times of the named
@@ -593,25 +581,3 @@ var Truncate = os.Truncate
 
 // Unsetenv unsets a single environment variable.
 var Unsetenv = os.Unsetenv
-
-// UserCacheDir returns the default root directory to use for user-specific
-// cached data. Users should create their own application-specific subdirectory
-// within this one and use that.
-//
-// On Unix systems, it returns $XDG_CACHE_HOME as specified by
-// https://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html if
-// non-empty, else $HOME/.cache.
-// On Darwin, it returns $HOME/Library/Caches.
-// On Windows, it returns %LocalAppData%.
-// On Plan 9, it returns $home/lib/cache.
-//
-// If the location cannot be determined (for example, $HOME is not defined),
-// then it will return an error.
-var UserCacheDir = os.UserCacheDir
-
-// UserHomeDir returns the current user&#39;s home directory.
-//
-// On Unix, including macOS, it returns the $HOME environment variable.
-// On Windows, it returns %USERPROFILE%.
-// On Plan 9, it returns the $home environment variable.
-var UserHomeDir = os.UserHomeDir

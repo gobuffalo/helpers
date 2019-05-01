@@ -34,10 +34,6 @@ func New() hctx.Map {
 }
 
 // Current returns the current user.
-//
-// The first call will cache the current user information.
-// Subsequent calls will return the cached value and will not reflect
-// changes to the current user.
 var Current = user.Current
 
 // Lookup looks up a user by username. If the user cannot be found, the

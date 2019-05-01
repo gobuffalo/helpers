@@ -80,7 +80,7 @@ var NewReaderDict = zlib.NewReaderDict
 // NewWriter creates a new Writer.
 // Writes to the returned Writer are compressed and written to w.
 //
-// It is the caller&#39;s responsibility to call Close on the Writer when done.
+// It is the caller&#39;s responsibility to call Close on the WriteCloser when done.
 // Writes may be buffered and not flushed until Close.
 var NewWriter = zlib.NewWriter
 

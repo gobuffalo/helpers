@@ -57,8 +57,6 @@ const (
 
 	ReplaceKey = "Replace"
 
-	ReplaceAllKey = "ReplaceAll"
-
 	SplitKey = "Split"
 
 	SplitAfterKey = "SplitAfter"
@@ -152,8 +150,6 @@ func New() hctx.Map {
 		RepeatKey: Repeat,
 
 		ReplaceKey: Replace,
-
-		ReplaceAllKey: ReplaceAll,
 
 		SplitKey: Split,
 
@@ -288,9 +284,8 @@ var Map = strings.Map
 // It is similar to bytes.NewBufferString but more efficient and read-only.
 var NewReader = strings.NewReader
 
-// NewReplacer returns a new Replacer from a list of old, new string
-// pairs. Replacements are performed in the order they appear in the
-// target string, without overlapping matches.
+// NewReplacer returns a new Replacer from a list of old, new string pairs.
+// Replacements are performed in order, without overlapping matches.
 var NewReplacer = strings.NewReplacer
 
 // Repeat returns a new string consisting of count copies of the string s.
@@ -306,13 +301,6 @@ var Repeat = strings.Repeat
 // for a k-rune string.
 // If n &lt; 0, there is no limit on the number of replacements.
 var Replace = strings.Replace
-
-// ReplaceAll returns a copy of the string s with all
-// non-overlapping instances of old replaced by new.
-// If old is empty, it matches at the beginning of the string
-// and after each UTF-8 sequence, yielding up to k+1 replacements
-// for a k-rune string.
-var ReplaceAll = strings.ReplaceAll
 
 // Split slices s into all substrings separated by sep and returns a slice of
 // the substrings between those separators.
@@ -372,7 +360,7 @@ var Title = strings.Title
 var ToLower = strings.ToLower
 
 // ToLowerSpecial returns a copy of the string s with all Unicode letters mapped to their
-// lower case using the case mapping specified by c.
+// lower case, giving priority to the special casing rules.
 var ToLowerSpecial = strings.ToLowerSpecial
 
 // ToTitle returns a copy of the string s with all Unicode letters mapped to their title case.
@@ -386,7 +374,7 @@ var ToTitleSpecial = strings.ToTitleSpecial
 var ToUpper = strings.ToUpper
 
 // ToUpperSpecial returns a copy of the string s with all Unicode letters mapped to their
-// upper case using the case mapping specified by c.
+// upper case, giving priority to the special casing rules.
 var ToUpperSpecial = strings.ToUpperSpecial
 
 // Trim returns a slice of the string s with all leading and
@@ -399,8 +387,6 @@ var TrimFunc = strings.TrimFunc
 
 // TrimLeft returns a slice of the string s with all leading
 // Unicode code points contained in cutset removed.
-//
-// To remove a prefix, use TrimPrefix instead.
 var TrimLeft = strings.TrimLeft
 
 // TrimLeftFunc returns a slice of the string s with all leading
@@ -413,8 +399,6 @@ var TrimPrefix = strings.TrimPrefix
 
 // TrimRight returns a slice of the string s, with all trailing
 // Unicode code points contained in cutset removed.
-//
-// To remove a suffix, use TrimSuffix instead.
 var TrimRight = strings.TrimRight
 
 // TrimRightFunc returns a slice of the string s with all trailing

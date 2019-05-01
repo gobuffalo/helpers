@@ -81,8 +81,9 @@ var PathEscape = url.PathEscape
 
 // PathUnescape does the inverse transformation of PathEscape,
 // converting each 3-byte encoded substring of the form &#34;%AB&#34; into the
-// hex-decoded byte 0xAB. It returns an error if any % is not followed
-// by two hexadecimal digits.
+// hex-decoded byte 0xAB. It also converts &#39;+&#39; into &#39; &#39; (space).
+// It returns an error if any % is not followed by two hexadecimal
+// digits.
 //
 // PathUnescape is identical to QueryUnescape except that it does not
 // unescape &#39;+&#39; to &#39; &#39; (space).
@@ -94,7 +95,7 @@ var QueryEscape = url.QueryEscape
 
 // QueryUnescape does the inverse transformation of QueryEscape,
 // converting each 3-byte encoded substring of the form &#34;%AB&#34; into the
-// hex-decoded byte 0xAB.
+// hex-decoded byte 0xAB. It also converts &#39;+&#39; into &#39; &#39; (space).
 // It returns an error if any % is not followed by two hexadecimal
 // digits.
 var QueryUnescape = url.QueryUnescape

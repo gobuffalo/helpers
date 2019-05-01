@@ -163,7 +163,7 @@ func New() hctx.Map {
 var CanonicalHeaderKey = http.CanonicalHeaderKey
 
 // DetectContentType implements the algorithm described
-// at https://mimesniff.spec.whatwg.org/ to determine the
+// at http://mimesniff.spec.whatwg.org/ to determine the
 // Content-Type of the given data. It considers at most the
 // first 512 bytes of data. DetectContentType always returns
 // a valid MIME type: if it cannot determine a more specific one, it
@@ -203,9 +203,7 @@ var FileServer = http.FileServer
 //
 // An error is returned if there were too many redirects or if there
 // was an HTTP protocol error. A non-2xx response doesn&#39;t cause an
-// error. Any returned error will be of type *url.Error. The url.Error
-// value&#39;s Timeout method will report true if request timed out or was
-// canceled.
+// error.
 //
 // When err is nil, resp always contains a non-nil resp.Body.
 // Caller should close resp.Body when done reading from it.
@@ -239,11 +237,32 @@ var HandleFunc = http.HandleFunc
 // Head is a wrapper around DefaultClient.Head
 var Head = http.Head
 
-// ListenAndServe listens on the TCP network address addr and then calls
-// Serve with handler to handle requests on incoming connections.
+// ListenAndServe listens on the TCP network address addr
+// and then calls Serve with handler to handle requests
+// on incoming connections.
 // Accepted connections are configured to enable TCP keep-alives.
+// Handler is typically nil, in which case the DefaultServeMux is
+// used.
 //
-// The handler is typically nil, in which case the DefaultServeMux is used.
+// A trivial example server is:
+//
+// 	package main
+//
+// 	import (
+// 		&#34;io&#34;
+// 		&#34;net/http&#34;
+// 		&#34;log&#34;
+// 	)
+//
+// 	// hello world, the web server
+// 	func HelloServer(w http.ResponseWriter, req *http.Request) {
+// 		io.WriteString(w, &#34;hello, world!\n&#34;)
+// 	}
+//
+// 	func main() {
+// 		http.HandleFunc(&#34;/hello&#34;, HelloServer)
+// 		log.Fatal(http.ListenAndServe(&#34;:12345&#34;, nil))
+// 	}
 //
 // ListenAndServe always returns a non-nil error.
 var ListenAndServe = http.ListenAndServe
@@ -253,6 +272,29 @@ var ListenAndServe = http.ListenAndServe
 // matching private key for the server must be provided. If the certificate
 // is signed by a certificate authority, the certFile should be the concatenation
 // of the server&#39;s certificate, any intermediates, and the CA&#39;s certificate.
+//
+// A trivial example server is:
+//
+// 	import (
+// 		&#34;log&#34;
+// 		&#34;net/http&#34;
+// 	)
+//
+// 	func handler(w http.ResponseWriter, req *http.Request) {
+// 		w.Header().Set(&#34;Content-Type&#34;, &#34;text/plain&#34;)
+// 		w.Write([]byte(&#34;This is an example server.\n&#34;))
+// 	}
+//
+// 	func main() {
+// 		http.HandleFunc(&#34;/&#34;, handler)
+// 		log.Printf(&#34;About to listen on 10443. Go to https://127.0.0.1:10443/&#34;)
+// 		err := http.ListenAndServeTLS(&#34;:10443&#34;, &#34;cert.pem&#34;, &#34;key.pem&#34;, nil)
+// 		log.Fatal(err)
+// 	}
+//
+// One can use generate_cert.go in crypto/tls to generate cert.pem and key.pem.
+//
+// ListenAndServeTLS always returns a non-nil error.
 var ListenAndServeTLS = http.ListenAndServeTLS
 
 // MaxBytesReader is similar to io.LimitReader but is intended for
@@ -372,11 +414,6 @@ var ProxyFromEnvironment = http.ProxyFromEnvironment
 var ProxyURL = http.ProxyURL
 
 // ReadRequest reads and parses an incoming request from b.
-//
-// ReadRequest is a low-level function and should only be used for
-// specialized applications; most code should use the Server to read
-// requests and handle them via the Handler interface. ReadRequest
-// only supports HTTP/1.x requests. For HTTP/2, use golang.org/x/net/http2.
 var ReadRequest = http.ReadRequest
 
 // ReadResponse reads and returns an HTTP response from r.
@@ -392,11 +429,6 @@ var ReadResponse = http.ReadResponse
 //
 // The provided code should be in the 3xx range and is usually
 // StatusMovedPermanently, StatusFound or StatusSeeOther.
-//
-// If the Content-Type header has not been set, Redirect sets it
-// to &#34;text/html; charset=utf-8&#34; and writes a small HTML body.
-// Setting the Content-Type header to any value, including nil,
-// disables that behavior.
 var Redirect = http.Redirect
 
 // RedirectHandler returns a request handler that redirects
@@ -410,14 +442,7 @@ var RedirectHandler = http.RedirectHandler
 // Serve accepts incoming HTTP connections on the listener l,
 // creating a new service goroutine for each. The service goroutines
 // read requests and then call handler to reply to them.
-//
-// The handler is typically nil, in which case the DefaultServeMux is used.
-//
-// HTTP/2 support is only enabled if the Listener returns *tls.Conn
-// connections and they were configured with &#34;h2&#34; in the TLS
-// Config.NextProtos.
-//
-// Serve always returns a non-nil error.
+// Handler is typically nil, in which case the DefaultServeMux is used.
 var Serve = http.Serve
 
 // ServeContent replies to the request using the content in the
@@ -451,37 +476,27 @@ var ServeContent = http.ServeContent
 // file or directory.
 //
 // If the provided file or directory name is a relative path, it is
-// interpreted relative to the current directory and may ascend to
-// parent directories. If the provided name is constructed from user
-// input, it should be sanitized before calling ServeFile.
+// interpreted relative to the current directory and may ascend to parent
+// directories. If the provided name is constructed from user input, it
+// should be sanitized before calling ServeFile. As a precaution, ServeFile
+// will reject requests where r.URL.Path contains a &#34;..&#34; path element.
 //
-// As a precaution, ServeFile will reject requests where r.URL.Path
-// contains a &#34;..&#34; path element; this protects against callers who
-// might unsafely use filepath.Join on r.URL.Path without sanitizing
-// it and then use that filepath.Join result as the name argument.
-//
-// As another special case, ServeFile redirects any request where r.URL.Path
+// As a special case, ServeFile redirects any request where r.URL.Path
 // ends in &#34;/index.html&#34; to the same path, without the final
 // &#34;index.html&#34;. To avoid such redirects either modify the path or
 // use ServeContent.
-//
-// Outside of those two special cases, ServeFile does not use
-// r.URL.Path for selecting the file or directory to serve; only the
-// file or directory provided in the name argument is used.
 var ServeFile = http.ServeFile
 
 // ServeTLS accepts incoming HTTPS connections on the listener l,
 // creating a new service goroutine for each. The service goroutines
 // read requests and then call handler to reply to them.
 //
-// The handler is typically nil, in which case the DefaultServeMux is used.
+// Handler is typically nil, in which case the DefaultServeMux is used.
 //
 // Additionally, files containing a certificate and matching private key
 // for the server must be provided. If the certificate is signed by a
 // certificate authority, the certFile should be the concatenation
 // of the server&#39;s certificate, any intermediates, and the CA&#39;s certificate.
-//
-// ServeTLS always returns a non-nil error.
 var ServeTLS = http.ServeTLS
 
 // SetCookie adds a Set-Cookie header to the provided ResponseWriter&#39;s headers.

@@ -137,7 +137,6 @@ var Pipe = io.Pipe
 // ReadAtLeast returns ErrUnexpectedEOF.
 // If min is greater than the length of buf, ReadAtLeast returns ErrShortBuffer.
 // On return, n &gt;= min if and only if err == nil.
-// If r returns an error having read at least min bytes, the error is dropped.
 var ReadAtLeast = io.ReadAtLeast
 
 // ReadFull reads exactly len(buf) bytes from r into buf.
@@ -146,7 +145,6 @@ var ReadAtLeast = io.ReadAtLeast
 // If an EOF happens after reading some but not all the bytes,
 // ReadFull returns ErrUnexpectedEOF.
 // On return, n == len(buf) if and only if err == nil.
-// If r returns an error having read at least len(buf) bytes, the error is dropped.
 var ReadFull = io.ReadFull
 
 // TeeReader returns a Reader that writes to w what it reads from r.
@@ -157,6 +155,6 @@ var ReadFull = io.ReadFull
 var TeeReader = io.TeeReader
 
 // WriteString writes the contents of the string s to w, which accepts a slice of bytes.
-// If w implements StringWriter, its WriteString method is invoked directly.
+// If w implements a WriteString method, it is invoked directly.
 // Otherwise, w.Write is called exactly once.
 var WriteString = io.WriteString

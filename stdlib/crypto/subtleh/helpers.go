@@ -40,9 +40,9 @@ func New() hctx.Map {
 // ConstantTimeByteEq returns 1 if x == y and 0 otherwise.
 var ConstantTimeByteEq = subtle.ConstantTimeByteEq
 
-// ConstantTimeCompare returns 1 if the two slices, x and y, have equal contents
-// and 0 otherwise. The time taken is a function of the length of the slices and
-// is independent of the contents.
+// ConstantTimeCompare returns 1 if and only if the two slices, x
+// and y, have equal contents. The time taken is a function of the length of
+// the slices and is independent of the contents.
 var ConstantTimeCompare = subtle.ConstantTimeCompare
 
 // ConstantTimeCopy copies the contents of y into x (a slice of equal length)
@@ -57,6 +57,6 @@ var ConstantTimeEq = subtle.ConstantTimeEq
 // Its behavior is undefined if x or y are negative or &gt; 2**31 - 1.
 var ConstantTimeLessOrEq = subtle.ConstantTimeLessOrEq
 
-// ConstantTimeSelect returns x if v == 1 and y if v == 0.
+// ConstantTimeSelect returns x if v is 1 and y if v is 0.
 // Its behavior is undefined if v takes any other value.
 var ConstantTimeSelect = subtle.ConstantTimeSelect

@@ -75,22 +75,22 @@ var Compile = regexp.Compile
 // specifies that the match be chosen to maximize the length of the first
 // subexpression, then the second, and so on from left to right.
 // The POSIX rule is computationally prohibitive and not even well-defined.
-// See https://swtch.com/~rsc/regexp/regexp2.html#posix for details.
+// See http://swtch.com/~rsc/regexp/regexp2.html#posix for details.
 var CompilePOSIX = regexp.CompilePOSIX
 
-// Match reports whether the byte slice b
-// contains any match of the regular expression pattern.
-// More complicated queries need to use Compile and the full Regexp interface.
+// Match checks whether a textual regular expression
+// matches a byte slice. More complicated queries need
+// to use Compile and the full Regexp interface.
 var Match = regexp.Match
 
-// MatchReader reports whether the text returned by the RuneReader
-// contains any match of the regular expression pattern.
-// More complicated queries need to use Compile and the full Regexp interface.
+// MatchReader checks whether a textual regular expression matches the text
+// read by the RuneReader. More complicated queries need to use Compile and
+// the full Regexp interface.
 var MatchReader = regexp.MatchReader
 
-// MatchString reports whether the string s
-// contains any match of the regular expression pattern.
-// More complicated queries need to use Compile and the full Regexp interface.
+// MatchString checks whether a textual regular expression
+// matches a string. More complicated queries need
+// to use Compile and the full Regexp interface.
 var MatchString = regexp.MatchString
 
 // MustCompile is like Compile but panics if the expression cannot be parsed.
@@ -103,7 +103,7 @@ var MustCompile = regexp.MustCompile
 // expressions.
 var MustCompilePOSIX = regexp.MustCompilePOSIX
 
-// QuoteMeta returns a string that escapes all regular expression metacharacters
+// QuoteMeta returns a string that quotes all regular expression metacharacters
 // inside the argument text; the returned string is a regular expression matching
-// the literal text.
+// the literal text. For example, QuoteMeta(`[foo]`) returns `\[foo\]`.
 var QuoteMeta = regexp.QuoteMeta
