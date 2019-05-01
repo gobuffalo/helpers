@@ -13,10 +13,6 @@ const (
 
 	ChownKey = "Chown"
 
-	ChownKey = "Chown"
-
-	ChtimesKey = "Chtimes"
-
 	ChtimesKey = "Chtimes"
 
 	ClearenvKey = "Clearenv"
@@ -24,6 +20,8 @@ const (
 	CreateKey = "Create"
 
 	EnvironKey = "Environ"
+
+	ErrNoDeadlineKey = "ErrNoDeadline"
 
 	ExecutableKey = "Executable"
 
@@ -57,13 +55,11 @@ const (
 
 	HostnameKey = "Hostname"
 
+	InterruptKey = "Interrupt"
+
 	IsExistKey = "IsExist"
 
 	IsNotExistKey = "IsNotExist"
-
-	IsPathSeparatorKey = "IsPathSeparator"
-
-	IsPathSeparatorKey = "IsPathSeparator"
 
 	IsPathSeparatorKey = "IsPathSeparator"
 
@@ -71,13 +67,9 @@ const (
 
 	IsTimeoutKey = "IsTimeout"
 
-	LchownKey = "Lchown"
+	KillKey = "Kill"
 
 	LchownKey = "Lchown"
-
-	LinkKey = "Link"
-
-	LinkKey = "Link"
 
 	LinkKey = "Link"
 
@@ -91,11 +83,23 @@ const (
 
 	NewFileKey = "NewFile"
 
-	NewFileKey = "NewFile"
-
-	NewFileKey = "NewFile"
-
 	NewSyscallErrorKey = "NewSyscallError"
+
+	O_APPENDKey = "O_APPEND"
+
+	O_CREATEKey = "O_CREATE"
+
+	O_EXCLKey = "O_EXCL"
+
+	O_RDONLYKey = "O_RDONLY"
+
+	O_RDWRKey = "O_RDWR"
+
+	O_SYNCKey = "O_SYNC"
+
+	O_TRUNCKey = "O_TRUNC"
+
+	O_WRONLYKey = "O_WRONLY"
 
 	OpenKey = "Open"
 
@@ -103,21 +107,7 @@ const (
 
 	PipeKey = "Pipe"
 
-	PipeKey = "Pipe"
-
-	PipeKey = "Pipe"
-
-	PipeKey = "Pipe"
-
-	PipeKey = "Pipe"
-
 	ReadlinkKey = "Readlink"
-
-	ReadlinkKey = "Readlink"
-
-	RemoveKey = "Remove"
-
-	RemoveKey = "Remove"
 
 	RemoveKey = "Remove"
 
@@ -135,15 +125,7 @@ const (
 
 	SymlinkKey = "Symlink"
 
-	SymlinkKey = "Symlink"
-
-	SymlinkKey = "Symlink"
-
 	TempDirKey = "TempDir"
-
-	TruncateKey = "Truncate"
-
-	TruncateKey = "Truncate"
 
 	TruncateKey = "Truncate"
 
@@ -163,10 +145,6 @@ func New() hctx.Map {
 
 		ChownKey: Chown,
 
-		ChownKey: Chown,
-
-		ChtimesKey: Chtimes,
-
 		ChtimesKey: Chtimes,
 
 		ClearenvKey: Clearenv,
@@ -174,6 +152,8 @@ func New() hctx.Map {
 		CreateKey: Create,
 
 		EnvironKey: Environ,
+
+		ErrNoDeadlineKey: ErrNoDeadline,
 
 		ExecutableKey: Executable,
 
@@ -207,13 +187,11 @@ func New() hctx.Map {
 
 		HostnameKey: Hostname,
 
+		InterruptKey: Interrupt,
+
 		IsExistKey: IsExist,
 
 		IsNotExistKey: IsNotExist,
-
-		IsPathSeparatorKey: IsPathSeparator,
-
-		IsPathSeparatorKey: IsPathSeparator,
 
 		IsPathSeparatorKey: IsPathSeparator,
 
@@ -221,13 +199,9 @@ func New() hctx.Map {
 
 		IsTimeoutKey: IsTimeout,
 
-		LchownKey: Lchown,
+		KillKey: Kill,
 
 		LchownKey: Lchown,
-
-		LinkKey: Link,
-
-		LinkKey: Link,
 
 		LinkKey: Link,
 
@@ -241,11 +215,23 @@ func New() hctx.Map {
 
 		NewFileKey: NewFile,
 
-		NewFileKey: NewFile,
-
-		NewFileKey: NewFile,
-
 		NewSyscallErrorKey: NewSyscallError,
+
+		O_APPENDKey: O_APPEND,
+
+		O_CREATEKey: O_CREATE,
+
+		O_EXCLKey: O_EXCL,
+
+		O_RDONLYKey: O_RDONLY,
+
+		O_RDWRKey: O_RDWR,
+
+		O_SYNCKey: O_SYNC,
+
+		O_TRUNCKey: O_TRUNC,
+
+		O_WRONLYKey: O_WRONLY,
 
 		OpenKey: Open,
 
@@ -253,21 +239,7 @@ func New() hctx.Map {
 
 		PipeKey: Pipe,
 
-		PipeKey: Pipe,
-
-		PipeKey: Pipe,
-
-		PipeKey: Pipe,
-
-		PipeKey: Pipe,
-
 		ReadlinkKey: Readlink,
-
-		ReadlinkKey: Readlink,
-
-		RemoveKey: Remove,
-
-		RemoveKey: Remove,
 
 		RemoveKey: Remove,
 
@@ -285,15 +257,7 @@ func New() hctx.Map {
 
 		SymlinkKey: Symlink,
 
-		SymlinkKey: Symlink,
-
-		SymlinkKey: Symlink,
-
 		TempDirKey: TempDir,
-
-		TruncateKey: Truncate,
-
-		TruncateKey: Truncate,
 
 		TruncateKey: Truncate,
 
@@ -338,23 +302,6 @@ var Chmod = os.Chmod
 // EPLAN9 error, wrapped in *PathError.
 var Chown = os.Chown
 
-// Chown changes the numeric uid and gid of the named file.
-// If the file is a symbolic link, it changes the uid and gid of the link&#39;s target.
-// A uid or gid of -1 means to not change that value.
-// If there is an error, it will be of type *PathError.
-//
-// On Windows or Plan 9, Chown always returns the syscall.EWINDOWS or
-// EPLAN9 error, wrapped in *PathError.
-var Chown = os.Chown
-
-// Chtimes changes the access and modification times of the named
-// file, similar to the Unix utime() or utimes() functions.
-//
-// The underlying filesystem may truncate or round the values to a
-// less precise time unit.
-// If there is an error, it will be of type *PathError.
-var Chtimes = os.Chtimes
-
 // Chtimes changes the access and modification times of the named
 // file, similar to the Unix utime() or utimes() functions.
 //
@@ -376,6 +323,8 @@ var Create = os.Create
 // Environ returns a copy of strings representing the environment,
 // in the form &#34;key=value&#34;.
 var Environ = os.Environ
+
+var ErrNoDeadline = os.ErrNoDeadline
 
 // Executable returns the path name for the executable that started
 // the current process. There is no guarantee that the path is still
@@ -464,6 +413,8 @@ var Getwd = os.Getwd
 // Hostname returns the host name reported by the kernel.
 var Hostname = os.Hostname
 
+var Interrupt = os.Interrupt
+
 // IsExist returns a boolean indicating whether the error is known to report
 // that a file or directory already exists. It is satisfied by ErrExist as
 // well as some syscall errors.
@@ -477,12 +428,6 @@ var IsNotExist = os.IsNotExist
 // IsPathSeparator reports whether c is a directory separator character.
 var IsPathSeparator = os.IsPathSeparator
 
-// IsPathSeparator reports whether c is a directory separator character.
-var IsPathSeparator = os.IsPathSeparator
-
-// IsPathSeparator reports whether c is a directory separator character.
-var IsPathSeparator = os.IsPathSeparator
-
 // IsPermission returns a boolean indicating whether the error is known to
 // report that permission is denied. It is satisfied by ErrPermission as well
 // as some syscall errors.
@@ -492,26 +437,12 @@ var IsPermission = os.IsPermission
 // to report that a timeout occurred.
 var IsTimeout = os.IsTimeout
 
-// Lchown changes the numeric uid and gid of the named file.
-// If the file is a symbolic link, it changes the uid and gid of the link itself.
-// If there is an error, it will be of type *PathError.
-//
-// On Windows, it always returns the syscall.EWINDOWS error, wrapped
-// in *PathError.
-var Lchown = os.Lchown
+var Kill = os.Kill
 
 // Lchown changes the numeric uid and gid of the named file.
 // If the file is a symbolic link, it changes the uid and gid of the link itself.
 // If there is an error, it will be of type *PathError.
 var Lchown = os.Lchown
-
-// Link creates newname as a hard link to the oldname file.
-// If there is an error, it will be of type *LinkError.
-var Link = os.Link
-
-// Link creates newname as a hard link to the oldname file.
-// If there is an error, it will be of type *LinkError.
-var Link = os.Link
 
 // Link creates newname as a hard link to the oldname file.
 // If there is an error, it will be of type *LinkError.
@@ -549,22 +480,28 @@ var MkdirAll = os.MkdirAll
 // descriptor.
 var NewFile = os.NewFile
 
-// NewFile returns a new File with the given file descriptor and
-// name. The returned value will be nil if fd is not a valid file
-// descriptor. On Unix systems, if the file descriptor is in
-// non-blocking mode, NewFile will attempt to return a pollable File
-// (one for which the SetDeadline methods work).
-var NewFile = os.NewFile
-
-// NewFile returns a new File with the given file descriptor and
-// name. The returned value will be nil if fd is not a valid file
-// descriptor.
-var NewFile = os.NewFile
-
 // NewSyscallError returns, as an error, a new SyscallError
 // with the given system call name and error details.
 // As a convenience, if err is nil, NewSyscallError returns nil.
 var NewSyscallError = os.NewSyscallError
+
+// The remaining values may be or&#39;ed in to control behavior.
+var O_APPEND = os.O_APPEND
+
+var O_CREATE = os.O_CREATE
+
+var O_EXCL = os.O_EXCL
+
+// Exactly one of O_RDONLY, O_WRONLY, or O_RDWR must be specified.
+var O_RDONLY = os.O_RDONLY
+
+var O_RDWR = os.O_RDWR
+
+var O_SYNC = os.O_SYNC
+
+var O_TRUNC = os.O_TRUNC
+
+var O_WRONLY = os.O_WRONLY
 
 // Open opens the named file for reading. If successful, methods on
 // the returned file can be used for reading; the associated file
@@ -583,37 +520,9 @@ var OpenFile = os.OpenFile
 // written to w. It returns the files and an error, if any.
 var Pipe = os.Pipe
 
-// Pipe returns a connected pair of Files; reads from r return bytes written to w.
-// It returns the files and an error, if any.
-var Pipe = os.Pipe
-
-// Pipe returns a connected pair of Files; reads from r return bytes written to w.
-// It returns the files and an error, if any.
-var Pipe = os.Pipe
-
-// Pipe returns a connected pair of Files; reads from r return bytes written to w.
-// It returns the files and an error, if any.
-var Pipe = os.Pipe
-
-// Pipe returns a connected pair of Files; reads from r return bytes written to w.
-// It returns the files and an error, if any.
-var Pipe = os.Pipe
-
 // Readlink returns the destination of the named symbolic link.
 // If there is an error, it will be of type *PathError.
 var Readlink = os.Readlink
-
-// Readlink returns the destination of the named symbolic link.
-// If there is an error, it will be of type *PathError.
-var Readlink = os.Readlink
-
-// Remove removes the named file or directory.
-// If there is an error, it will be of type *PathError.
-var Remove = os.Remove
-
-// Remove removes the named file or (empty) directory.
-// If there is an error, it will be of type *PathError.
-var Remove = os.Remove
 
 // Remove removes the named file or directory.
 // If there is an error, it will be of type *PathError.
@@ -666,14 +575,6 @@ var Stat = os.Stat
 // If there is an error, it will be of type *LinkError.
 var Symlink = os.Symlink
 
-// Symlink creates newname as a symbolic link to oldname.
-// If there is an error, it will be of type *LinkError.
-var Symlink = os.Symlink
-
-// Symlink creates newname as a symbolic link to oldname.
-// If there is an error, it will be of type *LinkError.
-var Symlink = os.Symlink
-
 // TempDir returns the default directory to use for temporary files.
 //
 // On Unix systems, it returns $TMPDIR if non-empty, else /tmp.
@@ -684,15 +585,6 @@ var Symlink = os.Symlink
 // The directory is neither guaranteed to exist nor have accessible
 // permissions.
 var TempDir = os.TempDir
-
-// Truncate changes the size of the named file.
-// If the file is a symbolic link, it changes the size of the link&#39;s target.
-var Truncate = os.Truncate
-
-// Truncate changes the size of the named file.
-// If the file is a symbolic link, it changes the size of the link&#39;s target.
-// If there is an error, it will be of type *PathError.
-var Truncate = os.Truncate
 
 // Truncate changes the size of the named file.
 // If the file is a symbolic link, it changes the size of the link&#39;s target.

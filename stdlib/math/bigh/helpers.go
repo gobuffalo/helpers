@@ -9,6 +9,12 @@ import (
 const (
 	JacobiKey = "Jacobi"
 
+	MaxExpKey = "MaxExp"
+
+	MaxPrecKey = "MaxPrec"
+
+	MinExpKey = "MinExp"
+
 	NewFloatKey = "NewFloat"
 
 	NewIntKey = "NewInt"
@@ -23,6 +29,12 @@ func New() hctx.Map {
 
 		JacobiKey: Jacobi,
 
+		MaxExpKey: MaxExp,
+
+		MaxPrecKey: MaxPrec,
+
+		MinExpKey: MinExp,
+
 		NewFloatKey: NewFloat,
 
 		NewIntKey: NewInt,
@@ -36,6 +48,12 @@ func New() hctx.Map {
 // Jacobi returns the Jacobi symbol (x/y), either +1, -1, or 0.
 // The y argument must be an odd integer.
 var Jacobi = big.Jacobi
+
+var MaxExp = big.MaxExp
+
+var MaxPrec = big.MaxPrec
+
+var MinExp = big.MinExp
 
 // NewFloat allocates and returns a new Float set to x,
 // with precision 53 and rounding mode ToNearestEven.

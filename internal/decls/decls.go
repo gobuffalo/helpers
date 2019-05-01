@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"go/ast"
 	"go/parser"
+	"os"
 	"path/filepath"
 	"sort"
 	"strings"
 
+	"github.com/gobuffalo/genny"
 	"github.com/gobuffalo/gogen"
-	"github.com/gobuffalo/packd"
-	"github.com/gobuffalo/packr/v2"
 )
 
 type Pkg struct {
@@ -32,31 +32,63 @@ var suffixes = []string{"_test.go"}
 func FindDecls(root string) ([]Pkg, error) {
 	var helpers []Pkg
 	m := map[string]Pkg{}
-	box := packr.Folder(root)
-	err := box.Walk(func(p string, f packd.File) error {
-		if filepath.Ext(f.Name()) != ".go" {
-			return nil
+	err := filepath.Walk(root, func(p string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
 		}
 
-		for _, x := range []string{"testdata", "internal", "vendor"} {
-			if strings.Contains(p, x) {
-				return nil
+		if info.IsDir() {
+			base := filepath.Base(p)
+			for _, x := range []string{"testdata", "internal", "vendor", ".git", ".idea", "syscall", "unsafe", "gob"} {
+				if base == x {
+					return filepath.SkipDir
+				}
 			}
 		}
 
+		if filepath.Ext(p) != ".go" {
+			return nil
+		}
+
 		for _, pre := range prefixes {
-			if strings.HasPrefix(f.Name(), pre) {
+			if strings.HasPrefix(p, pre) {
 				return nil
 			}
 		}
 		for _, suf := range suffixes {
-			if strings.HasSuffix(f.Name(), suf) {
+			if strings.HasSuffix(p, suf) {
 				return nil
 			}
 		}
+
+		of, err := os.Open(p)
+		if err != nil {
+			return err
+		}
+		defer of.Close()
+
+		f := genny.NewFile(p, of)
+		for _, x := range []string{"// +build ignore", "// +build race", "// +build msan"} {
+			if strings.Contains(f.String(), x) {
+				return nil
+			}
+		}
+
+		pf, err := gogen.ParseFileMode(f, parser.ParseComments)
+		if err != nil {
+			return err
+		}
+
+		for _, x := range []string{"main", "encoding/gob", "syscall", "syscall/js"} {
+			if pf.Ast.Name.String() == x {
+				return nil
+			}
+		}
+
 		pn := strings.TrimPrefix(p, root)
 		pn = strings.TrimPrefix(pn, "/")
 		pn = filepath.Dir(pn)
+		// fmt.Println(pn)
 		if pn == "." {
 			pn = ""
 		}
@@ -69,10 +101,6 @@ func FindDecls(root string) ([]Pkg, error) {
 			pkg = g
 		}
 
-		pf, err := gogen.ParseFileMode(f, parser.ParseComments)
-		if err != nil {
-			return err
-		}
 		if pf.Ast.Doc != nil {
 			pkg.Doc = comment(pf.Ast.Doc.Text())
 		}
@@ -130,6 +158,31 @@ func FindDecls(root string) ([]Pkg, error) {
 	})
 
 	for _, v := range m {
+		var dex []Decl
+		dm := map[string]Decl{}
+		for _, d := range v.Decls {
+			func() {
+				if d.Name == "New" {
+					return
+				}
+				y, ok := dm[d.Name]
+				if !ok {
+					defer func() {
+						dm[d.Name] = y
+					}()
+					y = Decl{
+						Name: d.Name,
+					}
+				}
+				y.Doc += d.Doc
+			}()
+		}
+
+		for _, v := range dm {
+			dex = append(dex, v)
+		}
+		v.Decls = dex
+
 		sort.Slice(v.Decls, func(a, b int) bool {
 			return v.Decls[a].Name < v.Decls[b].Name
 		})

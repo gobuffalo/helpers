@@ -7,23 +7,51 @@ import (
 )
 
 const (
+	BestCompressionKey = "BestCompression"
+
+	BestSpeedKey = "BestSpeed"
+
+	DefaultCompressionKey = "DefaultCompression"
+
+	HuffmanOnlyKey = "HuffmanOnly"
+
 	NewReaderKey = "NewReader"
 
 	NewWriterKey = "NewWriter"
 
 	NewWriterLevelKey = "NewWriterLevel"
+
+	NoCompressionKey = "NoCompression"
 )
 
 func New() hctx.Map {
 	return hctx.Map{
+
+		BestCompressionKey: BestCompression,
+
+		BestSpeedKey: BestSpeed,
+
+		DefaultCompressionKey: DefaultCompression,
+
+		HuffmanOnlyKey: HuffmanOnly,
 
 		NewReaderKey: NewReader,
 
 		NewWriterKey: NewWriter,
 
 		NewWriterLevelKey: NewWriterLevel,
+
+		NoCompressionKey: NoCompression,
 	}
 }
+
+var BestCompression = gzip.BestCompression
+
+var BestSpeed = gzip.BestSpeed
+
+var DefaultCompression = gzip.DefaultCompression
+
+var HuffmanOnly = gzip.HuffmanOnly
 
 // NewReader creates a new Reader reading the given reader.
 // If r does not also implement io.ByteReader,
@@ -51,3 +79,5 @@ var NewWriter = gzip.NewWriter
 // or any integer value between BestSpeed and BestCompression inclusive.
 // The error returned will be nil if the level is valid.
 var NewWriterLevel = gzip.NewWriterLevel
+
+var NoCompression = gzip.NoCompression

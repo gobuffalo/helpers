@@ -7,21 +7,15 @@ import (
 )
 
 const (
-	ArgServerKey = "ArgServer"
-
 	CanonicalHeaderKeyKey = "CanonicalHeaderKey"
 
-	ChanCreateKey = "ChanCreate"
-
-	DateServerKey = "DateServer"
-
 	DetectContentTypeKey = "DetectContentType"
+
+	ErrLineTooLongKey = "ErrLineTooLong"
 
 	ErrorKey = "Error"
 
 	FileServerKey = "FileServer"
-
-	FlagServerKey = "FlagServer"
 
 	GetKey = "Get"
 
@@ -31,13 +25,9 @@ const (
 
 	HeadKey = "Head"
 
-	HelloServerKey = "HelloServer"
-
 	ListenAndServeKey = "ListenAndServe"
 
 	ListenAndServeTLSKey = "ListenAndServeTLS"
-
-	LoggerKey = "Logger"
 
 	MaxBytesReaderKey = "MaxBytesReader"
 
@@ -91,21 +81,15 @@ const (
 func New() hctx.Map {
 	return hctx.Map{
 
-		ArgServerKey: ArgServer,
-
 		CanonicalHeaderKeyKey: CanonicalHeaderKey,
 
-		ChanCreateKey: ChanCreate,
-
-		DateServerKey: DateServer,
-
 		DetectContentTypeKey: DetectContentType,
+
+		ErrLineTooLongKey: ErrLineTooLong,
 
 		ErrorKey: Error,
 
 		FileServerKey: FileServer,
-
-		FlagServerKey: FlagServer,
 
 		GetKey: Get,
 
@@ -115,13 +99,9 @@ func New() hctx.Map {
 
 		HeadKey: Head,
 
-		HelloServerKey: HelloServer,
-
 		ListenAndServeKey: ListenAndServe,
 
 		ListenAndServeTLSKey: ListenAndServeTLS,
-
-		LoggerKey: Logger,
 
 		MaxBytesReaderKey: MaxBytesReader,
 
@@ -173,9 +153,6 @@ func New() hctx.Map {
 	}
 }
 
-// simple argument server
-var ArgServer = http.ArgServer
-
 // CanonicalHeaderKey returns the canonical format of the
 // header key s. The canonicalization converts the first
 // letter and any letter following a hyphen to upper case;
@@ -185,11 +162,6 @@ var ArgServer = http.ArgServer
 // returned without modifications.
 var CanonicalHeaderKey = http.CanonicalHeaderKey
 
-var ChanCreate = http.ChanCreate
-
-// exec a program, redirecting output
-var DateServer = http.DateServer
-
 // DetectContentType implements the algorithm described
 // at https://mimesniff.spec.whatwg.org/ to determine the
 // Content-Type of the given data. It considers at most the
@@ -197,6 +169,8 @@ var DateServer = http.DateServer
 // a valid MIME type: if it cannot determine a more specific one, it
 // returns &#34;application/octet-stream&#34;.
 var DetectContentType = http.DetectContentType
+
+var ErrLineTooLong = http.ErrLineTooLong
 
 // Error replies to the request with the specified error message and HTTP code.
 // It does not otherwise end the request; the caller should ensure no further
@@ -216,8 +190,6 @@ var Error = http.Error
 // ending in &#34;/index.html&#34; to the same path, without the final
 // &#34;index.html&#34;.
 var FileServer = http.FileServer
-
-var FlagServer = http.FlagServer
 
 // Get issues a GET to the specified URL. If the response is one of
 // the following redirect codes, Get follows the redirect, up to a
@@ -267,8 +239,6 @@ var HandleFunc = http.HandleFunc
 // Head is a wrapper around DefaultClient.Head
 var Head = http.Head
 
-var HelloServer = http.HelloServer
-
 // ListenAndServe listens on the TCP network address addr and then calls
 // Serve with handler to handle requests on incoming connections.
 // Accepted connections are configured to enable TCP keep-alives.
@@ -284,8 +254,6 @@ var ListenAndServe = http.ListenAndServe
 // is signed by a certificate authority, the certFile should be the concatenation
 // of the server&#39;s certificate, any intermediates, and the CA&#39;s certificate.
 var ListenAndServeTLS = http.ListenAndServeTLS
-
-var Logger = http.Logger
 
 // MaxBytesReader is similar to io.LimitReader but is intended for
 // limiting the size of incoming request bodies. In contrast to

@@ -19,14 +19,16 @@ deps:
 	$(GO_BIN) get -tags ${TAGS} -t ./...
 	make tidy
 
-build:
+gen:
+	go run ./helpers/main.go stdlib
+	go run ./helpers/main.go
+
+build: gen
 	packr2
 	$(GO_BIN) build -v .
 	make tidy
 
-test:
-	# packr2
-	go run ./helpers/main.go
+test: gen
 	$(GO_BIN) test -cover -tags ${TAGS} ./...
 	make tidy
 
@@ -48,8 +50,7 @@ update:
 	make install
 	make tidy
 
-release-test:
-	go run ./helpers/main.go
+release-test: gen
 	$(GO_BIN) test -tags ${TAGS} -race ./...
 	make tidy
 

@@ -25,8 +25,6 @@ const (
 
 	IntnKey = "Intn"
 
-	NewKey = "New"
-
 	NewSourceKey = "NewSource"
 
 	NewZipfKey = "NewZipf"
@@ -66,8 +64,6 @@ func New() hctx.Map {
 		Int63nKey: Int63n,
 
 		IntnKey: Intn,
-
-		NewKey: New,
 
 		NewSourceKey: NewSource,
 
@@ -131,10 +127,6 @@ var Int63n = rand.Int63n
 // from the default Source.
 // It panics if n &lt;= 0.
 var Intn = rand.Intn
-
-// New returns a new Rand that uses random values from src
-// to generate other random values.
-var New = rand.New
 
 // NewSource returns a new pseudo-random Source seeded with the given value.
 // Unlike the default Source used by top-level functions, this source is not

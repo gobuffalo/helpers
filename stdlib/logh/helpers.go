@@ -15,8 +15,6 @@ const (
 
 	FlagsKey = "Flags"
 
-	NewKey = "New"
-
 	OutputKey = "Output"
 
 	PanicKey = "Panic"
@@ -50,8 +48,6 @@ func New() hctx.Map {
 		FatallnKey: Fatalln,
 
 		FlagsKey: Flags,
-
-		NewKey: New,
 
 		OutputKey: Output,
 
@@ -88,12 +84,6 @@ var Fatalln = log.Fatalln
 
 // Flags returns the output flags for the standard logger.
 var Flags = log.Flags
-
-// New creates a new Logger. The out variable sets the
-// destination to which log data will be written.
-// The prefix appears at the beginning of each generated log line.
-// The flag argument defines the logging properties.
-var New = log.New
 
 // Output writes the output for a logging event. The string s contains
 // the text to print after the prefix specified by the flags of the

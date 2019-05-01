@@ -7,6 +7,14 @@ import (
 )
 
 const (
+	BestCompressionKey = "BestCompression"
+
+	BestSpeedKey = "BestSpeed"
+
+	DefaultCompressionKey = "DefaultCompression"
+
+	HuffmanOnlyKey = "HuffmanOnly"
+
 	NewReaderKey = "NewReader"
 
 	NewReaderDictKey = "NewReaderDict"
@@ -16,10 +24,20 @@ const (
 	NewWriterLevelKey = "NewWriterLevel"
 
 	NewWriterLevelDictKey = "NewWriterLevelDict"
+
+	NoCompressionKey = "NoCompression"
 )
 
 func New() hctx.Map {
 	return hctx.Map{
+
+		BestCompressionKey: BestCompression,
+
+		BestSpeedKey: BestSpeed,
+
+		DefaultCompressionKey: DefaultCompression,
+
+		HuffmanOnlyKey: HuffmanOnly,
 
 		NewReaderKey: NewReader,
 
@@ -30,8 +48,18 @@ func New() hctx.Map {
 		NewWriterLevelKey: NewWriterLevel,
 
 		NewWriterLevelDictKey: NewWriterLevelDict,
+
+		NoCompressionKey: NoCompression,
 	}
 }
+
+var BestCompression = zlib.BestCompression
+
+var BestSpeed = zlib.BestSpeed
+
+var DefaultCompression = zlib.DefaultCompression
+
+var HuffmanOnly = zlib.HuffmanOnly
 
 // NewReader creates a new ReadCloser.
 // Reads from the returned ReadCloser read and decompress data from r.
@@ -70,3 +98,5 @@ var NewWriterLevel = zlib.NewWriterLevel
 // The dictionary may be nil. If not, its contents should not be modified until
 // the Writer is closed.
 var NewWriterLevelDict = zlib.NewWriterLevelDict
+
+var NoCompression = zlib.NoCompression

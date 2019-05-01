@@ -7,8 +7,6 @@ import (
 )
 
 const (
-	NewKey = "New"
-
 	New384Key = "New384"
 
 	New512_224Key = "New512_224"
@@ -27,8 +25,6 @@ const (
 func New() hctx.Map {
 	return hctx.Map{
 
-		NewKey: New,
-
 		New384Key: New384,
 
 		New512_224Key: New512_224,
@@ -44,9 +40,6 @@ func New() hctx.Map {
 		Sum512_256Key: Sum512_256,
 	}
 }
-
-// New returns a new hash.Hash computing the SHA-512 checksum.
-var New = sha512.New
 
 // New384 returns a new hash.Hash computing the SHA-384 checksum.
 var New384 = sha512.New384

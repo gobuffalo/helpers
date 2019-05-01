@@ -25,21 +25,17 @@ const (
 
 	HasPrefixKey = "HasPrefix"
 
-	HasPrefixKey = "HasPrefix"
-
-	HasPrefixKey = "HasPrefix"
-
-	IsAbsKey = "IsAbs"
-
-	IsAbsKey = "IsAbs"
-
 	IsAbsKey = "IsAbs"
 
 	JoinKey = "Join"
 
+	ListSeparatorKey = "ListSeparator"
+
 	MatchKey = "Match"
 
 	RelKey = "Rel"
+
+	SeparatorKey = "Separator"
 
 	SplitKey = "Split"
 
@@ -73,21 +69,17 @@ func New() hctx.Map {
 
 		HasPrefixKey: HasPrefix,
 
-		HasPrefixKey: HasPrefix,
-
-		HasPrefixKey: HasPrefix,
-
-		IsAbsKey: IsAbs,
-
-		IsAbsKey: IsAbs,
-
 		IsAbsKey: IsAbs,
 
 		JoinKey: Join,
 
+		ListSeparatorKey: ListSeparator,
+
 		MatchKey: Match,
 
 		RelKey: Rel,
+
+		SeparatorKey: Separator,
 
 		SplitKey: Split,
 
@@ -181,24 +173,6 @@ var Glob = filepath.Glob
 // does not ignore case when required.
 var HasPrefix = filepath.HasPrefix
 
-// HasPrefix exists for historical compatibility and should not be used.
-//
-// Deprecated: HasPrefix does not respect path boundaries and
-// does not ignore case when required.
-var HasPrefix = filepath.HasPrefix
-
-// HasPrefix exists for historical compatibility and should not be used.
-//
-// Deprecated: HasPrefix does not respect path boundaries and
-// does not ignore case when required.
-var HasPrefix = filepath.HasPrefix
-
-// IsAbs reports whether the path is absolute.
-var IsAbs = filepath.IsAbs
-
-// IsAbs reports whether the path is absolute.
-var IsAbs = filepath.IsAbs
-
 // IsAbs reports whether the path is absolute.
 var IsAbs = filepath.IsAbs
 
@@ -208,6 +182,8 @@ var IsAbs = filepath.IsAbs
 // On Windows, the result is a UNC path if and only if the first path
 // element is a UNC path.
 var Join = filepath.Join
+
+var ListSeparator = filepath.ListSeparator
 
 // Match reports whether name matches the shell file name pattern.
 // The pattern syntax is:
@@ -244,6 +220,8 @@ var Match = filepath.Match
 // knowing the current working directory would be necessary to compute it.
 // Rel calls Clean on the result.
 var Rel = filepath.Rel
+
+var Separator = filepath.Separator
 
 // Split splits path immediately following the final Separator,
 // separating it into a directory and file name component.

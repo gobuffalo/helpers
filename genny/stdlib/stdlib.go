@@ -1,7 +1,6 @@
 package stdlib
 
 import (
-	"fmt"
 	"os"
 	"path/filepath"
 
@@ -26,16 +25,11 @@ func New(opts *Options) (*genny.Generator, error) {
 	box := packr.New("github.com/gobuffalo/helpers/genny/stdlib/templates", "../stdlib/templates")
 
 	helpers, err := decls.FindDecls(filepath.Join(os.Getenv("GOROOT"), "src"))
-	// fmt.Println(helpers)
+
 	if err != nil {
 		return g, err
 	}
 	for _, pk := range helpers {
-		fmt.Println("----")
-		fmt.Println(pk.Full)
-		for _, d := range pk.Decls {
-			fmt.Println(pk.Full, d.Name)
-		}
 		s, err := box.FindString("helpers.go.plush")
 		if err != nil {
 			return g, err

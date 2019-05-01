@@ -23,7 +23,11 @@ const (
 
 	GCKey = "GC"
 
+	GOARCHKey = "GOARCH"
+
 	GOMAXPROCSKey = "GOMAXPROCS"
+
+	GOOSKey = "GOOS"
 
 	GOROOTKey = "GOROOT"
 
@@ -37,10 +41,6 @@ const (
 
 	LockOSThreadKey = "LockOSThread"
 
-	MSanReadKey = "MSanRead"
-
-	MSanWriteKey = "MSanWrite"
-
 	MemProfileKey = "MemProfile"
 
 	MutexProfileKey = "MutexProfile"
@@ -50,26 +50,6 @@ const (
 	NumCgoCallKey = "NumCgoCall"
 
 	NumGoroutineKey = "NumGoroutine"
-
-	RaceAcquireKey = "RaceAcquire"
-
-	RaceDisableKey = "RaceDisable"
-
-	RaceEnableKey = "RaceEnable"
-
-	RaceErrorsKey = "RaceErrors"
-
-	RaceReadKey = "RaceRead"
-
-	RaceReadRangeKey = "RaceReadRange"
-
-	RaceReleaseKey = "RaceRelease"
-
-	RaceReleaseMergeKey = "RaceReleaseMerge"
-
-	RaceWriteKey = "RaceWrite"
-
-	RaceWriteRangeKey = "RaceWriteRange"
 
 	ReadMemStatsKey = "ReadMemStats"
 
@@ -117,7 +97,11 @@ func New() hctx.Map {
 
 		GCKey: GC,
 
+		GOARCHKey: GOARCH,
+
 		GOMAXPROCSKey: GOMAXPROCS,
+
+		GOOSKey: GOOS,
 
 		GOROOTKey: GOROOT,
 
@@ -131,10 +115,6 @@ func New() hctx.Map {
 
 		LockOSThreadKey: LockOSThread,
 
-		MSanReadKey: MSanRead,
-
-		MSanWriteKey: MSanWrite,
-
 		MemProfileKey: MemProfile,
 
 		MutexProfileKey: MutexProfile,
@@ -144,26 +124,6 @@ func New() hctx.Map {
 		NumCgoCallKey: NumCgoCall,
 
 		NumGoroutineKey: NumGoroutine,
-
-		RaceAcquireKey: RaceAcquire,
-
-		RaceDisableKey: RaceDisable,
-
-		RaceEnableKey: RaceEnable,
-
-		RaceErrorsKey: RaceErrors,
-
-		RaceReadKey: RaceRead,
-
-		RaceReadRangeKey: RaceReadRange,
-
-		RaceReleaseKey: RaceRelease,
-
-		RaceReleaseMergeKey: RaceReleaseMerge,
-
-		RaceWriteKey: RaceWrite,
-
-		RaceWriteRangeKey: RaceWriteRange,
 
 		ReadMemStatsKey: ReadMemStats,
 
@@ -258,12 +218,16 @@ var FuncForPC = runtime.FuncForPC
 // program.
 var GC = runtime.GC
 
+var GOARCH = runtime.GOARCH
+
 // GOMAXPROCS sets the maximum number of CPUs that can be executing
 // simultaneously and returns the previous setting. If n &lt; 1, it does not
 // change the current setting.
 // The number of logical CPUs on the local machine can be queried with NumCPU.
 // This call will go away when the scheduler improves.
 var GOMAXPROCS = runtime.GOMAXPROCS
+
+var GOOS = runtime.GOOS
 
 // GOROOT returns the root of the Go tree. It uses the
 // GOROOT environment variable, if set at process start,
@@ -329,10 +293,6 @@ var KeepAlive = runtime.KeepAlive
 // non-Go library functions that depend on per-thread state.
 var LockOSThread = runtime.LockOSThread
 
-var MSanRead = runtime.MSanRead
-
-var MSanWrite = runtime.MSanWrite
-
 // MemProfile returns a profile of memory allocated and freed per allocation
 // site.
 //
@@ -376,49 +336,6 @@ var NumCgoCall = runtime.NumCgoCall
 
 // NumGoroutine returns the number of goroutines that currently exist.
 var NumGoroutine = runtime.NumGoroutine
-
-// RaceAcquire/RaceRelease/RaceReleaseMerge establish happens-before relations
-// between goroutines. These inform the race detector about actual synchronization
-// that it can&#39;t see for some reason (e.g. synchronization within RaceDisable/RaceEnable
-// sections of code).
-// RaceAcquire establishes a happens-before relation with the preceding
-// RaceReleaseMerge on addr up to and including the last RaceRelease on addr.
-// In terms of the C memory model (C11 §5.1.2.4, §7.17.3),
-// RaceAcquire is equivalent to atomic_load(memory_order_acquire).
-var RaceAcquire = runtime.RaceAcquire
-
-// RaceDisable disables handling of race synchronization events in the current goroutine.
-// Handling is re-enabled with RaceEnable. RaceDisable/RaceEnable can be nested.
-// Non-synchronization events (memory accesses, function entry/exit) still affect
-// the race detector.
-var RaceDisable = runtime.RaceDisable
-
-// RaceEnable re-enables handling of race events in the current goroutine.
-var RaceEnable = runtime.RaceEnable
-
-var RaceErrors = runtime.RaceErrors
-
-var RaceRead = runtime.RaceRead
-
-var RaceReadRange = runtime.RaceReadRange
-
-// RaceRelease performs a release operation on addr that
-// can synchronize with a later RaceAcquire on addr.
-//
-// In terms of the C memory model, RaceRelease is equivalent to
-// atomic_store(memory_order_release).
-var RaceRelease = runtime.RaceRelease
-
-// RaceReleaseMerge is like RaceRelease, but also establishes a happens-before
-// relation with the preceding RaceRelease or RaceReleaseMerge on addr.
-//
-// In terms of the C memory model, RaceReleaseMerge is equivalent to
-// atomic_exchange(memory_order_release).
-var RaceReleaseMerge = runtime.RaceReleaseMerge
-
-var RaceWrite = runtime.RaceWrite
-
-var RaceWriteRange = runtime.RaceWriteRange
 
 // ReadMemStats populates m with memory allocator statistics.
 //

@@ -11,8 +11,6 @@ const (
 
 	IsPredeclaredKey = "IsPredeclared"
 
-	NewKey = "New"
-
 	SynopsisKey = "Synopsis"
 
 	ToHTMLKey = "ToHTML"
@@ -26,8 +24,6 @@ func New() hctx.Map {
 		ExamplesKey: Examples,
 
 		IsPredeclaredKey: IsPredeclared,
-
-		NewKey: New,
 
 		SynopsisKey: Synopsis,
 
@@ -54,10 +50,6 @@ var Examples = doc.Examples
 
 // IsPredeclared reports whether s is a predeclared identifier.
 var IsPredeclared = doc.IsPredeclared
-
-// New computes the package documentation for the given package AST.
-// New takes ownership of the AST pkg and may edit or overwrite it.
-var New = doc.New
 
 // Synopsis returns a cleaned version of the first sentence in s.
 // That sentence ends after the first period followed by space and

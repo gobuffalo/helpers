@@ -9,8 +9,6 @@ import (
 const (
 	IsEmptyTreeKey = "IsEmptyTree"
 
-	NewKey = "New"
-
 	NewIdentifierKey = "NewIdentifier"
 
 	ParseKey = "Parse"
@@ -21,8 +19,6 @@ func New() hctx.Map {
 
 		IsEmptyTreeKey: IsEmptyTree,
 
-		NewKey: New,
-
 		NewIdentifierKey: NewIdentifier,
 
 		ParseKey: Parse,
@@ -31,9 +27,6 @@ func New() hctx.Map {
 
 // IsEmptyTree reports whether this tree (node) is empty of everything but space.
 var IsEmptyTree = parse.IsEmptyTree
-
-// New allocates a new parse tree with the given name.
-var New = parse.New
 
 // NewIdentifier returns a new IdentifierNode with the given identifier name.
 var NewIdentifier = parse.NewIdentifier

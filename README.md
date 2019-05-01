@@ -22,8 +22,6 @@ Note: This file is auto-generated. Do Not Edit
 
 ## [`github.com/gobuffalo/helpers/forms/bootstrap`](https://godoc.org/github.com/gobuffalo/helpers/forms/bootstrap)
 
-## [`github.com/gobuffalo/helpers/helpers`](https://godoc.org/github.com/gobuffalo/helpers/helpers)
-
 ## [`github.com/gobuffalo/helpers/inflections`](https://godoc.org/github.com/gobuffalo/helpers/inflections)
 
 ## [`github.com/gobuffalo/helpers/iterators`](https://godoc.org/github.com/gobuffalo/helpers/iterators)
@@ -43,48 +41,6 @@ Note: This file is auto-generated. Do Not Edit
 ## [`github.com/gobuffalo/helpers/stdlib/builtinh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/builtinh)
 
 ## [`github.com/gobuffalo/helpers/stdlib/bytesh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/bytesh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/addr2lineh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/addr2lineh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/apih`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/apih)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/asmh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/asmh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/buildidh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/buildidh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/cgoh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/cgoh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/compileh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/compileh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/coverh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/coverh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/disth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/disth)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/doch`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/doch)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/fixh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/fixh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/gofmth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/gofmth)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/goh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/goh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/linkh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/linkh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/nmh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/nmh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/objdumph`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/objdumph)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/packh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/packh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/pprofh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/pprofh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/test2jsonh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/test2jsonh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/traceh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/traceh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/vet/allh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/vet/allh)
-
-## [`github.com/gobuffalo/helpers/stdlib/cmd/veth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/cmd/veth)
 
 ## [`github.com/gobuffalo/helpers/stdlib/compress/bzip2h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/compress/bzip2h)
 
@@ -169,8 +125,6 @@ Note: This file is auto-generated. Do Not Edit
 ## [`github.com/gobuffalo/helpers/stdlib/encoding/binaryh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/binaryh)
 
 ## [`github.com/gobuffalo/helpers/stdlib/encoding/csvh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/csvh)
-
-## [`github.com/gobuffalo/helpers/stdlib/encoding/gobh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/gobh)
 
 ## [`github.com/gobuffalo/helpers/stdlib/encoding/hexh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/encoding/hexh)
 
@@ -320,8 +274,6 @@ Note: This file is auto-generated. Do Not Edit
 
 ## [`github.com/gobuffalo/helpers/stdlib/runtime/debugh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/runtime/debugh)
 
-## [`github.com/gobuffalo/helpers/stdlib/runtime/msanh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/runtime/msanh)
-
 ## [`github.com/gobuffalo/helpers/stdlib/runtime/pprofh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/runtime/pprofh)
 
 ## [`github.com/gobuffalo/helpers/stdlib/runtime/raceh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/runtime/raceh)
@@ -339,10 +291,6 @@ Note: This file is auto-generated. Do Not Edit
 ## [`github.com/gobuffalo/helpers/stdlib/sync/atomich`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/sync/atomich)
 
 ## [`github.com/gobuffalo/helpers/stdlib/synch`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/synch)
-
-## [`github.com/gobuffalo/helpers/stdlib/syscall/jsh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/syscall/jsh)
-
-## [`github.com/gobuffalo/helpers/stdlib/syscallh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/syscallh)
 
 ## [`github.com/gobuffalo/helpers/stdlib/testing/iotesth`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/testing/iotesth)
 
@@ -365,8 +313,6 @@ Note: This file is auto-generated. Do Not Edit
 ## [`github.com/gobuffalo/helpers/stdlib/unicode/utf8h`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/unicode/utf8h)
 
 ## [`github.com/gobuffalo/helpers/stdlib/unicodeh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/unicodeh)
-
-## [`github.com/gobuffalo/helpers/stdlib/unsafeh`](https://godoc.org/github.com/gobuffalo/helpers/stdlib/unsafeh)
 
 ## [`github.com/gobuffalo/helpers/tags`](https://godoc.org/github.com/gobuffalo/helpers/tags)
 

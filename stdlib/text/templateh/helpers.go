@@ -23,8 +23,6 @@ const (
 
 	MustKey = "Must"
 
-	NewKey = "New"
-
 	ParseFilesKey = "ParseFiles"
 
 	ParseGlobKey = "ParseGlob"
@@ -50,8 +48,6 @@ func New() hctx.Map {
 		JSEscaperKey: JSEscaper,
 
 		MustKey: Must,
-
-		NewKey: New,
 
 		ParseFilesKey: ParseFiles,
 
@@ -91,9 +87,6 @@ var JSEscaper = template.JSEscaper
 // initializations such as
 // 	var t = template.Must(template.New(&#34;name&#34;).Parse(&#34;text&#34;))
 var Must = template.Must
-
-// New allocates a new, undefined template with the given name.
-var New = template.New
 
 // ParseFiles creates a new Template and parses the template definitions from
 // the named files. The returned template&#39;s name will have the base name and

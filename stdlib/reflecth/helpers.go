@@ -35,8 +35,6 @@ const (
 
 	MapOfKey = "MapOf"
 
-	NewKey = "New"
-
 	NewAtKey = "NewAt"
 
 	PtrToKey = "PtrTo"
@@ -86,8 +84,6 @@ func New() hctx.Map {
 		MakeSliceKey: MakeSlice,
 
 		MapOfKey: MapOf,
-
-		NewKey: New,
 
 		NewAtKey: NewAt,
 
@@ -251,10 +247,6 @@ var MakeSlice = reflect.MakeSlice
 // If the key type is not a valid map key type (that is, if it does
 // not implement Go&#39;s == operator), MapOf panics.
 var MapOf = reflect.MapOf
-
-// New returns a Value representing a pointer to a new zero value
-// for the specified type. That is, the returned Value&#39;s Type is PtrTo(typ).
-var New = reflect.New
 
 // NewAt returns a Value representing a pointer to a value of the
 // specified type, using p as that pointer.

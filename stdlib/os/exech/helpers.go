@@ -12,12 +12,6 @@ const (
 	CommandContextKey = "CommandContext"
 
 	LookPathKey = "LookPath"
-
-	LookPathKey = "LookPath"
-
-	LookPathKey = "LookPath"
-
-	LookPathKey = "LookPath"
 )
 
 func New() hctx.Map {
@@ -26,12 +20,6 @@ func New() hctx.Map {
 		CommandKey: Command,
 
 		CommandContextKey: CommandContext,
-
-		LookPathKey: LookPath,
-
-		LookPathKey: LookPath,
-
-		LookPathKey: LookPath,
 
 		LookPathKey: LookPath,
 	}
@@ -71,26 +59,5 @@ var CommandContext = exec.CommandContext
 // LookPath searches for an executable named file in the
 // directories named by the PATH environment variable.
 // If file contains a slash, it is tried directly and the PATH is not consulted.
-// The result may be an absolute path or a path relative to the current directory.
-var LookPath = exec.LookPath
-
-// LookPath searches for an executable named file in the
-// directories named by the path environment variable.
-// If file begins with &#34;/&#34;, &#34;#&#34;, &#34;./&#34;, or &#34;../&#34;, it is tried
-// directly and the path is not consulted.
-// The result may be an absolute path or a path relative to the current directory.
-var LookPath = exec.LookPath
-
-// LookPath searches for an executable named file in the
-// directories named by the PATH environment variable.
-// If file contains a slash, it is tried directly and the PATH is not consulted.
-// The result may be an absolute path or a path relative to the current directory.
-var LookPath = exec.LookPath
-
-// LookPath searches for an executable named file in the
-// directories named by the PATH environment variable.
-// If file contains a slash, it is tried directly and the PATH is not consulted.
-// LookPath also uses PATHEXT environment variable to match
-// a suitable candidate.
 // The result may be an absolute path or a path relative to the current directory.
 var LookPath = exec.LookPath

@@ -13,6 +13,8 @@ const (
 
 	DumpResponseKey = "DumpResponse"
 
+	ErrLineTooLongKey = "ErrLineTooLong"
+
 	NewChunkedReaderKey = "NewChunkedReader"
 
 	NewChunkedWriterKey = "NewChunkedWriter"
@@ -34,6 +36,8 @@ func New() hctx.Map {
 		DumpRequestOutKey: DumpRequestOut,
 
 		DumpResponseKey: DumpResponse,
+
+		ErrLineTooLongKey: ErrLineTooLong,
 
 		NewChunkedReaderKey: NewChunkedReader,
 
@@ -74,6 +78,8 @@ var DumpRequestOut = httputil.DumpRequestOut
 
 // DumpResponse is like DumpRequest but dumps a response.
 var DumpResponse = httputil.DumpResponse
+
+var ErrLineTooLong = httputil.ErrLineTooLong
 
 // NewChunkedReader returns a new chunkedReader that translates the data read from r
 // out of HTTP &#34;chunked&#34; format before returning it.

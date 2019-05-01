@@ -7,8 +7,6 @@ import (
 )
 
 const (
-	NewKey = "New"
-
 	New224Key = "New224"
 
 	Sum224Key = "Sum224"
@@ -19,8 +17,6 @@ const (
 func New() hctx.Map {
 	return hctx.Map{
 
-		NewKey: New,
-
 		New224Key: New224,
 
 		Sum224Key: Sum224,
@@ -28,12 +24,6 @@ func New() hctx.Map {
 		Sum256Key: Sum256,
 	}
 }
-
-// New returns a new hash.Hash computing the SHA256 checksum. The Hash
-// also implements encoding.BinaryMarshaler and
-// encoding.BinaryUnmarshaler to marshal and unmarshal the internal
-// state of the hash.
-var New = sha256.New
 
 // New224 returns a new hash.Hash computing the SHA224 checksum.
 var New224 = sha256.New224

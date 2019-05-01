@@ -6,7 +6,6 @@ require (
 	github.com/gobuffalo/genny v0.1.1
 	github.com/gobuffalo/github_flavored_markdown v1.0.7
 	github.com/gobuffalo/gogen v0.1.1
-	github.com/gobuffalo/packd v0.1.0
 	github.com/gobuffalo/packr/v2 v2.2.0
 	github.com/gobuffalo/plush v3.8.0+incompatible
 	github.com/gobuffalo/plushgen v0.1.0
@@ -16,6 +15,5 @@ require (
 	github.com/spf13/cobra v0.0.3
 	github.com/spf13/pflag v1.0.3 // indirect
 	github.com/stretchr/testify v1.3.0
-	golang.org/x/arch v0.0.0-20190312162104-788fe5ffcd8c // indirect
-	golang.org/x/tools v0.0.0-20190430194229-2d28432af7a5
+	golang.org/x/tools v0.0.0-20190430194229-2d28432af7a5 // indirect
 )
