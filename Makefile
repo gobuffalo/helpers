@@ -20,7 +20,7 @@ deps:
 	make tidy
 
 gen:
-	go run ./helpers/main.go stdlib
+#	go run ./helpers/main.go stdlib
 	go run ./helpers/main.go
 
 build: gen
