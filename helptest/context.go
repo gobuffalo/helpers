@@ -37,6 +37,16 @@ func (f HelperContext) New() hctx.Context {
 	return fhc
 }
 
+func (f HelperContext) Data() sync.Map {
+	var m sync.Map
+	f.data.Range(func(k, v interface{}) bool {
+		m.Store(k, v)
+		return true
+	})
+
+	return m
+}
+
 func (f HelperContext) Value(key interface{}) interface{} {
 	v, ok := f.data.Load(key)
 	if ok {
