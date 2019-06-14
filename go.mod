@@ -14,6 +14,5 @@ require (
 	github.com/gobuffalo/plushgen v0.1.0
 	github.com/gobuffalo/tags v2.1.0+incompatible
 	github.com/pkg/errors v0.8.1
-	github.com/spf13/cobra v0.0.5
 	github.com/stretchr/testify v1.3.0
 )
