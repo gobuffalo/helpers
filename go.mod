@@ -11,7 +11,7 @@ require (
 	github.com/gobuffalo/packd v0.1.0
 	github.com/gobuffalo/packr/v2 v2.4.0
 	github.com/gobuffalo/plush v3.8.2+incompatible
-	github.com/gobuffalo/plushgen v0.1.0
+	github.com/gobuffalo/plushgen v0.1.1
 	github.com/gobuffalo/tags v2.1.0+incompatible
 	github.com/pkg/errors v0.8.1
 	github.com/stretchr/testify v1.3.0

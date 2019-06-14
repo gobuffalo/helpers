@@ -5,4 +5,4 @@
 // and any other packr generated files.
 package docs
 
-import _ "github.com/gobuffalo/helpers/packrd"
+import _ "github.com/gobuffalo/plushgen/packrd"
