@@ -1,9 +1,11 @@
 package iterators
 
 import (
+	"errors"
+	"fmt"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"fmt"
 )
 
 // GroupBy creates an iterator of groups or sub-slices of the underlying
@@ -40,7 +42,7 @@ func GroupBy(size int, underlying interface{}) (Iterator, error) {
 			pos += groupSize
 		}
 	default:
-		return nil, errors.Errorf("can not use %T in groupBy", underlying)
+		return nil, fmt.Errorf("can not use %T in groupBy", underlying)
 	}
 	g := &groupBy{
 		group: group,

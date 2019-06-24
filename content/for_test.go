@@ -1,8 +1,8 @@
 package content
 
 import (
-	"testing"
 	"errors"
+	"testing"
 
 	"github.com/gobuffalo/helpers/hctx"
 	"github.com/gobuffalo/helpers/helptest"
