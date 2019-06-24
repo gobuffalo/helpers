@@ -4,8 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"reflect"
-
-	"fmt"
 )
 
 // GroupBy creates an iterator of groups or sub-slices of the underlying
