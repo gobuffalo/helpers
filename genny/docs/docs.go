@@ -11,11 +11,11 @@ import (
 	"unicode"
 
 	"github.com/gobuffalo/genny"
-	"github.com/gobuffalo/gogen"
+	"github.com/gobuffalo/genny/gogen"
+	"github.com/gobuffalo/genny/plushgen"
 	"github.com/gobuffalo/packd"
 	"github.com/gobuffalo/packr/v2"
 	"github.com/gobuffalo/plush"
-	"github.com/gobuffalo/plushgen"
 )
 
 type helper struct {
