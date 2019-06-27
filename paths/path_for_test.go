@@ -50,7 +50,7 @@ func Test_PathFor(t *testing.T) {
 		{nil, "", true},
 		{[]interface{}{truck{}, nil}, "", true},
 		{BadCar{}, "", true},
-		{"https://www.google.com", "https://www.google.com", true},
+		{"https://www.google.com", "https://www.google.com", false},
 	}
 
 	for _, tt := range table {
