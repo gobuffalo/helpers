@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"html/template"
+	"net/url"
 	"path"
 	"reflect"
 	"strings"
@@ -96,6 +97,13 @@ func byField(ni name.Ident, f reflect.Value) (string, error) {
 }
 
 func join(s ...string) string {
+	//In case is a full valid url it will return the same url without modification
+	if len(s) == 1 {
+		if _, err := url.ParseRequestURI(s[0]); err == nil {
+			return s[0]
+		}
+	}
+
 	p := path.Join(s...)
 	if !strings.HasPrefix(p, "/") {
 		p = "/" + p
