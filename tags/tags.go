@@ -9,6 +9,7 @@ const (
 	JSKey           = "javascriptTag"
 	LinkToKey       = "linkTo"
 	RemoteLinkToKey = "remoteLinkTo"
+	BackURLKey      = "backURL"
 )
 
 // New returns a map of the helpers within this package.
@@ -24,5 +25,6 @@ func New() hctx.Map {
 		JSKey:           JS,
 		LinkToKey:       LinkTo,
 		RemoteLinkToKey: RemoteLinkTo,
+		BackURLKey:      BackURL,
 	}
 }
