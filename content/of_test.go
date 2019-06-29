@@ -40,7 +40,7 @@ func Test_ContentOf(t *testing.T) {
 	}
 
 	name := "testing"
-	cf.Set("contentFor:"+name , func(data hctx.Map) (template.HTML, error) {
+	cf.Set("contentFor:"+name, func(data hctx.Map) (template.HTML, error) {
 		return template.HTML("body"), nil
 	})
 
