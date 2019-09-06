@@ -1,4 +1,5 @@
 variables:
+  GOPROXY: "https://proxy.golang.org"
   GOBIN:  "$(GOPATH)/bin" # Go binaries path
   GOPATH: "$(system.defaultWorkingDirectory)/gopath" # Go workspace path
   modulePath: "$(GOPATH)/src/github.com/$(build.repository.name)" # Path to the module"s code
@@ -10,16 +11,16 @@ jobs:
   strategy:
     matrix:
       go 1.11 (on):
-        go_version: "1.11.11"
+        go_version: "1.11.13"
         GO111MODULE: "on"
       go 1.11 (off):
-        go_version: "1.11.11"
+        go_version: "1.11.13"
         GO111MODULE: "off"
       go 1.12 (on):
-        go_version: "1.12.6"
+        go_version: "1.12.9"
         GO111MODULE: "on"
       go 1.12 (off):
-        go_version: "1.12.6"
+        go_version: "1.12.9"
         GO111MODULE: "off"
   steps:
     - template: azure-tests.yml
@@ -30,16 +31,16 @@ jobs:
   strategy:
     matrix:
       go 1.11 (on):
-        go_version: "1.11.11"
+        go_version: "1.11.13"
         GO111MODULE: "on"
       go 1.11 (off):
-        go_version: "1.11.11"
+        go_version: "1.11.13"
         GO111MODULE: "off"
       go 1.12 (on):
-        go_version: "1.12.6"
+        go_version: "1.12.9"
         GO111MODULE: "on"
       go 1.12 (off):
-        go_version: "1.12.6"
+        go_version: "1.12.9"
         GO111MODULE: "off"
   steps:
     - template: azure-tests.yml
@@ -50,16 +51,16 @@ jobs:
   strategy:
     matrix:
       go 1.11 (on):
-        go_version: "1.11.11"
+        go_version: "1.11.13"
         GO111MODULE: "on"
       go 1.11 (off):
-        go_version: "1.11.11"
+        go_version: "1.11.13"
         GO111MODULE: "off"
       go 1.12 (on):
-        go_version: "1.12.6"
+        go_version: "1.12.9"
         GO111MODULE: "on"
       go 1.12 (off):
-        go_version: "1.12.6"
+        go_version: "1.12.9"
         GO111MODULE: "off"
   steps:
     - template: azure-tests.yml

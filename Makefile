@@ -1,7 +1,7 @@
 TAGS ?= ""
 GO_BIN ?= "go"
 
-install: packr
+install: 
 	$(GO_BIN) install -tags ${TAGS} -v .
 	make tidy
 
@@ -16,18 +16,18 @@ deps:
 	$(GO_BIN) get -tags ${TAGS} -t ./...
 	make tidy
 
-build: packr
+build: 
 	$(GO_BIN) build -v .
 	make tidy
 
-test: packr
+test: 
 	$(GO_BIN) test -cover -tags ${TAGS} ./...
 	make tidy
 
-ci-deps: packr
+ci-deps: 
 	$(GO_BIN) get -tags ${TAGS} -t ./...
 
-ci-test: packr
+ci-test: 
 	$(GO_BIN) test -tags ${TAGS} -race ./...
 
 lint:
@@ -47,19 +47,14 @@ endif
 	make install
 	make tidy
 
-release-test: packr
+release-test: 
 	$(GO_BIN) test -tags ${TAGS} -race ./...
 	make tidy
 
 release:
 	$(GO_BIN) get github.com/gobuffalo/release
 	make tidy
-	release -y -f version.go 
-	make tidy
-
-packr:
-	$(GO_BIN) get github.com/gobuffalo/packr/v2/packr2
-	packr2
+	release -y -f version.go --skip-packr
 	make tidy
 
 
