@@ -1,4 +1,4 @@
 package helpers
 
 // Version of helpers
-const Version = "v0.2.4"
+const Version = "v0.3.0"
