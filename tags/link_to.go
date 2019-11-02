@@ -18,9 +18,9 @@ import (
 // yields(assuming user ID'd by `id` and widget by `slug`):
 //	<a class="btn" href="/users/id/widget/slug"></a>
 // Example 2:
-//	<%= linkTo("foo", {class: "btn"}) %>
+//	<%= linkTo("foo", {class: "btn", body: "View"}) %>
 // yields:
-//	<a class="btn" href="/foo"></a>
+//	<a class="btn" href="/foo">View</a>
 func LinkTo(in interface{}, opts tags.Options, help hctx.HelperContext) (template.HTML, error) {
 	s, err := paths.PathFor(in)
 	if err != nil {
