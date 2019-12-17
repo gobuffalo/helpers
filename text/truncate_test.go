@@ -8,37 +8,46 @@ import (
 )
 
 func Test_Truncate(t *testing.T) {
+	var runesS []rune
+	var runesX []rune
+
 	r := require.New(t)
-	x := "KEuFHyyImKUMhSkSolLqgqevKQNZUjpSZokrGbZqnUrUnWrTDwi"
+	x := "世界uFHyyImKUMhSkSolLqgqevKQNZUjpSZokrGbZqnUrUnWrTDwi"
 	s := Truncate(x, hctx.Map{})
-	r.Len(s, 50)
-	r.Equal("...", s[47:])
+	runesS = []rune(s)
+	r.Equal(len(runesS), 50)
+	r.Equal("...", string(runesS[47:]))
 
 	s = Truncate(x, hctx.Map{
 		"size": 10,
 	})
-	r.Len(s, 10)
-	r.Equal("...", s[7:])
+	runesS = []rune(s)
+	r.Equal(len(runesS), 10)
+	r.Equal("...", string(runesS[7:]))
 
 	s = Truncate(x, hctx.Map{
 		"size":  10,
-		"trail": "more",
+		"trail": "世界re",
 	})
-	r.Len(s, 10)
-	r.Equal("more", s[6:])
+	runesS = []rune(s)
+	r.Equal(len(runesS), 10)
+	r.Equal("世界re", string(runesS[6:]))
 
 	// Case size < len(trail)
 	s = Truncate(x, hctx.Map{
 		"size":  3,
-		"trail": "more",
+		"trail": "世界re",
 	})
-	r.Len(s, 4)
-	r.Equal("more", s)
+	runesS = []rune(s)
+	r.Equal(len(runesS), 4)
+	r.Equal("世界re", s)
 
 	// Case size >= len(string)
 	s = Truncate(x, hctx.Map{
 		"size": len(x),
 	})
-	r.Len(s, len(x))
-	r.Equal(x[48:], s[48:])
+	runesS = []rune(s)
+	runesX = []rune(x)
+	r.Equal(len(runesS), len(runesX))
+	r.Equal(string(runesX[48:]), string(runesS[48:]))
 }
