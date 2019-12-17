@@ -17,13 +17,15 @@ func Truncate(s string, opts hctx.Map) string {
 	if opts["trail"] == nil {
 		opts["trail"] = "..."
 	}
+	runesS := []rune(s)
 	size := opts["size"].(int)
-	if len(s) <= size {
+	if len(runesS) <= size {
 		return s
 	}
 	trail := opts["trail"].(string)
-	if len(trail) >= size {
+	runesTrail := []rune(trail)
+	if len(runesTrail) >= size {
 		return trail
 	}
-	return s[:size-len(trail)] + trail
+	return string(runesS[:size-len(runesTrail)]) + trail
 }
