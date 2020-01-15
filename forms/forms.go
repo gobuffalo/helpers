@@ -5,7 +5,7 @@ import (
 	"html/template"
 
 	"github.com/gobuffalo/helpers/hctx"
-	"github.com/gobuffalo/tags"
+	"github.com/gobuffalo/tags/v3"
 )
 
 // Keys to be used in templates for the functions in this package.

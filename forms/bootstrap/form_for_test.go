@@ -7,7 +7,7 @@ import (
 
 	"github.com/gobuffalo/helpers/hctx"
 	"github.com/gobuffalo/helpers/helptest"
-	"github.com/gobuffalo/tags"
+	"github.com/gobuffalo/tags/v3"
 )
 
 type Car struct {

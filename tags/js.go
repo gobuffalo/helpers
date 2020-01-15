@@ -3,7 +3,7 @@ package tags
 import (
 	"html/template"
 
-	"github.com/gobuffalo/tags"
+	"github.com/gobuffalo/tags/v3"
 )
 
 // JS creates html for a `<script>` tag using `github.com/gobuffalo/tags`

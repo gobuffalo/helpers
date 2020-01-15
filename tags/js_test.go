@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/gobuffalo/tags"
+	"github.com/gobuffalo/tags/v3"
 )
 
 func TestJS(t *testing.T) {

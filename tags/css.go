@@ -3,7 +3,7 @@ package tags
 import (
 	"html/template"
 
-	"github.com/gobuffalo/tags"
+	"github.com/gobuffalo/tags/v3"
 )
 
 // CSS creates html for a css link using `github.com/gobuffalo/tags`

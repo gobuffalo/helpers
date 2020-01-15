@@ -6,7 +6,7 @@ import (
 
 	"github.com/gobuffalo/helpers/hctx"
 	"github.com/gobuffalo/helpers/paths"
-	"github.com/gobuffalo/tags"
+	"github.com/gobuffalo/tags/v3"
 )
 
 // LinkTo creates html for a `<a>` tag using `github.com/gobuffalo/tags`

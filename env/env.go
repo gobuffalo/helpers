@@ -1,7 +1,9 @@
 package env
 
 import (
-	"github.com/gobuffalo/envy"
+	"fmt"
+	"os"
+
 	"github.com/gobuffalo/helpers/hctx"
 )
 
@@ -22,9 +24,21 @@ func New() hctx.Map {
 // Env will return the specified environment variable,
 // or an error if it can not be found
 //	<%= env("GOPATH") %>
-var Env = envy.MustGet
+func Env(key string) (string, error) {
+	s := os.Getenv(key)
+	if len(s) == 0 {
+		return "", fmt.Errorf("could not find ENV %q", key)
+	}
+	return s, nil
+}
 
 // Env will return the specified environment variable,
 // or the second argument, if not found
 //	<%= envOr("GOPATH", "~/go) %>
-var EnvOr = envy.Get
+func EnvOr(key string, def string) string {
+	s := os.Getenv(key)
+	if len(s) == 0 {
+		return def
+	}
+	return s
+}

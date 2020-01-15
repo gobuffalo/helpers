@@ -3,7 +3,7 @@ package tags
 import (
 	"html/template"
 
-	"github.com/gobuffalo/tags"
+	"github.com/gobuffalo/tags/v3"
 )
 
 // Img creates html for a `<img>` tag using `github.com/gobuffalo/tags`
