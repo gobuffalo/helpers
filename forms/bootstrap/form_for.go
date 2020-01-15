@@ -5,8 +5,8 @@ import (
 
 	"github.com/gobuffalo/helpers/hctx"
 	"github.com/gobuffalo/helpers/paths"
-	"github.com/gobuffalo/tags"
-	"github.com/gobuffalo/tags/form/bootstrap"
+	"github.com/gobuffalo/tags/v3"
+	"github.com/gobuffalo/tags/v3/form/bootstrap"
 )
 
 // FormFor implements a `github.com/gobuffalo/plush` helper around the

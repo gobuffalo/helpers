@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/gobuffalo/helpers/helptest"
-	"github.com/gobuffalo/tags"
+	"github.com/gobuffalo/tags/v3"
 	"github.com/stretchr/testify/require"
 )
 
