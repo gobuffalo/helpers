@@ -1,6 +1,6 @@
 module github.com/gobuffalo/helpers
 
-go 1.13
+go 1.15
 
 require (
 	github.com/gobuffalo/flect v0.2.2
