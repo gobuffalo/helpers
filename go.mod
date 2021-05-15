@@ -1,9 +1,9 @@
 module github.com/gobuffalo/helpers
 
-go 1.13
+go 1.15
 
 require (
-	github.com/gobuffalo/flect v0.2.0
+	github.com/gobuffalo/flect v0.2.2
 	github.com/gobuffalo/github_flavored_markdown v1.1.0
 	github.com/gobuffalo/tags/v3 v3.1.0
 	github.com/sergi/go-diff v1.1.0 // indirect
