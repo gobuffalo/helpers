@@ -27,7 +27,6 @@ Thank you to the following **GIANTS**:
 * [golang.org/x/sys](https://godoc.org/golang.org/x/sys)
 * [golang.org/x/term](https://godoc.org/golang.org/x/term)
 * [golang.org/x/text](https://godoc.org/golang.org/x/text)
-* [golang.org/x/tools](https://godoc.org/golang.org/x/tools)
 * [gopkg.in/check.v1](https://godoc.org/gopkg.in/check.v1)
 * [gopkg.in/yaml.v2](https://godoc.org/gopkg.in/yaml.v2)
 * [gopkg.in/yaml.v3](https://godoc.org/gopkg.in/yaml.v3)
