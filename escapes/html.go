@@ -3,7 +3,7 @@ package escapes
 import (
 	"html/template"
 
-	"github.com/gobuffalo/helpers/hctx"
+	"github.com/gobuffalo/plush/v5/helpers/hctx"
 )
 
 // HTMLEscape will escape a string for HTML

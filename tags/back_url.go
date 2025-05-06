@@ -3,7 +3,7 @@ package tags
 import (
 	"net/http"
 
-	"github.com/gobuffalo/helpers/hctx"
+	"github.com/gobuffalo/plush/v5/helpers/hctx"
 )
 
 // BackURL returns a URL to the referer, if its presend in the

@@ -3,7 +3,7 @@ package forms
 import (
 	"html/template"
 
-	"github.com/gobuffalo/helpers/hctx"
+	"github.com/gobuffalo/plush/v5/helpers/hctx"
 	"github.com/gobuffalo/tags/v3"
 	"github.com/gobuffalo/tags/v3/form"
 )

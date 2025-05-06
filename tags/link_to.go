@@ -4,8 +4,8 @@ import (
 	"errors"
 	"html/template"
 
-	"github.com/gobuffalo/helpers/hctx"
 	"github.com/gobuffalo/helpers/paths"
+	"github.com/gobuffalo/plush/v5/helpers/hctx"
 	"github.com/gobuffalo/tags/v3"
 )
 
@@ -14,12 +14,19 @@ import (
 // using [`paths#PathFor(in)`](https://godoc.org/github.com/gobuffalo/helpers/paths#PathFor) to set the `href`. If given a block
 // it will be interrupted and appended inside of the `<a>` tag.
 // Example 1:
+//
 //	<%= linkTo([user, widget], {class: "btn"}) %>
+//
 // yields(assuming user ID'd by `id` and widget by `slug`):
+//
 //	<a class="btn" href="/users/id/widget/slug"></a>
+//
 // Example 2:
+//
 //	<%= linkTo("foo", {class: "btn", body: "View"}) %>
+//
 // yields:
+//
 //	<a class="btn" href="/foo">View</a>
 func LinkTo(in interface{}, opts tags.Options, help hctx.HelperContext) (template.HTML, error) {
 	s, err := paths.PathFor(in)
@@ -49,6 +56,7 @@ func LinkTo(in interface{}, opts tags.Options, help hctx.HelperContext) (templat
 }
 
 // RemoteLinkTo creates an AJAXified `<a>` tag.
+//
 //	<%= remoteLinkTo(widget, {class: "btn btn-info", body: "View"}) %>
 //	<a class="btn btn-info" data-remote="true" href="/widgets/b6b0ab24-19ae-4cdd-ad73-c5ecbddd6f91">View</a>
 func RemoteLinkTo(in interface{}, opts tags.Options, help hctx.HelperContext) (template.HTML, error) {

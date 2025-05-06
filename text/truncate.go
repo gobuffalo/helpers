@@ -1,6 +1,6 @@
 package text
 
-import "github.com/gobuffalo/helpers/hctx"
+import "github.com/gobuffalo/plush/v5/helpers/hctx"
 
 // Truncate will try to return a string that is no longer
 // than `size`, which defaults to 50. If given

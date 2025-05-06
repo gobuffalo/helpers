@@ -1,6 +1,6 @@
 package content
 
-import "github.com/gobuffalo/helpers/hctx"
+import "github.com/gobuffalo/plush/v5/helpers/hctx"
 
 // WithDefault returns the key if exists, otherwise it returns
 // defaultValue passed.
