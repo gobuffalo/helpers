@@ -5,7 +5,7 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/gobuffalo/helpers/hctx"
+	"github.com/gobuffalo/plush/v5/helpers/hctx"
 )
 
 var _ hctx.HelperContext = NewContext()

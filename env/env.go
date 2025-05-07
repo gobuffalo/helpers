@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/gobuffalo/helpers/hctx"
+	"github.com/gobuffalo/plush/v5/helpers/hctx"
 )
 
 // Keys to be used in templates for the functions in this package.
@@ -23,6 +23,7 @@ func New() hctx.Map {
 
 // Env will return the specified environment variable,
 // or an error if it can not be found
+//
 //	<%= env("GOPATH") %>
 func Env(key string) (string, error) {
 	s := os.Getenv(key)
@@ -34,6 +35,7 @@ func Env(key string) (string, error) {
 
 // Env will return the specified environment variable,
 // or the second argument, if not found
+//
 //	<%= envOr("GOPATH", "~/go") %>
 func EnvOr(key string, def string) string {
 	s := os.Getenv(key)

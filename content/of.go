@@ -4,7 +4,7 @@ import (
 	"errors"
 	"html/template"
 
-	"github.com/gobuffalo/helpers/hctx"
+	"github.com/gobuffalo/plush/v5/helpers/hctx"
 )
 
 // ContentOf retrieves a stored block for templating and renders it.

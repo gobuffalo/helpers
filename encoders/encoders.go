@@ -1,6 +1,6 @@
 package encoders
 
-import "github.com/gobuffalo/helpers/hctx"
+import "github.com/gobuffalo/plush/v5/helpers/hctx"
 
 // Keys to be used in templates for the functions in this package.
 const (

@@ -4,7 +4,7 @@ import (
 	"html/template"
 
 	"github.com/gobuffalo/github_flavored_markdown"
-	"github.com/gobuffalo/helpers/hctx"
+	"github.com/gobuffalo/plush/v5/helpers/hctx"
 )
 
 // Markdown converts the string into HTML using GitHub flavored markdown.
