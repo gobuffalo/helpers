@@ -42,7 +42,6 @@ func helper(opts tags.Options, help hctx.HelperContext, fn func(opts tags.Option
 		hn = n.(string)
 		delete(opts, "var")
 	}
-	log.Println("SSSS", opts, help)
 	if opts["errors"] == nil && help != nil && help.Value("errors") != nil {
 		opts["errors"] = help.Value("errors")
 	}
