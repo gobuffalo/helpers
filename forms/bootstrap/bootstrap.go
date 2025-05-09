@@ -3,7 +3,6 @@ package bootstrap
 import (
 	"fmt"
 	"html/template"
-	"log"
 
 	"github.com/gobuffalo/plush/v5/helpers/hctx"
 	"github.com/gobuffalo/tags/v3"
