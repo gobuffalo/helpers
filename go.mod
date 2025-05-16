@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/gobuffalo/flect v1.0.2
 	github.com/gobuffalo/github_flavored_markdown v1.1.3
-	github.com/gobuffalo/plush/v5 v5.0.3
+	github.com/gobuffalo/plush/v5 v5.0.4
 	github.com/gobuffalo/tags/v3 v3.1.4
 	github.com/stretchr/testify v1.9.0
 )
