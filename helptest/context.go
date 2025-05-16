@@ -59,6 +59,13 @@ func (f *HelperContext) Set(key string, value interface{}) {
 	f.data.Store(key, value)
 }
 
+func (f *HelperContext) Update(key string, value interface{}) bool {
+	if f.Has(key) {
+		f.Set(key, value)
+	}
+	return false
+}
+
 func (f HelperContext) Block() (string, error) {
 	if f.BlockFn == nil {
 		return "", errors.New("no block given")
